@@ -4,9 +4,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/karlsen-network/karlsend/app/protocol/protocolerrors"
+	"github.com/hungyu99/freed/app/protocol/protocolerrors"
 
-	"github.com/karlsen-network/karlsend/app/appmessage"
+	"github.com/hungyu99/freed/app/appmessage"
 	"github.com/pkg/errors"
 )
 

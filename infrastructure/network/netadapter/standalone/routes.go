@@ -3,12 +3,12 @@ package standalone
 import (
 	"time"
 
-	"github.com/karlsen-network/karlsend/infrastructure/network/netadapter"
+	"github.com/hungyu99/freed/infrastructure/network/netadapter"
 
 	"github.com/pkg/errors"
 
-	"github.com/karlsen-network/karlsend/app/appmessage"
-	"github.com/karlsen-network/karlsend/infrastructure/network/netadapter/router"
+	"github.com/hungyu99/freed/app/appmessage"
+	"github.com/hungyu99/freed/infrastructure/network/netadapter/router"
 )
 
 // Routes holds the incoming and outgoing routes of a connection created by MinimalNetAdapter
