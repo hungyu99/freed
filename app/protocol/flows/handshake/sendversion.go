@@ -1,19 +1,19 @@
 package handshake
 
 import (
-	"github.com/karlsen-network/karlsend/app/appmessage"
-	"github.com/karlsen-network/karlsend/app/protocol/common"
-	peerpkg "github.com/karlsen-network/karlsend/app/protocol/peer"
-	"github.com/karlsen-network/karlsend/infrastructure/logger"
-	"github.com/karlsen-network/karlsend/infrastructure/network/netadapter/router"
-	"github.com/karlsen-network/karlsend/version"
+	"github.com/hungyu99/freed/app/appmessage"
+	"github.com/hungyu99/freed/app/protocol/common"
+	peerpkg "github.com/hungyu99/freed/app/protocol/peer"
+	"github.com/hungyu99/freed/infrastructure/logger"
+	"github.com/hungyu99/freed/infrastructure/network/netadapter/router"
+	"github.com/hungyu99/freed/version"
 	"github.com/pkg/errors"
 )
 
 var (
 	// userAgentName is the user agent name and is used to help identify
 	// ourselves to other kaspa peers.
-	userAgentName = "karlsend"
+	userAgentName = "freed"
 
 	// userAgentVersion is the user agent version and is used to help
 	// identify ourselves to other kaspa peers.

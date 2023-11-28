@@ -1,16 +1,16 @@
 package v5
 
 import (
-	"github.com/karlsen-network/karlsend/app/appmessage"
-	"github.com/karlsen-network/karlsend/app/protocol/common"
-	"github.com/karlsen-network/karlsend/app/protocol/flowcontext"
-	"github.com/karlsen-network/karlsend/app/protocol/flows/v5/addressexchange"
-	"github.com/karlsen-network/karlsend/app/protocol/flows/v5/blockrelay"
-	"github.com/karlsen-network/karlsend/app/protocol/flows/v5/ping"
-	"github.com/karlsen-network/karlsend/app/protocol/flows/v5/rejects"
-	"github.com/karlsen-network/karlsend/app/protocol/flows/v5/transactionrelay"
-	peerpkg "github.com/karlsen-network/karlsend/app/protocol/peer"
-	routerpkg "github.com/karlsen-network/karlsend/infrastructure/network/netadapter/router"
+	"github.com/hungyu99/freed/app/appmessage"
+	"github.com/hungyu99/freed/app/protocol/common"
+	"github.com/hungyu99/freed/app/protocol/flowcontext"
+	"github.com/hungyu99/freed/app/protocol/flows/v5/addressexchange"
+	"github.com/hungyu99/freed/app/protocol/flows/v5/blockrelay"
+	"github.com/hungyu99/freed/app/protocol/flows/v5/ping"
+	"github.com/hungyu99/freed/app/protocol/flows/v5/rejects"
+	"github.com/hungyu99/freed/app/protocol/flows/v5/transactionrelay"
+	peerpkg "github.com/hungyu99/freed/app/protocol/peer"
+	routerpkg "github.com/hungyu99/freed/infrastructure/network/netadapter/router"
 )
 
 type protocolManager interface {

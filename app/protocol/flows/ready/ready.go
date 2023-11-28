@@ -3,12 +3,12 @@ package ready
 import (
 	"sync/atomic"
 
-	"github.com/karlsen-network/karlsend/app/appmessage"
-	"github.com/karlsen-network/karlsend/app/protocol/common"
+	"github.com/hungyu99/freed/app/appmessage"
+	"github.com/hungyu99/freed/app/protocol/common"
 
-	peerpkg "github.com/karlsen-network/karlsend/app/protocol/peer"
-	"github.com/karlsen-network/karlsend/app/protocol/protocolerrors"
-	routerpkg "github.com/karlsen-network/karlsend/infrastructure/network/netadapter/router"
+	peerpkg "github.com/hungyu99/freed/app/protocol/peer"
+	"github.com/hungyu99/freed/app/protocol/protocolerrors"
+	routerpkg "github.com/hungyu99/freed/infrastructure/network/netadapter/router"
 	"github.com/pkg/errors"
 )
 

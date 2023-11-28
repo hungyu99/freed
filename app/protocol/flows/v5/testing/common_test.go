@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/karlsen-network/karlsend/app/protocol/protocolerrors"
+	"github.com/hungyu99/freed/app/protocol/protocolerrors"
 	"github.com/pkg/errors"
 )
 

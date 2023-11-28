@@ -3,15 +3,15 @@ package ping
 import (
 	"time"
 
-	"github.com/karlsen-network/karlsend/app/protocol/common"
-	"github.com/karlsen-network/karlsend/app/protocol/flowcontext"
+	"github.com/hungyu99/freed/app/protocol/common"
+	"github.com/hungyu99/freed/app/protocol/flowcontext"
 	"github.com/pkg/errors"
 
-	"github.com/karlsen-network/karlsend/app/appmessage"
-	peerpkg "github.com/karlsen-network/karlsend/app/protocol/peer"
-	"github.com/karlsen-network/karlsend/app/protocol/protocolerrors"
-	"github.com/karlsen-network/karlsend/infrastructure/network/netadapter/router"
-	"github.com/karlsen-network/karlsend/util/random"
+	"github.com/hungyu99/freed/app/appmessage"
+	peerpkg "github.com/hungyu99/freed/app/protocol/peer"
+	"github.com/hungyu99/freed/app/protocol/protocolerrors"
+	"github.com/hungyu99/freed/infrastructure/network/netadapter/router"
+	"github.com/hungyu99/freed/util/random"
 )
 
 // SendPingsContext is the interface for the context needed for the SendPings flow.

@@ -4,14 +4,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/karlsen-network/karlsend/app/protocol/flows/v5/addressexchange"
+	"github.com/hungyu99/freed/app/protocol/flows/v5/addressexchange"
 
-	"github.com/karlsen-network/karlsend/app/appmessage"
-	peerpkg "github.com/karlsen-network/karlsend/app/protocol/peer"
-	"github.com/karlsen-network/karlsend/domain/consensus"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/testutils"
-	"github.com/karlsen-network/karlsend/infrastructure/network/addressmanager"
-	"github.com/karlsen-network/karlsend/infrastructure/network/netadapter/router"
+	"github.com/hungyu99/freed/app/appmessage"
+	peerpkg "github.com/hungyu99/freed/app/protocol/peer"
+	"github.com/hungyu99/freed/domain/consensus"
+	"github.com/hungyu99/freed/domain/consensus/utils/testutils"
+	"github.com/hungyu99/freed/infrastructure/network/addressmanager"
+	"github.com/hungyu99/freed/infrastructure/network/netadapter/router"
 )
 
 type fakeReceiveAddressesContext struct{}

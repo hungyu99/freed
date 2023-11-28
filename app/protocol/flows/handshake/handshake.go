@@ -3,18 +3,18 @@ package handshake
 import (
 	"sync/atomic"
 
-	"github.com/karlsen-network/karlsend/domain"
+	"github.com/hungyu99/freed/domain"
 
-	"github.com/karlsen-network/karlsend/app/protocol/common"
-	"github.com/karlsen-network/karlsend/app/protocol/protocolerrors"
-	"github.com/karlsen-network/karlsend/infrastructure/network/addressmanager"
+	"github.com/hungyu99/freed/app/protocol/common"
+	"github.com/hungyu99/freed/app/protocol/protocolerrors"
+	"github.com/hungyu99/freed/infrastructure/network/addressmanager"
 
-	"github.com/karlsen-network/karlsend/infrastructure/config"
-	"github.com/karlsen-network/karlsend/infrastructure/network/netadapter"
+	"github.com/hungyu99/freed/infrastructure/config"
+	"github.com/hungyu99/freed/infrastructure/network/netadapter"
 
-	"github.com/karlsen-network/karlsend/app/appmessage"
-	peerpkg "github.com/karlsen-network/karlsend/app/protocol/peer"
-	routerpkg "github.com/karlsen-network/karlsend/infrastructure/network/netadapter/router"
+	"github.com/hungyu99/freed/app/appmessage"
+	peerpkg "github.com/hungyu99/freed/app/protocol/peer"
+	routerpkg "github.com/hungyu99/freed/infrastructure/network/netadapter/router"
 	"github.com/pkg/errors"
 )
 
