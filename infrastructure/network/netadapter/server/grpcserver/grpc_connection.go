@@ -5,13 +5,13 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/karlsen-network/karlsend/infrastructure/network/netadapter/router"
-	"github.com/karlsen-network/karlsend/infrastructure/network/netadapter/server/grpcserver/protowire"
+	"github.com/hungyu99/freed/infrastructure/network/netadapter/router"
+	"github.com/hungyu99/freed/infrastructure/network/netadapter/server/grpcserver/protowire"
 	"github.com/pkg/errors"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	"github.com/karlsen-network/karlsend/infrastructure/network/netadapter/server"
+	"github.com/hungyu99/freed/infrastructure/network/netadapter/server"
 	"google.golang.org/grpc"
 )
 
@@ -37,8 +37,8 @@ type gRPCConnection struct {
 }
 
 type grpcStream interface {
-	Send(*protowire.KarlsendMessage) error
-	Recv() (*protowire.KarlsendMessage, error)
+	Send(*protowire.FreedMessage) error
+	Recv() (*protowire.FreedMessage, error)
 }
 
 func newConnection(server *gRPCServer, address *net.TCPAddr, stream grpcStream,
@@ -127,7 +127,7 @@ func (c *gRPCConnection) Address() *net.TCPAddr {
 	return c.address
 }
 
-func (c *gRPCConnection) receive() (*protowire.KarlsendMessage, error) {
+func (c *gRPCConnection) receive() (*protowire.FreedMessage, error) {
 	// We use RLock here and in send() because they can work
 	// in parallel. closeSend(), however, must not have either
 	// receive() nor send() running while it's running.
@@ -137,7 +137,7 @@ func (c *gRPCConnection) receive() (*protowire.KarlsendMessage, error) {
 	return c.stream.Recv()
 }
 
-func (c *gRPCConnection) send(message *protowire.KarlsendMessage) error {
+func (c *gRPCConnection) send(message *protowire.FreedMessage) error {
 	// We use RLock here and in receive() because they can work
 	// in parallel. closeSend(), however, must not have either
 	// receive() nor send() running while it's running.
