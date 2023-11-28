@@ -7,9 +7,9 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/karlsen-network/karlsend/stability-tests/common"
-	"github.com/karlsen-network/karlsend/stability-tests/common/rpc"
-	"github.com/karlsen-network/karlsend/util/profiling"
+	"github.com/hungyu99/freed/stability-tests/common"
+	"github.com/hungyu99/freed/stability-tests/common/rpc"
+	"github.com/hungyu99/freed/util/profiling"
 )
 
 var timeout = 30 * time.Second
@@ -49,7 +49,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	// Wait a second to let karlsend process orphans
+	// Wait a second to let freed process orphans
 	<-time.After(1 * time.Second)
 
 	err = checkTopBlockIsTip(rpcClient, topBlock)

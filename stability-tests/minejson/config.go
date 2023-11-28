@@ -3,10 +3,10 @@ package main
 import (
 	"path/filepath"
 
-	"github.com/karlsen-network/karlsend/infrastructure/config"
-	"github.com/karlsen-network/karlsend/infrastructure/logger"
-	"github.com/karlsen-network/karlsend/stability-tests/common"
-	"github.com/karlsen-network/karlsend/stability-tests/common/rpc"
+	"github.com/hungyu99/freed/infrastructure/config"
+	"github.com/hungyu99/freed/infrastructure/logger"
+	"github.com/hungyu99/freed/stability-tests/common"
+	"github.com/hungyu99/freed/stability-tests/common/rpc"
 
 	"github.com/jessevdk/go-flags"
 )

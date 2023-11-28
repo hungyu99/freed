@@ -7,8 +7,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/karlsen-network/karlsend/stability-tests/common"
-	"github.com/karlsen-network/karlsend/util/panics"
+	"github.com/hungyu99/freed/stability-tests/common"
+	"github.com/hungyu99/freed/util/panics"
 	"github.com/pkg/errors"
 )
 
@@ -24,20 +24,20 @@ func startNodes() (teardown func(), err error) {
 	)
 
 	log.Infof("Starting nodes")
-	syncerDataDir, err := common.TempDir("karlsend-datadir-syncer")
+	syncerDataDir, err := common.TempDir("freed-datadir-syncer")
 	if err != nil {
 		panic(errors.Wrapf(err, "error in Tempdir"))
 	}
 	log.Infof("SYNCER datadir: %s", syncerDataDir)
 
-	syncedDataDir, err := common.TempDir("karlsend-datadir-synced")
+	syncedDataDir, err := common.TempDir("freed-datadir-synced")
 	if err != nil {
 		panic(errors.Wrapf(err, "error in Tempdir"))
 	}
 	log.Infof("SYNCED datadir: %s", syncedDataDir)
 
 	syncerCmd, err := common.StartCmd("KASPAD-SYNCER",
-		"karlsend",
+		"freed",
 		common.NetworkCliArgumentFromNetParams(activeConfig().NetParams()),
 		"--appdir", syncerDataDir,
 		"--logdir", syncerDataDir,
@@ -51,7 +51,7 @@ func startNodes() (teardown func(), err error) {
 	}
 
 	syncedCmd, err := common.StartCmd("KASPAD-SYNCED",
-		"karlsend",
+		"freed",
 		common.NetworkCliArgumentFromNetParams(activeConfig().NetParams()),
 		"--appdir", syncedDataDir,
 		"--logdir", syncedDataDir,

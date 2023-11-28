@@ -3,10 +3,10 @@ package main
 import (
 	"time"
 
-	"github.com/karlsen-network/karlsend/app/appmessage"
-	"github.com/karlsen-network/karlsend/stability-tests/common"
-	"github.com/karlsen-network/karlsend/stability-tests/common/rpc"
-	"github.com/karlsen-network/karlsend/util"
+	"github.com/hungyu99/freed/app/appmessage"
+	"github.com/hungyu99/freed/stability-tests/common"
+	"github.com/hungyu99/freed/stability-tests/common/rpc"
+	"github.com/hungyu99/freed/util"
 	"github.com/kaspanet/go-secp256k1"
 	"github.com/pkg/errors"
 )
@@ -32,7 +32,7 @@ func mineLoop(syncerRPCClient, syncedRPCClient *rpc.Client) error {
 		err = mineBlock(syncerRPCClient.Address(), miningAddr)
 		if err != nil {
 			// Ignore error and instead check that the block count changed correctly.
-			// TODO: Fix the race condition in karlsenminer so it won't panic (proper shutdown handler)
+			// TODO: Fix the race condition in freeminer so it won't panic (proper shutdown handler)
 			log.Warnf("mineBlock returned an err: %s", err)
 		}
 
@@ -129,8 +129,8 @@ func areTipsAreEqual(resultA, resultB *appmessage.GetBlockDAGInfoResponseMessage
 }
 
 func mineBlock(syncerRPCAddress string, miningAddress util.Address) error {
-	karlsenminerCmd, err := common.StartCmd("MINER",
-		"karlsenminer",
+	freeminerCmd, err := common.StartCmd("MINER",
+		"freeminer",
 		common.NetworkCliArgumentFromNetParams(activeConfig().NetParams()),
 		"-s", syncerRPCAddress,
 		"--mine-when-not-synced",
@@ -140,5 +140,5 @@ func mineBlock(syncerRPCAddress string, miningAddress util.Address) error {
 	if err != nil {
 		return err
 	}
-	return errors.Wrapf(karlsenminerCmd.Wait(), "error with command '%s'", karlsenminerCmd)
+	return errors.Wrapf(freeminerCmd.Wait(), "error with command '%s'", freeminerCmd)
 }

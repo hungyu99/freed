@@ -8,14 +8,14 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/karlsen-network/karlsend/domain/consensus"
+	"github.com/hungyu99/freed/domain/consensus"
 
-	"github.com/karlsen-network/karlsend/app/appmessage"
-	"github.com/karlsen-network/karlsend/stability-tests/common"
-	"github.com/karlsen-network/karlsend/stability-tests/common/mine"
-	"github.com/karlsen-network/karlsend/stability-tests/common/rpc"
-	"github.com/karlsen-network/karlsend/util"
-	"github.com/karlsen-network/karlsend/util/panics"
+	"github.com/hungyu99/freed/app/appmessage"
+	"github.com/hungyu99/freed/stability-tests/common"
+	"github.com/hungyu99/freed/stability-tests/common/mine"
+	"github.com/hungyu99/freed/stability-tests/common/rpc"
+	"github.com/hungyu99/freed/util"
+	"github.com/hungyu99/freed/util/panics"
 	"github.com/pkg/errors"
 )
 
@@ -31,7 +31,7 @@ func startNode(name string, rpcAddress, listen, connect, profilePort, dataDir st
 	log.Infof("Data directory for %s is %s", name, dataDir)
 
 	args := []string{
-		"karlsend",
+		"freed",
 		common.NetworkCliArgumentFromNetParams(activeConfig().NetParams()),
 		"--appdir", dataDir,
 		"--logdir", dataDir,
@@ -120,7 +120,7 @@ func setupNodeWithRPC(name, listen, rpcListen, connect, profilePort, dataDir str
 func setupSyncee() (*rpc.Client, func(), error) {
 	const syncedProfilePort = "6061"
 
-	synceeDataDir, err := useDirOrCreateTemp(activeConfig().SynceeDataDirectory, "syncee-karlsend-data-dir")
+	synceeDataDir, err := useDirOrCreateTemp(activeConfig().SynceeDataDirectory, "syncee-freed-data-dir")
 	if err != nil {
 		return nil, nil, err
 	}
@@ -132,7 +132,7 @@ func setupSyncee() (*rpc.Client, func(), error) {
 func setupSyncer() (*rpc.Client, func(), error) {
 	const syncerProfilePort = "6062"
 
-	syncerDataDir, err := useDirOrCreateTemp(activeConfig().SyncerDataDirectory, "syncer-karlsend-data-dir")
+	syncerDataDir, err := useDirOrCreateTemp(activeConfig().SyncerDataDirectory, "syncer-freed-data-dir")
 	if err != nil {
 		return nil, nil, err
 	}

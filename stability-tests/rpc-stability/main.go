@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/karlsen-network/karlsend/infrastructure/network/rpcclient/grpcclient"
-	"github.com/karlsen-network/karlsend/stability-tests/common"
-	"github.com/karlsen-network/karlsend/util/panics"
-	"github.com/karlsen-network/karlsend/util/profiling"
+	"github.com/hungyu99/freed/infrastructure/network/rpcclient/grpcclient"
+	"github.com/hungyu99/freed/stability-tests/common"
+	"github.com/hungyu99/freed/util/panics"
+	"github.com/hungyu99/freed/util/profiling"
 	"github.com/pkg/errors"
 )
 

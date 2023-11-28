@@ -1,11 +1,11 @@
 # Netsync Stability Tester
 This tests that the netsync is at least 5 blocks per second.
 
-Note: the test doesn't delete karlsend's data directory and it's the user
+Note: the test doesn't delete freed's data directory and it's the user
 responsibility to delete the data directories that appear in the log.
 
 ## Running
- 1. `go install karlsend`.
+ 1. `go install freed`.
  2. `go install ./...`.
  3. `cd run`
  4. `./run.sh`

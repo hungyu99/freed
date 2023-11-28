@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/karlsen-network/karlsend/infrastructure/network/rpcclient/grpcclient"
+	"github.com/hungyu99/freed/infrastructure/network/rpcclient/grpcclient"
 	"github.com/pkg/errors"
 )
 

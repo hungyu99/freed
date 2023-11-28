@@ -3,7 +3,7 @@ package main
 import (
 	"time"
 
-	"github.com/karlsen-network/karlsend/stability-tests/common/rpc"
+	"github.com/hungyu99/freed/stability-tests/common/rpc"
 
 	"github.com/pkg/errors"
 )
