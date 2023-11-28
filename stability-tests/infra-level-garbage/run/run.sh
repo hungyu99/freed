@@ -1,7 +1,7 @@
 #!/bin/bash
-rm -rf /tmp/karlsend-temp
+rm -rf /tmp/freed-temp
 
-karlsend --devnet --appdir=/tmp/karlsend-temp --profile=6061 &
+freed --devnet --appdir=/tmp/freed-temp --profile=6061 &
 KASPAD_PID=$!
 
 sleep 1
@@ -15,7 +15,7 @@ wait $KASPAD_PID
 KASPAD_EXIT_CODE=$?
 
 echo "Exit code: $TEST_EXIT_CODE"
-echo "Karlsend exit code: $KASPAD_EXIT_CODE"
+echo "Freed exit code: $KASPAD_EXIT_CODE"
 
 if [ $TEST_EXIT_CODE -eq 0 ] && [ $KASPAD_EXIT_CODE -eq 0 ]; then
   echo "infra-level-garbage test: PASSED"

@@ -1,14 +1,14 @@
 ARG KASPAD_IMAGE
 ARG KASPAMINER_IMAGE
 
-FROM ${KASPAD_IMAGE} as karlsend
-FROM ${KASPAMINER_IMAGE} as karlsenminer
+FROM ${KASPAD_IMAGE} as freed
+FROM ${KASPAMINER_IMAGE} as freeminer
 
 FROM golang:1.19-alpine
 
-RUN mkdir -p /go/src/github.com/karlsen-network/karlsend/
+RUN mkdir -p /go/src/github.com/hungyu99/freed/
 
-WORKDIR /go/src/github.com/karlsen-network/karlsend/
+WORKDIR /go/src/github.com/hungyu99/freed/
 
 RUN apk add bash build-base git
 
@@ -19,11 +19,11 @@ RUN go mod download
 
 COPY . .
 
-COPY --from=karlsend /app/ /app/
-COPY --from=karlsenminer /app/ /app/
+COPY --from=freed /app/ /app/
+COPY --from=freeminer /app/ /app/
 ENV PATH="/app:${PATH}"
 
-WORKDIR /go/src/github.com/karlsen-network/karlsend/stability-tests
+WORKDIR /go/src/github.com/hungyu99/freed/stability-tests
 
 RUN go install ./...
 

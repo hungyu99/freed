@@ -7,16 +7,16 @@ import (
 	"testing"
 	"time"
 
-	"github.com/karlsen-network/karlsend/app/appmessage"
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/pow"
-	"github.com/karlsen-network/karlsend/domain/dagconfig"
-	"github.com/karlsen-network/karlsend/infrastructure/network/rpcclient"
-	"github.com/karlsen-network/karlsend/stability-tests/common"
+	"github.com/hungyu99/freed/app/appmessage"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/utils/pow"
+	"github.com/hungyu99/freed/domain/dagconfig"
+	"github.com/hungyu99/freed/infrastructure/network/rpcclient"
+	"github.com/hungyu99/freed/stability-tests/common"
 )
 
 const rpcAddress = "localhost:9000"
-const miningAddress = "karlsendev:qrcqat6l9zcjsu7swnaztqzrv0s7hu04skpaezxk43y4etj8ncwfkuhy0zmax"
+const miningAddress = "freedev:qrcqat6l9zcjsu7swnaztqzrv0s7hu04skpaezxk43y4etj8ncwfkuhy0zmax"
 const blockRateDeviationThreshold = 0.5
 const averageBlockRateSampleSize = 60
 const averageHashRateSampleSize = 100_000
@@ -181,8 +181,8 @@ func runDAATest(t *testing.T, testName string, runDuration time.Duration,
 	t.Logf("DAA TEST STARTED: %s", testName)
 	defer t.Logf("DAA TEST FINISHED: %s", testName)
 
-	tearDownKarlsend := common.RunKarlsendForTesting(t, "karlsend-daa-test", rpcAddress)
-	defer tearDownKarlsend()
+	tearDownFreed := common.RunFreedForTesting(t, "freed-daa-test", rpcAddress)
+	defer tearDownFreed()
 
 	rpcClient, err := rpcclient.NewRPCClient(rpcAddress)
 	if err != nil {

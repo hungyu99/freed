@@ -3,10 +3,10 @@ package rpc
 import (
 	"time"
 
-	"github.com/karlsen-network/karlsend/app/appmessage"
-	"github.com/karlsen-network/karlsend/infrastructure/network/rpcclient"
+	"github.com/hungyu99/freed/app/appmessage"
+	"github.com/hungyu99/freed/infrastructure/network/rpcclient"
 
-	"github.com/karlsen-network/karlsend/domain/dagconfig"
+	"github.com/hungyu99/freed/domain/dagconfig"
 )
 
 const defaultRPCServer = "localhost"

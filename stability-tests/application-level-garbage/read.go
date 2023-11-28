@@ -3,8 +3,8 @@ package main
 import (
 	"encoding/json"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/stability-tests/common"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/stability-tests/common"
 	"github.com/pkg/errors"
 )
 

@@ -1,12 +1,12 @@
 #!/bin/bash
-karlsendsanity --command-list-file ./commands-list --profile=7000
+freedsanity --command-list-file ./commands-list --profile=7000
 TEST_EXIT_CODE=$?
 
 echo "Exit code: $TEST_EXIT_CODE"
 
 if [ $TEST_EXIT_CODE -eq 0 ]; then
-  echo "karlsendsanity test: PASSED"
+  echo "freedsanity test: PASSED"
   exit 0
 fi
-echo "karlsendsanity test: FAILED"
+echo "freedsanity test: FAILED"
 exit 1

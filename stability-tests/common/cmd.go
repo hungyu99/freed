@@ -5,8 +5,8 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/karlsen-network/karlsend/domain/dagconfig"
-	"github.com/karlsen-network/karlsend/infrastructure/logger"
+	"github.com/hungyu99/freed/domain/dagconfig"
+	"github.com/hungyu99/freed/infrastructure/logger"
 	"github.com/pkg/errors"
 )
 
@@ -26,7 +26,7 @@ func StartCmd(name string, args ...string) (*exec.Cmd, error) {
 	return cmd, nil
 }
 
-// NetworkCliArgumentFromNetParams returns the karlsend command line argument that starts the given network.
+// NetworkCliArgumentFromNetParams returns the freed command line argument that starts the given network.
 func NetworkCliArgumentFromNetParams(params *dagconfig.Params) string {
 	return fmt.Sprintf("--%s", strings.TrimPrefix(params.Name, "kaspa-"))
 }

@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/karlsen-network/karlsend/infrastructure/config"
-	"github.com/karlsen-network/karlsend/infrastructure/network/netadapter/standalone"
-	"github.com/karlsen-network/karlsend/stability-tests/common"
-	"github.com/karlsen-network/karlsend/util/panics"
-	"github.com/karlsen-network/karlsend/util/profiling"
+	"github.com/hungyu99/freed/infrastructure/config"
+	"github.com/hungyu99/freed/infrastructure/network/netadapter/standalone"
+	"github.com/hungyu99/freed/stability-tests/common"
+	"github.com/hungyu99/freed/util/panics"
+	"github.com/hungyu99/freed/util/profiling"
 )
 
 func main() {
@@ -25,10 +25,10 @@ func main() {
 		profiling.Start(cfg.Profile, log)
 	}
 
-	karlsendConfig := config.DefaultConfig()
-	karlsendConfig.NetworkFlags = cfg.NetworkFlags
+	freedConfig := config.DefaultConfig()
+	freedConfig.NetworkFlags = cfg.NetworkFlags
 
-	minimalNetAdapter, err := standalone.NewMinimalNetAdapter(karlsendConfig)
+	minimalNetAdapter, err := standalone.NewMinimalNetAdapter(freedConfig)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error creating minimalNetAdapter: %+v", err)
 		backendLog.Close()

@@ -7,18 +7,18 @@ import (
 	"syscall"
 	"testing"
 
-	"github.com/karlsen-network/karlsend/domain/dagconfig"
+	"github.com/hungyu99/freed/domain/dagconfig"
 )
 
-// RunKarlsendForTesting runs karlsend for testing purposes
-func RunKarlsendForTesting(t *testing.T, testName string, rpcAddress string) func() {
+// RunFreedForTesting runs freed for testing purposes
+func RunFreedForTesting(t *testing.T, testName string, rpcAddress string) func() {
 	appDir, err := TempDir(testName)
 	if err != nil {
 		t.Fatalf("TempDir: %s", err)
 	}
 
-	karlsendRunCommand, err := StartCmd("KASPAD",
-		"karlsend",
+	freedRunCommand, err := StartCmd("KASPAD",
+		"freed",
 		NetworkCliArgumentFromNetParams(&dagconfig.DevnetParams),
 		"--appdir", appDir,
 		"--rpclisten", rpcAddress,
@@ -27,20 +27,20 @@ func RunKarlsendForTesting(t *testing.T, testName string, rpcAddress string) fun
 	if err != nil {
 		t.Fatalf("StartCmd: %s", err)
 	}
-	t.Logf("Karlsend started with --appdir=%s", appDir)
+	t.Logf("Freed started with --appdir=%s", appDir)
 
 	isShutdown := uint64(0)
 	go func() {
-		err := karlsendRunCommand.Wait()
+		err := freedRunCommand.Wait()
 		if err != nil {
 			if atomic.LoadUint64(&isShutdown) == 0 {
-				panic(fmt.Sprintf("Karlsend closed unexpectedly: %s. See logs at: %s", err, appDir))
+				panic(fmt.Sprintf("Freed closed unexpectedly: %s. See logs at: %s", err, appDir))
 			}
 		}
 	}()
 
 	return func() {
-		err := karlsendRunCommand.Process.Signal(syscall.SIGTERM)
+		err := freedRunCommand.Process.Signal(syscall.SIGTERM)
 		if err != nil {
 			t.Fatalf("Signal: %s", err)
 		}
@@ -49,6 +49,6 @@ func RunKarlsendForTesting(t *testing.T, testName string, rpcAddress string) fun
 			t.Fatalf("RemoveAll: %s", err)
 		}
 		atomic.StoreUint64(&isShutdown, 1)
-		t.Logf("Karlsend stopped")
+		t.Logf("Freed stopped")
 	}
 }

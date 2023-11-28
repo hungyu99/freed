@@ -4,7 +4,7 @@ import (
 	"path/filepath"
 
 	"github.com/jessevdk/go-flags"
-	"github.com/karlsen-network/karlsend/stability-tests/common"
+	"github.com/hungyu99/freed/stability-tests/common"
 )
 
 const (
@@ -21,7 +21,7 @@ var (
 type configFlags struct {
 	LogLevel           string `long:"loglevel" description:"Set log level {trace, debug, info, warn, error, critical}"`
 	Profile            string `long:"profile" description:"Enable HTTP profiling on given port -- NOTE port must be between 1024 and 65536"`
-	KarlsendRPCAddress string `long:"rpc-address" description:"RPC address of the karlsend node"`
+	FreedRPCAddress string `long:"rpc-address" description:"RPC address of the freed node"`
 }
 
 var cfg *configFlags

@@ -4,12 +4,12 @@ import (
 	"path/filepath"
 
 	"github.com/jessevdk/go-flags"
-	"github.com/karlsen-network/karlsend/stability-tests/common"
+	"github.com/hungyu99/freed/stability-tests/common"
 )
 
 const (
-	defaultLogFilename    = "karlsendsanity.log"
-	defaultErrLogFilename = "karlsendsanity_err.log"
+	defaultLogFilename    = "freedsanity.log"
+	defaultErrLogFilename = "freedsanity_err.log"
 )
 
 var (

@@ -11,15 +11,15 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/karlsen-network/karlsend/app/appmessage"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/mining"
-	"github.com/karlsen-network/karlsend/util"
+	"github.com/hungyu99/freed/app/appmessage"
+	"github.com/hungyu99/freed/domain/consensus/utils/mining"
+	"github.com/hungyu99/freed/util"
 	"github.com/kaspanet/go-secp256k1"
 
-	"github.com/karlsen-network/karlsend/stability-tests/common"
-	"github.com/karlsen-network/karlsend/stability-tests/common/rpc"
-	"github.com/karlsen-network/karlsend/util/panics"
-	"github.com/karlsen-network/karlsend/util/profiling"
+	"github.com/hungyu99/freed/stability-tests/common"
+	"github.com/hungyu99/freed/stability-tests/common/rpc"
+	"github.com/hungyu99/freed/util/panics"
+	"github.com/hungyu99/freed/util/profiling"
 	"github.com/pkg/errors"
 )
 
@@ -103,14 +103,14 @@ func realMain() error {
 
 func startNode() (teardown func(), err error) {
 	log.Infof("Starting node")
-	dataDir, err := common.TempDir("karlsend-datadir")
+	dataDir, err := common.TempDir("freed-datadir")
 	if err != nil {
 		panic(errors.Wrapf(err, "Error in Tempdir"))
 	}
-	log.Infof("karlsend datadir: %s", dataDir)
+	log.Infof("freed datadir: %s", dataDir)
 
-	karlsendCmd, err := common.StartCmd("KASPAD",
-		"karlsend",
+	freedCmd, err := common.StartCmd("KASPAD",
+		"freed",
 		common.NetworkCliArgumentFromNetParams(activeConfig().NetParams()),
 		"--appdir", dataDir,
 		"--logdir", dataDir,
@@ -125,15 +125,15 @@ func startNode() (teardown func(), err error) {
 
 	processesStoppedWg := sync.WaitGroup{}
 	processesStoppedWg.Add(1)
-	spawn("startNode-karlsendCmd.Wait", func() {
-		err := karlsendCmd.Wait()
+	spawn("startNode-freedCmd.Wait", func() {
+		err := freedCmd.Wait()
 		if err != nil {
 			if atomic.LoadUint64(&shutdown) == 0 {
-				panics.Exit(log, fmt.Sprintf("karlsendCmd closed unexpectedly: %s. See logs at: %s", err, dataDir))
+				panics.Exit(log, fmt.Sprintf("freedCmd closed unexpectedly: %s. See logs at: %s", err, dataDir))
 			}
 			if !strings.Contains(err.Error(), "signal: killed") {
-				// TODO: Panic here and check why sometimes karlsend closes ungracefully
-				log.Errorf("karlsendCmd closed with an error: %s. See logs at: %s", err, dataDir)
+				// TODO: Panic here and check why sometimes freed closes ungracefully
+				log.Errorf("freedCmd closed with an error: %s. See logs at: %s", err, dataDir)
 			}
 		}
 		processesStoppedWg.Done()
@@ -141,7 +141,7 @@ func startNode() (teardown func(), err error) {
 	return func() {
 		log.Infof("defer start-node")
 		atomic.StoreUint64(&shutdown, 1)
-		killWithSigterm(karlsendCmd, "karlsendCmd")
+		killWithSigterm(freedCmd, "freedCmd")
 
 		processesStoppedChan := make(chan struct{})
 		spawn("startNode-processStoppedWg.Wait", func() {
@@ -227,8 +227,8 @@ func mineLoopUntilHavingOnlyOneTipInDAG(rpcClient *rpc.Client, miningAddress uti
 	}
 	numOfBlocksBeforeMining := dagInfo.BlockCount
 
-	karlsenminerCmd, err := common.StartCmd("MINER",
-		"karlsenminer",
+	freeminerCmd, err := common.StartCmd("MINER",
+		"freeminer",
 		common.NetworkCliArgumentFromNetParams(activeConfig().NetParams()),
 		"-s", rpcAddress,
 		"--mine-when-not-synced",
@@ -242,7 +242,7 @@ func mineLoopUntilHavingOnlyOneTipInDAG(rpcClient *rpc.Client, miningAddress uti
 	shutdown := uint64(0)
 
 	spawn("kaspa-miner-Cmd.Wait", func() {
-		err := karlsenminerCmd.Wait()
+		err := freeminerCmd.Wait()
 		if err != nil {
 			if atomic.LoadUint64(&shutdown) == 0 {
 				panics.Exit(log, fmt.Sprintf("minerCmd closed unexpectedly: %s.", err))
@@ -284,7 +284,7 @@ func mineLoopUntilHavingOnlyOneTipInDAG(rpcClient *rpc.Client, miningAddress uti
 	numOfAddedBlocks := dagInfo.BlockCount - numOfBlocksBeforeMining
 	log.Infof("Added %d blocks to reach this.", numOfAddedBlocks)
 	atomic.StoreUint64(&shutdown, 1)
-	killWithSigterm(karlsenminerCmd, "karlsenminerCmd")
+	killWithSigterm(freeminerCmd, "freeminerCmd")
 	return nil
 }
 

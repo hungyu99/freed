@@ -4,10 +4,10 @@ import (
 	"os"
 	"testing"
 
-	"github.com/karlsen-network/karlsend/infrastructure/network/rpcclient"
-	"github.com/karlsen-network/karlsend/stability-tests/common"
-	"github.com/karlsen-network/karlsend/util/panics"
-	"github.com/karlsen-network/karlsend/util/profiling"
+	"github.com/hungyu99/freed/infrastructure/network/rpcclient"
+	"github.com/hungyu99/freed/stability-tests/common"
+	"github.com/hungyu99/freed/util/panics"
+	"github.com/hungyu99/freed/util/profiling"
 )
 
 const (
@@ -74,9 +74,9 @@ func TestMempoolLimits(t *testing.T) {
 }
 
 func buildRPCClient(t *testing.T) *rpcclient.RPCClient {
-	client, err := rpcclient.NewRPCClient(activeConfig().KarlsendRPCAddress)
+	client, err := rpcclient.NewRPCClient(activeConfig().FreedRPCAddress)
 	if err != nil {
-		t.Fatalf("error connecting to %s: %s", activeConfig().KarlsendRPCAddress, err)
+		t.Fatalf("error connecting to %s: %s", activeConfig().FreedRPCAddress, err)
 	}
 	return client
 }

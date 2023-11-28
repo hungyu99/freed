@@ -6,13 +6,13 @@ import (
 	"strings"
 	"time"
 
-	"github.com/karlsen-network/karlsend/app/appmessage"
-	"github.com/karlsen-network/karlsend/domain/consensus"
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/model/testapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/consensushashing"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/mining"
-	"github.com/karlsen-network/karlsend/stability-tests/common/rpc"
+	"github.com/hungyu99/freed/app/appmessage"
+	"github.com/hungyu99/freed/domain/consensus"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/model/testapi"
+	"github.com/hungyu99/freed/domain/consensus/utils/consensushashing"
+	"github.com/hungyu99/freed/domain/consensus/utils/mining"
+	"github.com/hungyu99/freed/stability-tests/common/rpc"
 	"github.com/pkg/errors"
 )
 

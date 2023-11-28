@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/karlsen-network/karlsend/stability-tests/common"
-	"github.com/karlsen-network/karlsend/util/profiling"
+	"github.com/hungyu99/freed/stability-tests/common"
+	"github.com/hungyu99/freed/util/profiling"
 
-	"github.com/karlsen-network/karlsend/util/panics"
+	"github.com/hungyu99/freed/util/panics"
 	"github.com/pkg/errors"
 )
 
 func main() {
-	defer panics.HandlePanic(log, "karlsendsanity-main", nil)
+	defer panics.HandlePanic(log, "freedsanity-main", nil)
 	err := parseConfig()
 	if err != nil {
 		panic(errors.Wrap(err, "error in parseConfig"))
