@@ -1,12 +1,12 @@
 package blockvalidator
 
 import (
-	"github.com/karlsen-network/karlsend/domain/consensus/model"
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/ruleerrors"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/transactionhelper"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/virtual"
-	"github.com/karlsen-network/karlsend/infrastructure/logger"
+	"github.com/hungyu99/freed/domain/consensus/model"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/ruleerrors"
+	"github.com/hungyu99/freed/domain/consensus/utils/transactionhelper"
+	"github.com/hungyu99/freed/domain/consensus/utils/virtual"
+	"github.com/hungyu99/freed/infrastructure/logger"
 	"github.com/pkg/errors"
 )
 
@@ -168,7 +168,7 @@ func (v *blockValidator) checkCoinbaseSubsidy(
 			return err
 		}
 
-		// The pruning proof ( https://github.com/karlsen-network/docs/blob/main/Reference/prunality/Prunality.pdf ) concludes
+		// The pruning proof ( https://github.com/hungyu99/docs/blob/main/Reference/prunality/Prunality.pdf ) concludes
 		// that it's impossible for a block to be merged if it was created in the anticone of the pruning point that was
 		// present at the time of the block creation. So if such situation happens we can be sure that it happens during
 		// IBD and that this block has at least pruningDepth-finalityInterval confirmations.

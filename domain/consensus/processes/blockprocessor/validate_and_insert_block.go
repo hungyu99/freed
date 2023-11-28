@@ -5,16 +5,16 @@ import (
 	_ "embed"
 	"fmt"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/model"
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/ruleerrors"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/consensushashing"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/multiset"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/utxo"
-	"github.com/karlsen-network/karlsend/infrastructure/db/database"
-	"github.com/karlsen-network/karlsend/infrastructure/logger"
-	"github.com/karlsen-network/karlsend/util/difficulty"
-	"github.com/karlsen-network/karlsend/util/staging"
+	"github.com/hungyu99/freed/domain/consensus/model"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/ruleerrors"
+	"github.com/hungyu99/freed/domain/consensus/utils/consensushashing"
+	"github.com/hungyu99/freed/domain/consensus/utils/multiset"
+	"github.com/hungyu99/freed/domain/consensus/utils/utxo"
+	"github.com/hungyu99/freed/infrastructure/db/database"
+	"github.com/hungyu99/freed/infrastructure/logger"
+	"github.com/hungyu99/freed/util/difficulty"
+	"github.com/hungyu99/freed/util/staging"
 	"github.com/pkg/errors"
 )
 
@@ -233,7 +233,7 @@ func (bp *blockProcessor) loadUTXODataForGenesis(stagingArea *model.StagingArea,
 	// pruning point.
 	// The actual UTXO set that fits Mainnet's genesis' UTXO commitment was removed from the codebase in order
 	// to make reduce the consensus initialization time and the compiled binary size, but can be still
-	// found here for anyone to verify: https://github.com/karlsen-network/karlsend/blob/dbf18d8052f000ba0079be9e79b2d6f5a98b74ca/domain/consensus/processes/blockprocessor/resources/utxos.gz
+	// found here for anyone to verify: https://github.com/hungyu99/freed/blob/dbf18d8052f000ba0079be9e79b2d6f5a98b74ca/domain/consensus/processes/blockprocessor/resources/utxos.gz
 	bp.consensusStateStore.StageVirtualUTXODiff(stagingArea, utxo.NewUTXODiff())
 	bp.utxoDiffStore.Stage(stagingArea, blockHash, utxo.NewUTXODiff(), nil)
 	bp.multisetStore.Stage(stagingArea, blockHash, multiset.New())

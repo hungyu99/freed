@@ -3,12 +3,12 @@ package consensusstatemanager
 import (
 	"fmt"
 
-	"github.com/karlsen-network/karlsend/util/staging"
+	"github.com/hungyu99/freed/util/staging"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/model"
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/ruleerrors"
-	"github.com/karlsen-network/karlsend/infrastructure/logger"
+	"github.com/hungyu99/freed/domain/consensus/model"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/ruleerrors"
+	"github.com/hungyu99/freed/infrastructure/logger"
 	"github.com/pkg/errors"
 )
 

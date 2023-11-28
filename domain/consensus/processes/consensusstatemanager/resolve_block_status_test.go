@@ -4,18 +4,18 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/utxo"
+	"github.com/hungyu99/freed/domain/consensus/utils/utxo"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/model"
+	"github.com/hungyu99/freed/domain/consensus/model"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/ruleerrors"
+	"github.com/hungyu99/freed/domain/consensus/ruleerrors"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/consensushashing"
+	"github.com/hungyu99/freed/domain/consensus/utils/consensushashing"
 
-	"github.com/karlsen-network/karlsend/domain/consensus"
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/testutils"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/transactionhelper"
+	"github.com/hungyu99/freed/domain/consensus"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/utils/testutils"
+	"github.com/hungyu99/freed/domain/consensus/utils/transactionhelper"
 )
 
 func TestDoubleSpends(t *testing.T) {

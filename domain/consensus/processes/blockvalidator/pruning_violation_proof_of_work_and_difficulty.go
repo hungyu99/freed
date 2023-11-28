@@ -1,13 +1,13 @@
 package blockvalidator
 
 import (
-	"github.com/karlsen-network/karlsend/domain/consensus/model"
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/ruleerrors"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/pow"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/virtual"
-	"github.com/karlsen-network/karlsend/infrastructure/db/database"
-	"github.com/karlsen-network/karlsend/infrastructure/logger"
+	"github.com/hungyu99/freed/domain/consensus/model"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/ruleerrors"
+	"github.com/hungyu99/freed/domain/consensus/utils/pow"
+	"github.com/hungyu99/freed/domain/consensus/utils/virtual"
+	"github.com/hungyu99/freed/infrastructure/db/database"
+	"github.com/hungyu99/freed/infrastructure/logger"
 	"github.com/pkg/errors"
 )
 

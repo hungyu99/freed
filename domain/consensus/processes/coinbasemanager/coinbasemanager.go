@@ -3,13 +3,13 @@ package coinbasemanager
 import (
 	"math"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/model"
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/constants"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/hashset"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/subnetworks"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/transactionhelper"
-	"github.com/karlsen-network/karlsend/infrastructure/db/database"
+	"github.com/hungyu99/freed/domain/consensus/model"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/utils/constants"
+	"github.com/hungyu99/freed/domain/consensus/utils/hashset"
+	"github.com/hungyu99/freed/domain/consensus/utils/subnetworks"
+	"github.com/hungyu99/freed/domain/consensus/utils/transactionhelper"
+	"github.com/hungyu99/freed/infrastructure/db/database"
 	"github.com/pkg/errors"
 )
 

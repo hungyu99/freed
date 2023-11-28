@@ -5,15 +5,15 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/model/testapi"
+	"github.com/hungyu99/freed/domain/consensus/model/testapi"
 
-	"github.com/karlsen-network/karlsend/domain/consensus"
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/ruleerrors"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/blockheader"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/constants"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/testutils"
-	"github.com/karlsen-network/karlsend/util/mstime"
+	"github.com/hungyu99/freed/domain/consensus"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/ruleerrors"
+	"github.com/hungyu99/freed/domain/consensus/utils/blockheader"
+	"github.com/hungyu99/freed/domain/consensus/utils/constants"
+	"github.com/hungyu99/freed/domain/consensus/utils/testutils"
+	"github.com/hungyu99/freed/util/mstime"
 	"github.com/pkg/errors"
 )
 

@@ -4,9 +4,9 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/constants"
-	"github.com/karlsen-network/karlsend/domain/dagconfig"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/utils/constants"
+	"github.com/hungyu99/freed/domain/dagconfig"
 )
 
 func TestCalcDeflationaryPeriodBlockSubsidy(t *testing.T) {
