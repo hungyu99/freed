@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/karlsen-network/karlsend/cmd/karlsenwallet/libkaspawallet"
-	"github.com/karlsen-network/karlsend/util"
+	"github.com/hungyu99/freed/cmd/freewallet/libkaspawallet"
+	"github.com/hungyu99/freed/util"
 )
 
 func main() {
