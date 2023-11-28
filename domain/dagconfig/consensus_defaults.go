@@ -3,7 +3,7 @@ package dagconfig
 import (
 	"time"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/constants"
+	"github.com/hungyu99/freed/domain/consensus/utils/constants"
 )
 
 // The documentation refers to the following constants which aren't explicated in the code:
@@ -49,8 +49,8 @@ const (
 	// in block take longer)
 	defaultMergeSetSizeLimit                       = defaultGHOSTDAGK * 10
 	defaultSubsidyGenesisReward                    = 1 * constants.SompiPerKaspa
-	defaultPreDeflationaryPhaseBaseSubsidy         = 50 * constants.SompiPerKaspa
-	defaultDeflationaryPhaseBaseSubsidy            = 44 * constants.SompiPerKaspa
+	defaultPreDeflationaryPhaseBaseSubsidy         = 100 * constants.SompiPerKaspa
+	defaultDeflationaryPhaseBaseSubsidy            = 88 * constants.SompiPerKaspa
 	defaultCoinbasePayloadScriptPublicKeyMaxLength = 150
 	// defaultDifficultyAdjustmentWindowSize is the number of blocks in a block's past used to calculate its difficulty
 	// target.
