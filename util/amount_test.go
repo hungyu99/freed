@@ -8,9 +8,9 @@ import (
 	"math"
 	"testing"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/constants"
+	"github.com/hungyu99/freed/domain/consensus/utils/constants"
 
-	. "github.com/karlsen-network/karlsend/util"
+	. "github.com/hungyu99/freed/util"
 )
 
 func TestAmountCreation(t *testing.T) {
@@ -29,7 +29,7 @@ func TestAmountCreation(t *testing.T) {
 		},
 		{
 			name:     "max producible",
-			amount:   4961e6,
+			amount:   29e8,
 			valid:    true,
 			expected: Amount(constants.MaxSompi),
 		},
@@ -106,8 +106,8 @@ func TestAmountUnitConversions(t *testing.T) {
 			name:      "MKAS",
 			amount:    Amount(constants.MaxSompi),
 			unit:      AmountMegaKAS,
-			converted: 4961,
-			s:         "4961 MKAS",
+			converted: 2900,
+			s:         "2900 MKAS",
 		},
 		{
 			name:      "kKAS",

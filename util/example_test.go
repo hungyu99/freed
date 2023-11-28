@@ -5,9 +5,9 @@ import (
 	"math"
 	"math/big"
 
-	"github.com/karlsen-network/karlsend/util/difficulty"
+	"github.com/hungyu99/freed/util/difficulty"
 
-	"github.com/karlsen-network/karlsend/util"
+	"github.com/hungyu99/freed/util"
 )
 
 func ExampleAmount() {

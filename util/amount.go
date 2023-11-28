@@ -8,7 +8,7 @@ import (
 	"math"
 	"strconv"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/constants"
+	"github.com/hungyu99/freed/domain/consensus/utils/constants"
 	"github.com/pkg/errors"
 )
 

@@ -1,8 +1,8 @@
 package txmass
 
 import (
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/transactionhelper"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/utils/transactionhelper"
 )
 
 // Calculator exposes methods to calculate the mass of a transaction

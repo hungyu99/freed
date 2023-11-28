@@ -8,7 +8,7 @@ import (
 	"github.com/pkg/errors"
 	"golang.org/x/crypto/blake2b"
 
-	"github.com/karlsen-network/karlsend/util/bech32"
+	"github.com/hungyu99/freed/util/bech32"
 )
 
 var (
@@ -54,10 +54,10 @@ const (
 
 // Map from strings to Bech32 address prefix constants for parsing purposes.
 var stringsToBech32Prefixes = map[string]Bech32Prefix{
-	"karlsen":     Bech32PrefixKaspa,
-	"karlsendev":  Bech32PrefixKaspaDev,
-	"karlsentest": Bech32PrefixKaspaTest,
-	"karlsensim":  Bech32PrefixKaspaSim,
+	"free":     Bech32PrefixKaspa,
+	"freedev":  Bech32PrefixKaspaDev,
+	"freetest": Bech32PrefixKaspaTest,
+	"freesim":  Bech32PrefixKaspaSim,
 }
 
 // ParsePrefix attempts to parse a Bech32 address prefix.

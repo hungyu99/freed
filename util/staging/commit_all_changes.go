@@ -3,8 +3,8 @@ package staging
 import (
 	"sync/atomic"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/model"
-	"github.com/karlsen-network/karlsend/infrastructure/logger"
+	"github.com/hungyu99/freed/domain/consensus/model"
+	"github.com/hungyu99/freed/infrastructure/logger"
 )
 
 // CommitAllChanges creates a transaction in `databaseContext`, and commits all changes in `stagingArea` through it.

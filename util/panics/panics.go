@@ -7,7 +7,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/karlsen-network/karlsend/infrastructure/logger"
+	"github.com/hungyu99/freed/infrastructure/logger"
 )
 
 const exitHandlerTimeout = 5 * time.Second
