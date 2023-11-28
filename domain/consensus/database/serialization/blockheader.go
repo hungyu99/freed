@@ -4,8 +4,8 @@ import (
 	"math"
 	"math/big"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/blockheader"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/utils/blockheader"
 	"github.com/pkg/errors"
 )
 

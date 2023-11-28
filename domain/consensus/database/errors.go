@@ -1,7 +1,7 @@
 package database
 
 import (
-	"github.com/karlsen-network/karlsend/infrastructure/db/database"
+	"github.com/hungyu99/freed/infrastructure/db/database"
 )
 
 // ErrNotFound denotes that the requested item was not

@@ -1,7 +1,7 @@
 package serialization
 
 import (
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
 )
 
 // DbBlockLevelParentsToDomainBlockLevelParents converts a DbBlockLevelParents to a BlockLevelParents

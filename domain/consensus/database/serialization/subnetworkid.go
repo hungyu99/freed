@@ -1,8 +1,8 @@
 package serialization
 
 import (
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/subnetworks"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/utils/subnetworks"
 )
 
 // DbSubnetworkIDToDomainSubnetworkID converts DbSubnetworkId to DomainSubnetworkID

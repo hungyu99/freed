@@ -1,7 +1,7 @@
 package serialization
 
 import (
-	"github.com/karlsen-network/karlsend/domain/consensus/model"
+	"github.com/hungyu99/freed/domain/consensus/model"
 )
 
 // DomainBlockRelationsToDbBlockRelations converts model.BlockRelations to DbBlockRelations

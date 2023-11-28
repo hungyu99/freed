@@ -1,8 +1,8 @@
 package database
 
 import (
-	"github.com/karlsen-network/karlsend/domain/consensus/model"
-	"github.com/karlsen-network/karlsend/infrastructure/db/database"
+	"github.com/hungyu99/freed/domain/consensus/model"
+	"github.com/hungyu99/freed/infrastructure/db/database"
 )
 
 type dbManager struct {

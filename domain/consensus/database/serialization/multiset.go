@@ -1,8 +1,8 @@
 package serialization
 
 import (
-	"github.com/karlsen-network/karlsend/domain/consensus/model"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/multiset"
+	"github.com/hungyu99/freed/domain/consensus/model"
+	"github.com/hungyu99/freed/domain/consensus/utils/multiset"
 )
 
 // MultisetToDBMultiset converts Multiset to DbMultiset

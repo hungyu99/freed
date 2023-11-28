@@ -1,10 +1,10 @@
 package consensusstatestore
 
 import (
-	"github.com/karlsen-network/karlsend/domain/consensus/model"
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/utxolrucache"
-	"github.com/karlsen-network/karlsend/util/staging"
+	"github.com/hungyu99/freed/domain/consensus/model"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/utils/utxolrucache"
+	"github.com/hungyu99/freed/util/staging"
 )
 
 var importingPruningPointUTXOSetKeyName = []byte("importing-pruning-point-utxo-set")
