@@ -4,25 +4,25 @@ import (
 	"fmt"
 	"sync/atomic"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
 
-	"github.com/karlsen-network/karlsend/domain/miningmanager/mempool"
+	"github.com/hungyu99/freed/domain/miningmanager/mempool"
 
-	"github.com/karlsen-network/karlsend/app/protocol"
-	"github.com/karlsen-network/karlsend/app/rpc"
-	"github.com/karlsen-network/karlsend/domain"
-	"github.com/karlsen-network/karlsend/domain/consensus"
-	"github.com/karlsen-network/karlsend/domain/utxoindex"
-	"github.com/karlsen-network/karlsend/infrastructure/config"
-	infrastructuredatabase "github.com/karlsen-network/karlsend/infrastructure/db/database"
-	"github.com/karlsen-network/karlsend/infrastructure/network/addressmanager"
-	"github.com/karlsen-network/karlsend/infrastructure/network/connmanager"
-	"github.com/karlsen-network/karlsend/infrastructure/network/netadapter"
-	"github.com/karlsen-network/karlsend/infrastructure/network/netadapter/id"
-	"github.com/karlsen-network/karlsend/util/panics"
+	"github.com/hungyu99/freed/app/protocol"
+	"github.com/hungyu99/freed/app/rpc"
+	"github.com/hungyu99/freed/domain"
+	"github.com/hungyu99/freed/domain/consensus"
+	"github.com/hungyu99/freed/domain/utxoindex"
+	"github.com/hungyu99/freed/infrastructure/config"
+	infrastructuredatabase "github.com/hungyu99/freed/infrastructure/db/database"
+	"github.com/hungyu99/freed/infrastructure/network/addressmanager"
+	"github.com/hungyu99/freed/infrastructure/network/connmanager"
+	"github.com/hungyu99/freed/infrastructure/network/netadapter"
+	"github.com/hungyu99/freed/infrastructure/network/netadapter/id"
+	"github.com/hungyu99/freed/util/panics"
 )
 
-// ComponentManager is a wrapper for all the karlsend services
+// ComponentManager is a wrapper for all the freed services
 type ComponentManager struct {
 	cfg               *config.Config
 	addressManager    *addressmanager.AddressManager
@@ -34,14 +34,14 @@ type ComponentManager struct {
 	started, shutdown int32
 }
 
-// Start launches all the karlsend services.
+// Start launches all the freed services.
 func (a *ComponentManager) Start() {
 	// Already started?
 	if atomic.AddInt32(&a.started, 1) != 1 {
 		return
 	}
 
-	log.Trace("Starting karlsend")
+	log.Trace("Starting freed")
 
 	err := a.netAdapter.Start()
 	if err != nil {
@@ -51,15 +51,15 @@ func (a *ComponentManager) Start() {
 	a.connectionManager.Start()
 }
 
-// Stop gracefully shuts down all the karlsend services.
+// Stop gracefully shuts down all the freed services.
 func (a *ComponentManager) Stop() {
 	// Make sure this only happens once.
 	if atomic.AddInt32(&a.shutdown, 1) != 1 {
-		log.Infof("Karlsend is already in the process of shutting down")
+		log.Infof("Freed is already in the process of shutting down")
 		return
 	}
 
-	log.Warnf("Karlsend shutting down")
+	log.Warnf("Freed shutting down")
 
 	a.connectionManager.Stop()
 

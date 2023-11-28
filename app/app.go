@@ -7,17 +7,17 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/karlsen-network/karlsend/infrastructure/config"
-	"github.com/karlsen-network/karlsend/infrastructure/db/database"
-	"github.com/karlsen-network/karlsend/infrastructure/db/database/ldb"
-	"github.com/karlsen-network/karlsend/infrastructure/logger"
-	"github.com/karlsen-network/karlsend/infrastructure/os/execenv"
-	"github.com/karlsen-network/karlsend/infrastructure/os/limits"
-	"github.com/karlsen-network/karlsend/infrastructure/os/signal"
-	"github.com/karlsen-network/karlsend/infrastructure/os/winservice"
-	"github.com/karlsen-network/karlsend/util/panics"
-	"github.com/karlsen-network/karlsend/util/profiling"
-	"github.com/karlsen-network/karlsend/version"
+	"github.com/hungyu99/freed/infrastructure/config"
+	"github.com/hungyu99/freed/infrastructure/db/database"
+	"github.com/hungyu99/freed/infrastructure/db/database/ldb"
+	"github.com/hungyu99/freed/infrastructure/logger"
+	"github.com/hungyu99/freed/infrastructure/os/execenv"
+	"github.com/hungyu99/freed/infrastructure/os/limits"
+	"github.com/hungyu99/freed/infrastructure/os/signal"
+	"github.com/hungyu99/freed/infrastructure/os/winservice"
+	"github.com/hungyu99/freed/util/panics"
+	"github.com/hungyu99/freed/util/profiling"
+	"github.com/hungyu99/freed/version"
 )
 
 const (
@@ -31,17 +31,17 @@ var desiredLimits = &limits.DesiredLimits{
 }
 
 var serviceDescription = &winservice.ServiceDescription{
-	Name:        "karlsendsvc",
-	DisplayName: "Karlsend Service",
+	Name:        "freedsvc",
+	DisplayName: "Freed Service",
 	Description: "Downloads and stays synchronized with the Kaspa blockDAG and " +
 		"provides DAG services to applications.",
 }
 
-type karlsendApp struct {
+type freedApp struct {
 	cfg *config.Config
 }
 
-// StartApp starts the karlsend app, and blocks until it finishes running
+// StartApp starts the freed app, and blocks until it finishes running
 func StartApp() error {
 	execenv.Initialize(desiredLimits)
 
@@ -55,7 +55,7 @@ func StartApp() error {
 	defer logger.BackendLog.Close()
 	defer panics.HandlePanic(log, "MAIN", nil)
 
-	app := &karlsendApp{cfg: cfg}
+	app := &freedApp{cfg: cfg}
 
 	// Call serviceMain on Windows to handle running as a service. When
 	// the return isService flag is true, exit now since we ran as a
@@ -73,7 +73,7 @@ func StartApp() error {
 	return app.main(nil)
 }
 
-func (app *karlsendApp) main(startedChan chan<- struct{}) error {
+func (app *freedApp) main(startedChan chan<- struct{}) error {
 	// Get a channel that will be closed when a shutdown signal has been
 	// triggered either from an OS signal such as SIGINT (Ctrl+C) or from
 	// another subsystem such as the RPC server.
@@ -125,12 +125,12 @@ func (app *karlsendApp) main(startedChan chan<- struct{}) error {
 	// Create componentManager and start it.
 	componentManager, err := NewComponentManager(app.cfg, databaseContext, interrupt)
 	if err != nil {
-		log.Errorf("Unable to start karlsend: %+v", err)
+		log.Errorf("Unable to start freed: %+v", err)
 		return err
 	}
 
 	defer func() {
-		log.Infof("Gracefully shutting down karlsend...")
+		log.Infof("Gracefully shutting down freed...")
 
 		shutdownDone := make(chan struct{})
 		go func() {
@@ -145,7 +145,7 @@ func (app *karlsendApp) main(startedChan chan<- struct{}) error {
 		case <-time.After(shutdownTimeout):
 			log.Criticalf("Graceful shutdown timed out %s. Terminating...", shutdownTimeout)
 		}
-		log.Infof("Karlsend shutdown complete")
+		log.Infof("Freed shutdown complete")
 	}()
 
 	componentManager.Start()
