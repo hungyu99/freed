@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/karlsen-network/karlsend/app/appmessage"
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/mining"
+	"github.com/hungyu99/freed/app/appmessage"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/utils/mining"
 )
 
 func mineNextBlock(t *testing.T, harness *appHarness) *externalapi.DomainBlock {

@@ -4,7 +4,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/karlsen-network/karlsend/infrastructure/logger"
+	"github.com/hungyu99/freed/infrastructure/logger"
 )
 
 func TestMain(m *testing.M) {

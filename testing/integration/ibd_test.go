@@ -7,13 +7,13 @@ import (
 	"testing"
 	"time"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/consensushashing"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/mining"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/utils/consensushashing"
+	"github.com/hungyu99/freed/domain/consensus/utils/mining"
 
-	"github.com/karlsen-network/karlsend/domain/dagconfig"
+	"github.com/hungyu99/freed/domain/dagconfig"
 
-	"github.com/karlsen-network/karlsend/app/appmessage"
+	"github.com/hungyu99/freed/app/appmessage"
 )
 
 func TestIBD(t *testing.T) {

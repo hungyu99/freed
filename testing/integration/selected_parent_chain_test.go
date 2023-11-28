@@ -3,20 +3,20 @@ package integration
 import (
 	"testing"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
 
-	"github.com/karlsen-network/karlsend/app/appmessage"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/consensushashing"
+	"github.com/hungyu99/freed/app/appmessage"
+	"github.com/hungyu99/freed/domain/consensus/utils/consensushashing"
 )
 
 func TestVirtualSelectedParentChain(t *testing.T) {
-	// Setup a couple of karlsend instances
-	karlsend1, karlsend2, _, teardown := standardSetup(t)
+	// Setup a couple of freed instances
+	freed1, freed2, _, teardown := standardSetup(t)
 	defer teardown()
 
 	// Register to virtual selected parent chain changes
 	onVirtualSelectedParentChainChangedChan := make(chan *appmessage.VirtualSelectedParentChainChangedNotificationMessage)
-	err := karlsend1.rpcClient.RegisterForVirtualSelectedParentChainChangedNotifications(true,
+	err := freed1.rpcClient.RegisterForVirtualSelectedParentChainChangedNotifications(true,
 		func(notification *appmessage.VirtualSelectedParentChainChangedNotificationMessage) {
 			onVirtualSelectedParentChainChangedChan <- notification
 		})
@@ -24,14 +24,14 @@ func TestVirtualSelectedParentChain(t *testing.T) {
 		t.Fatalf("Failed to register for virtual selected parent chain change notifications: %s", err)
 	}
 
-	// In karlsend1, mine a chain over the genesis and make sure
+	// In freed1, mine a chain over the genesis and make sure
 	// each chain changed notifications contains only one entry
 	// in `added` and nothing in `removed`
-	chain1TipHash := consensushashing.BlockHash(karlsend1.config.NetParams().GenesisBlock)
+	chain1TipHash := consensushashing.BlockHash(freed1.config.NetParams().GenesisBlock)
 	chain1TipHashString := chain1TipHash.String()
 	const blockAmountToMine = 10
 	for i := 0; i < blockAmountToMine; i++ {
-		minedBlock := mineNextBlock(t, karlsend1)
+		minedBlock := mineNextBlock(t, freed1)
 		notification := <-onVirtualSelectedParentChainChangedChan
 		if len(notification.RemovedChainBlockHashes) > 0 {
 			t.Fatalf("RemovedChainBlockHashes is unexpectedly not empty")
@@ -50,16 +50,16 @@ func TestVirtualSelectedParentChain(t *testing.T) {
 		chain1TipHashString = minedBlockHashString
 	}
 
-	// In karlsend2, mine a different chain of `blockAmountToMine` + 1
+	// In freed2, mine a different chain of `blockAmountToMine` + 1
 	// blocks over the genesis
 	var chain2Tip *externalapi.DomainBlock
 	for i := 0; i < blockAmountToMine+1; i++ {
-		chain2Tip = mineNextBlock(t, karlsend2)
+		chain2Tip = mineNextBlock(t, freed2)
 	}
 
-	// Connect the two karlsends. This should trigger sync
+	// Connect the two freeds. This should trigger sync
 	// between the two nodes
-	connect(t, karlsend1, karlsend2)
+	connect(t, freed1, freed2)
 
 	chain2TipHash := consensushashing.BlockHash(chain2Tip)
 	chain2TipHashString := chain2TipHash.String()
@@ -79,7 +79,7 @@ func TestVirtualSelectedParentChain(t *testing.T) {
 
 	// Get the virtual selected parent chain from the tip of
 	// the first chain
-	virtualSelectedParentChainFromChain1Tip, err := karlsend1.rpcClient.GetVirtualSelectedParentChainFromBlock(
+	virtualSelectedParentChainFromChain1Tip, err := freed1.rpcClient.GetVirtualSelectedParentChainFromBlock(
 		chain1TipHashString, true)
 	if err != nil {
 		t.Fatalf("GetVirtualSelectedParentChainFromBlock failed: %s", err)

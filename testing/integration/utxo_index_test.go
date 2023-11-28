@@ -4,20 +4,20 @@ import (
 	"encoding/hex"
 	"testing"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/utxo"
+	"github.com/hungyu99/freed/domain/consensus/utils/utxo"
 
-	"github.com/karlsen-network/karlsend/app/appmessage"
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/consensushashing"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/constants"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/transactionid"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/txscript"
-	"github.com/karlsen-network/karlsend/util"
+	"github.com/hungyu99/freed/app/appmessage"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/utils/consensushashing"
+	"github.com/hungyu99/freed/domain/consensus/utils/constants"
+	"github.com/hungyu99/freed/domain/consensus/utils/transactionid"
+	"github.com/hungyu99/freed/domain/consensus/utils/txscript"
+	"github.com/hungyu99/freed/util"
 	"github.com/kaspanet/go-secp256k1"
 )
 
 func TestUTXOIndex(t *testing.T) {
-	// Setup a single karlsend instance
+	// Setup a single freed instance
 	harnessParams := &harnessParams{
 		p2pAddress:              p2pAddress1,
 		rpcAddress:              rpcAddress1,
@@ -25,17 +25,17 @@ func TestUTXOIndex(t *testing.T) {
 		miningAddressPrivateKey: miningAddress1PrivateKey,
 		utxoIndex:               true,
 	}
-	karlsend, teardown := setupHarness(t, harnessParams)
+	freed, teardown := setupHarness(t, harnessParams)
 	defer teardown()
 
 	// skip the first block because it's paying to genesis script,
 	// which contains no outputs
-	mineNextBlock(t, karlsend)
+	mineNextBlock(t, freed)
 
 	// Register for UTXO changes
 	const blockAmountToMine = 100
 	onUTXOsChangedChan := make(chan *appmessage.UTXOsChangedNotificationMessage, blockAmountToMine)
-	err := karlsend.rpcClient.RegisterForUTXOsChangedNotifications([]string{miningAddress1}, func(
+	err := freed.rpcClient.RegisterForUTXOsChangedNotifications([]string{miningAddress1}, func(
 		notification *appmessage.UTXOsChangedNotificationMessage) {
 
 		onUTXOsChangedChan <- notification
@@ -46,17 +46,17 @@ func TestUTXOIndex(t *testing.T) {
 
 	// Mine some blocks
 	for i := 0; i < blockAmountToMine; i++ {
-		mineNextBlock(t, karlsend)
+		mineNextBlock(t, freed)
 	}
 
 	//check if rewards corrosponds to circulating supply.
-	getCoinSupplyResponse, err := karlsend.rpcClient.GetCoinSupply()
+	getCoinSupplyResponse, err := freed.rpcClient.GetCoinSupply()
 	if err != nil {
 		t.Fatalf("Error Retriving Coin supply: %s", err)
 	}
 
 	rewardsMinedSompi := uint64(blockAmountToMine * constants.SompiPerKaspa * 500)
-	getBlockCountResponse, err := karlsend.rpcClient.GetBlockCount()
+	getBlockCountResponse, err := freed.rpcClient.GetBlockCount()
 	if err != nil {
 		t.Fatalf("Error Retriving BlockCount: %s", err)
 	}
@@ -89,14 +89,14 @@ func TestUTXOIndex(t *testing.T) {
 	const transactionAmountToSpend = 5
 	for i := 0; i < transactionAmountToSpend; i++ {
 		rpcTransaction := buildTransactionForUTXOIndexTest(t, notificationEntries[i])
-		_, err = karlsend.rpcClient.SubmitTransaction(rpcTransaction, false)
+		_, err = freed.rpcClient.SubmitTransaction(rpcTransaction, false)
 		if err != nil {
 			t.Fatalf("Error submitting transaction: %s", err)
 		}
 	}
 
 	// Mine a block to include the above transactions
-	mineNextBlock(t, karlsend)
+	mineNextBlock(t, freed)
 
 	// Make sure this block removed the UTXOs we spent
 	notification := <-onUTXOsChangedChan
@@ -128,7 +128,7 @@ func TestUTXOIndex(t *testing.T) {
 
 	// Get all the UTXOs and make sure the response is equivalent
 	// to the data collected via notifications
-	utxosByAddressesResponse, err := karlsend.rpcClient.GetUTXOsByAddresses([]string{miningAddress1})
+	utxosByAddressesResponse, err := freed.rpcClient.GetUTXOsByAddresses([]string{miningAddress1})
 	if err != nil {
 		t.Fatalf("Failed to get UTXOs: %s", err)
 	}

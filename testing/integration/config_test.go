@@ -5,8 +5,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/karlsen-network/karlsend/domain/dagconfig"
-	"github.com/karlsen-network/karlsend/infrastructure/config"
+	"github.com/hungyu99/freed/domain/dagconfig"
+	"github.com/hungyu99/freed/infrastructure/config"
 )
 
 const (
