@@ -1,7 +1,7 @@
 package database
 
 // DataAccessor defines the common interface by which data gets
-// accessed in a generic karlsend database.
+// accessed in a generic freed database.
 type DataAccessor interface {
 	// Put sets the value for the given key. It overwrites
 	// any previous value for that key.

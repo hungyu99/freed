@@ -18,21 +18,21 @@ import (
 
 	"github.com/btcsuite/go-socks/socks"
 	"github.com/jessevdk/go-flags"
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/dagconfig"
-	"github.com/karlsen-network/karlsend/infrastructure/logger"
-	"github.com/karlsen-network/karlsend/util"
-	"github.com/karlsen-network/karlsend/util/network"
-	"github.com/karlsen-network/karlsend/version"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/dagconfig"
+	"github.com/hungyu99/freed/infrastructure/logger"
+	"github.com/hungyu99/freed/util"
+	"github.com/hungyu99/freed/util/network"
+	"github.com/hungyu99/freed/version"
 	"github.com/pkg/errors"
 )
 
 const (
-	defaultConfigFilename      = "karlsend.conf"
+	defaultConfigFilename      = "freed.conf"
 	defaultLogLevel            = "info"
 	defaultLogDirname          = "logs"
-	defaultLogFilename         = "karlsend.log"
-	defaultErrLogFilename      = "karlsend_err.log"
+	defaultLogFilename         = "freed.log"
+	defaultErrLogFilename      = "freed_err.log"
 	defaultTargetOutboundPeers = 8
 	defaultMaxInboundPeers     = 117
 	defaultBanDuration         = time.Hour * 24
@@ -51,14 +51,14 @@ const (
 	//DefaultMaxOrphanTxSize is the default maximum size for an orphan transaction
 	DefaultMaxOrphanTxSize  = 100_000
 	defaultSigCacheMaxSize  = 100_000
-	sampleConfigFilename    = "sample-karlsend.conf"
+	sampleConfigFilename    = "sample-freed.conf"
 	defaultMaxUTXOCacheSize = 5_000_000_000
 	defaultProtocolVersion  = 5
 )
 
 var (
-	// DefaultAppDir is the default home directory for karlsend.
-	DefaultAppDir = util.AppDir("karlsend", false)
+	// DefaultAppDir is the default home directory for freed.
+	DefaultAppDir = util.AppDir("freed", false)
 
 	defaultConfigFile  = filepath.Join(DefaultAppDir, defaultConfigFilename)
 	defaultDataDir     = filepath.Join(DefaultAppDir)
@@ -66,14 +66,14 @@ var (
 	defaultRPCCertFile = filepath.Join(DefaultAppDir, "rpc.cert")
 )
 
-//go:embed sample-karlsend.conf
+//go:embed sample-freed.conf
 var sampleConfig string
 
 // RunServiceCommand is only set to a real function on Windows. It is used
 // to parse and execute service commands specified via the -s flag.
 var RunServiceCommand func(string) error
 
-// Flags defines the configuration options for karlsend.
+// Flags defines the configuration options for freed.
 //
 // See loadConfig for details on the configuration load process.
 type Flags struct {
@@ -84,14 +84,14 @@ type Flags struct {
 	AddPeers                        []string      `short:"a" long:"addpeer" description:"Add a peer to connect with at startup"`
 	ConnectPeers                    []string      `long:"connect" description:"Connect only to the specified peers at startup"`
 	DisableListen                   bool          `long:"nolisten" description:"Disable listening for incoming connections -- NOTE: Listening is automatically disabled if the --connect or --proxy options are used without also specifying listen interfaces via --listen"`
-	Listeners                       []string      `long:"listen" description:"Add an interface/port to listen for connections (default all interfaces port: 42111, testnet: 16211)"`
+	Listeners                       []string      `long:"listen" description:"Add an interface/port to listen for connections (default all interfaces port: 22111, testnet: 16211)"`
 	TargetOutboundPeers             int           `long:"outpeers" description:"Target number of outbound peers"`
 	MaxInboundPeers                 int           `long:"maxinpeers" description:"Max number of inbound peers"`
 	EnableBanning                   bool          `long:"enablebanning" description:"Enable banning of misbehaving peers"`
 	BanDuration                     time.Duration `long:"banduration" description:"How long to ban misbehaving peers. Valid time units are {s, m, h}. Minimum 1 second"`
 	BanThreshold                    uint32        `long:"banthreshold" description:"Maximum allowed ban score before disconnecting and banning misbehaving peers."`
 	Whitelists                      []string      `long:"whitelist" description:"Add an IP network or IP that will not be banned. (eg. 192.168.1.0/24 or ::1)"`
-	RPCListeners                    []string      `long:"rpclisten" description:"Add an interface/port to listen for RPC connections (default port: 42110, testnet: 16210)"`
+	RPCListeners                    []string      `long:"rpclisten" description:"Add an interface/port to listen for RPC connections (default port: 22110, testnet: 16210)"`
 	RPCCert                         string        `long:"rpccert" description:"File containing the certificate file"`
 	RPCKey                          string        `long:"rpckey" description:"File containing the certificate key"`
 	RPCMaxClients                   int           `long:"rpcmaxclients" description:"Max number of RPC clients for standard connections"`
@@ -130,7 +130,7 @@ type Flags struct {
 	ServiceOptions *ServiceOptions
 }
 
-// Config defines the configuration options for karlsend.
+// Config defines the configuration options for freed.
 //
 // See loadConfig for details on the configuration load process.
 type Config struct {
@@ -196,7 +196,7 @@ func defaultFlags() *Flags {
 	}
 }
 
-// DefaultConfig returns the default karlsend configuration
+// DefaultConfig returns the default freed configuration
 func DefaultConfig() *Config {
 	config := &Config{Flags: defaultFlags()}
 	config.NetworkFlags.ActiveNetParams = &dagconfig.MainnetParams
@@ -212,7 +212,7 @@ func DefaultConfig() *Config {
 //  3. Load configuration file overwriting defaults with any specified options
 //  4. Parse CLI options and overwrite/add any specified options
 //
-// The above results in karlsend functioning properly without any config settings
+// The above results in freed functioning properly without any config settings
 // while still allowing the user to override settings with config files and
 // command line options. Command line options always take precedence.
 func LoadConfig() (*Config, error) {
@@ -575,7 +575,7 @@ func LoadConfig() (*Config, error) {
 	return cfg, nil
 }
 
-// createDefaultConfig copies the file sample-karlsend.conf to the given destination path,
+// createDefaultConfig copies the file sample-freed.conf to the given destination path,
 // and populates it with some randomly generated RPC username and password.
 func createDefaultConfigFile(destinationPath string) error {
 	// Create the destination directory if it does not exists

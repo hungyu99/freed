@@ -5,10 +5,10 @@ import (
 	"os"
 	"runtime"
 
-	"github.com/karlsen-network/karlsend/infrastructure/os/limits"
+	"github.com/hungyu99/freed/infrastructure/os/limits"
 )
 
-// Initialize initializes the execution environment required to run karlsend
+// Initialize initializes the execution environment required to run freed
 func Initialize(desiredLimits *limits.DesiredLimits) {
 	// Use all processor cores.
 	runtime.GOMAXPROCS(runtime.NumCPU())

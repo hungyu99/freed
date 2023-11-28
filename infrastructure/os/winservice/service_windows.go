@@ -9,9 +9,9 @@ import (
 
 	"github.com/btcsuite/winsvc/eventlog"
 	"github.com/btcsuite/winsvc/svc"
-	"github.com/karlsen-network/karlsend/infrastructure/config"
-	"github.com/karlsen-network/karlsend/infrastructure/os/signal"
-	"github.com/karlsen-network/karlsend/version"
+	"github.com/hungyu99/freed/infrastructure/config"
+	"github.com/hungyu99/freed/infrastructure/os/signal"
+	"github.com/hungyu99/freed/version"
 )
 
 // Service houses the main service handler which handles all service
@@ -51,20 +51,20 @@ func (s *Service) Start() error {
 
 // Execute is the main entry point the winsvc package calls when receiving
 // information from the Windows service control manager. It launches the
-// long-running karlsendMain (which is the real meat of karlsend), handles service
+// long-running freedMain (which is the real meat of freed), handles service
 // change requests, and notifies the service control manager of changes.
 func (s *Service) Execute(args []string, r <-chan svc.ChangeRequest, changes chan<- svc.Status) (bool, uint32) {
 	// Service start is pending.
 	const cmdsAccepted = svc.AcceptStop | svc.AcceptShutdown
 	changes <- svc.Status{State: svc.StartPending}
 
-	// Start karlsendMain in a separate goroutine so the service can start
+	// Start freedMain in a separate goroutine so the service can start
 	// quickly. Shutdown (along with a potential error) is reported via
-	// doneChan. startedChan is notified once karlsend is started so this can
+	// doneChan. startedChan is notified once freed is started so this can
 	// be properly logged
 	doneChan := make(chan error)
 	startedChan := make(chan struct{})
-	spawn("karlsendMain-windows", func() {
+	spawn("freedMain-windows", func() {
 		err := s.main(startedChan)
 		doneChan <- err
 	})
@@ -108,7 +108,7 @@ loop:
 	return false, 0
 }
 
-// logServiceStart logs information about karlsend when the main server has
+// logServiceStart logs information about freed when the main server has
 // been started to the Windows event log.
 func (s *Service) logServiceStart() {
 	var message string

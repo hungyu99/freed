@@ -1,6 +1,6 @@
 package database
 
-// Transaction defines the interface of a generic karlsend database
+// Transaction defines the interface of a generic freed database
 // transaction.
 //
 // Note: Transactions provide data consistency over the state of

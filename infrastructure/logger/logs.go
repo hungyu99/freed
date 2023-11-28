@@ -39,7 +39,7 @@ import (
 	"runtime"
 	"sync/atomic"
 
-	"github.com/karlsen-network/karlsend/util/mstime"
+	"github.com/hungyu99/freed/util/mstime"
 )
 
 // Logger is a subsystem logger for a Backend.
