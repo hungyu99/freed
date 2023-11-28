@@ -10,7 +10,7 @@ import (
 	"testing"
 
 	"github.com/davecgh/go-spew/spew"
-	"github.com/karlsen-network/karlsend/infrastructure/network/netadapter/id"
+	"github.com/hungyu99/freed/infrastructure/network/netadapter/id"
 )
 
 // TestVersion tests the MsgVersion API.

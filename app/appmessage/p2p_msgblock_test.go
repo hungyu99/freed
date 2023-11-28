@@ -10,11 +10,11 @@ import (
 	"testing"
 
 	"github.com/davecgh/go-spew/spew"
-	"github.com/karlsen-network/karlsend/util/mstime"
+	"github.com/hungyu99/freed/util/mstime"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/subnetworks"
+	"github.com/hungyu99/freed/domain/consensus/utils/subnetworks"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
 )
 
 // TestBlock tests the MsgBlock API.
