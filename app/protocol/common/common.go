@@ -3,8 +3,8 @@ package common
 import (
 	"time"
 
-	peerpkg "github.com/karlsen-network/karlsend/app/protocol/peer"
-	routerpkg "github.com/karlsen-network/karlsend/infrastructure/network/netadapter/router"
+	peerpkg "github.com/hungyu99/freed/app/protocol/peer"
+	routerpkg "github.com/hungyu99/freed/infrastructure/network/netadapter/router"
 
 	"github.com/pkg/errors"
 )

@@ -1,6 +1,6 @@
 package flowcontext
 
-import "github.com/karlsen-network/karlsend/infrastructure/config"
+import "github.com/hungyu99/freed/infrastructure/config"
 
 // Config returns an instance of *config.Config associated to the flow context.
 func (f *FlowContext) Config() *config.Config {
