@@ -8,11 +8,11 @@ import (
 	"encoding/hex"
 	"fmt"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/txscript"
-	"github.com/karlsen-network/karlsend/domain/dagconfig"
-	"github.com/karlsen-network/karlsend/util"
+	"github.com/hungyu99/freed/domain/consensus/utils/txscript"
+	"github.com/hungyu99/freed/domain/dagconfig"
+	"github.com/hungyu99/freed/util"
 )
 
 // This example demonstrates creating a script which pays to a kaspa address.

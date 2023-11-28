@@ -4,9 +4,9 @@ import (
 	"bytes"
 	"io"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/serialization"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/transactionid"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/utils/serialization"
+	"github.com/hungyu99/freed/domain/consensus/utils/transactionid"
 	"github.com/pkg/errors"
 )
 

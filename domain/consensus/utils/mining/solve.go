@@ -4,8 +4,8 @@ import (
 	"math"
 	"math/rand"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/pow"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/utils/pow"
 	"github.com/pkg/errors"
 )
 

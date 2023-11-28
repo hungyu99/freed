@@ -1,10 +1,10 @@
 package consensushashing
 
 import (
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/hashes"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/serialization"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/subnetworks"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/utils/hashes"
+	"github.com/hungyu99/freed/domain/consensus/utils/serialization"
+	"github.com/hungyu99/freed/domain/consensus/utils/subnetworks"
 	"github.com/pkg/errors"
 )
 

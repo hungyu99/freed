@@ -1,7 +1,7 @@
 package transactionid
 
 import (
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
 )
 
 // FromString creates a new DomainTransactionID from the given string
