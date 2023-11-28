@@ -1,14 +1,15 @@
-Karlsend
-========
+
+Freed
+====
 
 [![ISC License](http://img.shields.io/badge/license-ISC-blue.svg)](https://choosealicense.com/licenses/isc/)
-[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](http://godoc.org/github.com/karlsen-network/karlsend/)
+[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](http://godoc.org/github.com/hungyu99/freed/)
 
-Karlsend is the reference full node Karlsen implementation written in Go (golang).
+Freed is the reference full node Free implementation written in Go (golang).
 
-## What is Karlsen
+## What is Free
 
-Karlsen is a fork of Kaspa with an ASIC resistance implementation
+Free is a fork of Kaspa with an ASIC resistance implementation
 Kaspa is an attempt at a proof-of-work cryptocurrency with instant confirmations and sub-second block times. It is based on [the PHANTOM protocol](https://eprint.iacr.org/2018/104.pdf), a generalization of Nakamoto consensus.
 
 ## Requirements
@@ -28,41 +29,41 @@ Go 1.18 or later.
 $ go version
 ```
 
-- Run the following commands to obtain and install karlsend including all dependencies:
+- Run the following commands to obtain and install freed including all dependencies:
 
 ```bash
-$ git clone https://github.com/karlsen-network/karlsend/
-$ cd karlsend
+$ git clone https://github.com/hungyu99/freed/
+$ cd freed
 $ go install . ./cmd/...
 ```
 
-- Karlsend (and utilities) should now be installed in `$(go env GOPATH)/bin`. If you did
+- Freed (and utilities) should now be installed in `$(go env GOPATH)/bin`. If you did
   not already add the bin directory to your system path during Go installation,
   you are encouraged to do so now.
 
 
 ## Getting Started
 
-Karlsend has several configuration options available to tweak how it runs, but all
+Freed has several configuration options available to tweak how it runs, but all
 of the basic operations work with zero configuration.
 
 ```bash
-$ karlsend
+$ freed
 ```
 
 ## Discord
-Join our discord server using the following link: https://discord.gg/ZPZRvgMJDT
+Join our discord server using the following link: https://discord.gg/YNYnNN5Pf2
 
 ## Issue Tracker
 
-The [integrated github issue tracker](https://github.com/karlsen-network/karlsend/issues)
+The [integrated github issue tracker](https://github.com/hungyu99/freed/issues)
 is used for this project.
 
 
 ## Documentation
 
-The [documentation](https://github.com/karlsen-network/docs) is a work-in-progress
+The [documentation](https://github.com/hungyu99/docs) is a work-in-progress
 
 ## License
 
-Karlsend is licensed under the copyfree [ISC License](https://choosealicense.com/licenses/isc/).
+Freed is licensed under the copyfree [ISC License](https://choosealicense.com/licenses/isc/).

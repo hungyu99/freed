@@ -1,11 +1,11 @@
-# Contributing to Karlsend
+# Contributing to Freed
 
-Any contribution to Karlsend is very welcome.
+Any contribution to Freed is very welcome.
 
 ## Getting started
 
-If you want to start contributing to Karlsend and don't know where to start, you can pick an issue from
-the [list](https://github.com/karlsen-network/karlsend/issues).
+If you want to start contributing to Freed and don't know where to start, you can pick an issue from
+the [list](https://github.com/hungyu99/freed/issues).
 
 If you want to make a big change it's better to discuss it first by opening an issue or talk about it in
 [Discord](https://discord.gg/WmGhhzk) to avoid duplicate work.

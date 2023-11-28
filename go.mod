@@ -1,4 +1,4 @@
-module github.com/karlsen-network/karlsend
+module github.com/hungyu99/freed
 
 go 1.18
 
