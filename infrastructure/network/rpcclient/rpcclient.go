@@ -4,12 +4,12 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/karlsen-network/karlsend/app/appmessage"
-	"github.com/karlsen-network/karlsend/infrastructure/logger"
-	routerpkg "github.com/karlsen-network/karlsend/infrastructure/network/netadapter/router"
-	"github.com/karlsen-network/karlsend/infrastructure/network/rpcclient/grpcclient"
-	"github.com/karlsen-network/karlsend/util/panics"
-	"github.com/karlsen-network/karlsend/version"
+	"github.com/hungyu99/freed/app/appmessage"
+	"github.com/hungyu99/freed/infrastructure/logger"
+	routerpkg "github.com/hungyu99/freed/infrastructure/network/netadapter/router"
+	"github.com/hungyu99/freed/infrastructure/network/rpcclient/grpcclient"
+	"github.com/hungyu99/freed/util/panics"
+	"github.com/hungyu99/freed/version"
 	"github.com/pkg/errors"
 )
 

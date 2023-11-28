@@ -7,7 +7,7 @@ package addressmanager
 import (
 	"net"
 
-	"github.com/karlsen-network/karlsend/app/appmessage"
+	"github.com/hungyu99/freed/app/appmessage"
 )
 
 var (

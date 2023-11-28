@@ -6,15 +6,15 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/karlsen-network/karlsend/app/appmessage"
-	"github.com/karlsen-network/karlsend/infrastructure/network/dnsseed"
+	"github.com/hungyu99/freed/app/appmessage"
+	"github.com/hungyu99/freed/infrastructure/network/dnsseed"
 	"github.com/pkg/errors"
 
-	"github.com/karlsen-network/karlsend/infrastructure/network/addressmanager"
+	"github.com/hungyu99/freed/infrastructure/network/addressmanager"
 
-	"github.com/karlsen-network/karlsend/infrastructure/network/netadapter"
+	"github.com/hungyu99/freed/infrastructure/network/netadapter"
 
-	"github.com/karlsen-network/karlsend/infrastructure/config"
+	"github.com/hungyu99/freed/infrastructure/config"
 )
 
 // connectionRequest represents a user request (either through CLI or RPC) to connect to a certain node
@@ -258,7 +258,7 @@ func (c *ConnectionManager) seedFromDNS() {
 	if len(c.activeOutgoing) == 0 && !cfg.DisableDNSSeed {
 		dnsseed.SeedFromDNS(cfg.NetParams(), cfg.DNSSeed, false, nil,
 			cfg.Lookup, func(addresses []*appmessage.NetAddress) {
-				// Karlsend uses a lookup of the dns seeder here. Since seeder returns
+				// Freed uses a lookup of the dns seeder here. Since seeder returns
 				// IPs of nodes and not its own IP, we can not know real IP of
 				// source. So we'll take first returned address as source.
 				_ = c.addressManager.AddAddresses(addresses...)
