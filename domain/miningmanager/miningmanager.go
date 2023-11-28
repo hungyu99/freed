@@ -4,9 +4,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/consensusreference"
-	miningmanagermodel "github.com/karlsen-network/karlsend/domain/miningmanager/model"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensusreference"
+	miningmanagermodel "github.com/hungyu99/freed/domain/miningmanager/model"
 )
 
 // MiningManager creates block templates for mining as well as maintaining

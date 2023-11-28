@@ -3,10 +3,10 @@ package utxoindex
 import (
 	"encoding/binary"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/database/binaryserialization"
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/infrastructure/db/database"
-	"github.com/karlsen-network/karlsend/infrastructure/logger"
+	"github.com/hungyu99/freed/domain/consensus/database/binaryserialization"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/infrastructure/db/database"
+	"github.com/hungyu99/freed/infrastructure/logger"
 	"github.com/pkg/errors"
 )
 

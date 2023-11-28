@@ -3,13 +3,13 @@ package mempool
 import (
 	"sync"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/consensushashing"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/constants"
+	"github.com/hungyu99/freed/domain/consensus/utils/consensushashing"
+	"github.com/hungyu99/freed/domain/consensus/utils/constants"
 
-	"github.com/karlsen-network/karlsend/domain/consensusreference"
+	"github.com/hungyu99/freed/domain/consensusreference"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	miningmanagermodel "github.com/karlsen-network/karlsend/domain/miningmanager/model"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	miningmanagermodel "github.com/hungyu99/freed/domain/miningmanager/model"
 )
 
 type mempool struct {

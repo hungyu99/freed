@@ -3,11 +3,11 @@ package mempool
 import (
 	"time"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/constants"
+	"github.com/hungyu99/freed/domain/consensus/utils/constants"
 
-	"github.com/karlsen-network/karlsend/util"
+	"github.com/hungyu99/freed/util"
 
-	"github.com/karlsen-network/karlsend/domain/dagconfig"
+	"github.com/hungyu99/freed/domain/dagconfig"
 )
 
 const (

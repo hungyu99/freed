@@ -8,14 +8,14 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
 
-	"github.com/karlsen-network/karlsend/app/appmessage"
-	"github.com/karlsen-network/karlsend/util/network"
+	"github.com/hungyu99/freed/app/appmessage"
+	"github.com/hungyu99/freed/util/network"
 
 	"github.com/pkg/errors"
 
-	"github.com/karlsen-network/karlsend/util"
+	"github.com/hungyu99/freed/util"
 )
 
 // These variables are the DAG proof-of-work limit parameters for each default
@@ -175,7 +175,7 @@ type Params struct {
 	// CoinbasePayloadScriptPublicKeyMaxLength is the maximum allowed script public key in the coinbase's payload
 	CoinbasePayloadScriptPublicKeyMaxLength uint8
 
-	// PruningProofM is the 'm' constant in the pruning proof. For more details see: https://github.com/karlsen-network/research/issues/3
+	// PruningProofM is the 'm' constant in the pruning proof. For more details see: https://github.com/hungyu99/research/issues/3
 	PruningProofM uint64
 
 	// DeflationaryPhaseDaaScore is the DAA score after which the monetary policy switches
@@ -209,14 +209,16 @@ func (p *Params) PruningDepth() uint64 {
 // MainnetParams defines the network parameters for the main Kaspa network.
 var MainnetParams = Params{
 	K:           defaultGHOSTDAGK,
-	Name:        "karlsen-mainnet",
+	Name:        "free-mainnet",
 	Net:         appmessage.Mainnet,
-	RPCPort:     "42110",
-	DefaultPort: "42111",
+	RPCPort:     "22110",
+	DefaultPort: "22111",
 	DNSSeeds: []string{
 		// Team DNS seed
-		"mainnet-dnsseed-1.karlsencoin.com",
-		"mainnet-dnsseed-2.karlsencoin.com",
+		"mainnet-dnsseed-1.freecoin.com",
+		"mainnet-dnsseed-2.freecoin.com",
+		"211.72.119.154",
+		"192.168.1.31",
 	},
 
 	// DAG parameters
@@ -279,7 +281,7 @@ var MainnetParams = Params{
 // TestnetParams defines the network parameters for the test Kaspa network.
 var TestnetParams = Params{
 	K:           defaultGHOSTDAGK,
-	Name:        "karlsen-testnet-10",
+	Name:        "free-testnet-10",
 	Net:         appmessage.Testnet,
 	RPCPort:     "16210",
 	DefaultPort: "16211",
@@ -351,7 +353,7 @@ var TestnetParams = Params{
 // just turn into another public testnet.
 var SimnetParams = Params{
 	K:           defaultGHOSTDAGK,
-	Name:        "karlsen-simnet",
+	Name:        "free-simnet",
 	Net:         appmessage.Simnet,
 	RPCPort:     "16510",
 	DefaultPort: "16511",
@@ -411,7 +413,7 @@ var SimnetParams = Params{
 // DevnetParams defines the network parameters for the development Kaspa network.
 var DevnetParams = Params{
 	K:           defaultGHOSTDAGK,
-	Name:        "karlsen-devnet",
+	Name:        "free-devnet",
 	Net:         appmessage.Devnet,
 	RPCPort:     "16610",
 	DefaultPort: "16611",

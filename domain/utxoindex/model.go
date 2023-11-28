@@ -1,7 +1,7 @@
 package utxoindex
 
 import (
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
 )
 
 // ScriptPublicKeyString is a script public key represented as a string

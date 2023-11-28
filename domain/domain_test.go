@@ -9,14 +9,14 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/karlsen-network/karlsend/domain"
-	"github.com/karlsen-network/karlsend/domain/consensus"
-	"github.com/karlsen-network/karlsend/domain/consensus/model"
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/consensushashing"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/testutils"
-	"github.com/karlsen-network/karlsend/domain/miningmanager/mempool"
-	"github.com/karlsen-network/karlsend/infrastructure/db/database/ldb"
+	"github.com/hungyu99/freed/domain"
+	"github.com/hungyu99/freed/domain/consensus"
+	"github.com/hungyu99/freed/domain/consensus/model"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/utils/consensushashing"
+	"github.com/hungyu99/freed/domain/consensus/utils/testutils"
+	"github.com/hungyu99/freed/domain/miningmanager/mempool"
+	"github.com/hungyu99/freed/infrastructure/db/database/ldb"
 )
 
 func TestCreateStagingConsensus(t *testing.T) {

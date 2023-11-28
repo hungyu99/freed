@@ -4,18 +4,18 @@ import (
 	"math"
 	"sort"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/processes/coinbasemanager"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/merkle"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/transactionhelper"
-	"github.com/karlsen-network/karlsend/domain/consensusreference"
-	"github.com/karlsen-network/karlsend/util/mstime"
+	"github.com/hungyu99/freed/domain/consensus/processes/coinbasemanager"
+	"github.com/hungyu99/freed/domain/consensus/utils/merkle"
+	"github.com/hungyu99/freed/domain/consensus/utils/transactionhelper"
+	"github.com/hungyu99/freed/domain/consensusreference"
+	"github.com/hungyu99/freed/util/mstime"
 
-	"github.com/karlsen-network/karlsend/util/difficulty"
+	"github.com/hungyu99/freed/util/difficulty"
 
-	consensusexternalapi "github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/ruleerrors"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/subnetworks"
-	miningmanagerapi "github.com/karlsen-network/karlsend/domain/miningmanager/model"
+	consensusexternalapi "github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/ruleerrors"
+	"github.com/hungyu99/freed/domain/consensus/utils/subnetworks"
+	miningmanagerapi "github.com/hungyu99/freed/domain/miningmanager/model"
 	"github.com/pkg/errors"
 )
 
@@ -156,7 +156,7 @@ func (btb *blockTemplateBuilder) BuildBlockTemplate(
 		if err != nil {
 			// mempool.RemoveTransactions might return errors in situations that are perfectly fine in this context.
 			// TODO: Once the mempool invariants are clear, this should be converted back `return nil, err`:
-			// https://github.com/karlsen-network/karlsend/issues/1553
+			// https://github.com/hungyu99/freed/issues/1553
 			log.Criticalf("Error from mempool.RemoveTransactions: %+v", err)
 		}
 		// We can call this recursively without worry because this should almost never happen

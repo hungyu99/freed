@@ -1,9 +1,9 @@
 package mempool
 
 import (
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/miningmanager/mempool/model"
-	"github.com/karlsen-network/karlsend/infrastructure/logger"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/miningmanager/mempool/model"
+	"github.com/hungyu99/freed/infrastructure/logger"
 )
 
 func (mp *mempool) revalidateHighPriorityTransactions() ([]*externalapi.DomainTransaction, error) {

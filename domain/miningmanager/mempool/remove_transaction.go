@@ -1,9 +1,9 @@
 package mempool
 
 import (
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/consensushashing"
-	"github.com/karlsen-network/karlsend/domain/miningmanager/mempool/model"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/utils/consensushashing"
+	"github.com/hungyu99/freed/domain/miningmanager/mempool/model"
 )
 
 func (mp *mempool) removeTransactions(transactions []*externalapi.DomainTransaction, removeRedeemers bool) error {

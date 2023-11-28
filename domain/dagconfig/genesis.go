@@ -7,10 +7,10 @@ package dagconfig
 import (
 	"math/big"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/blockheader"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/subnetworks"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/transactionhelper"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/utils/blockheader"
+	"github.com/hungyu99/freed/domain/consensus/utils/subnetworks"
+	"github.com/hungyu99/freed/domain/consensus/utils/transactionhelper"
 	"github.com/kaspanet/go-muhash"
 )
 
@@ -63,9 +63,9 @@ var genesisBlock = externalapi.DomainBlock{
 		genesisMerkleRoot,
 		&externalapi.DomainHash{},
 		externalapi.NewDomainHashFromByteArray(muhash.EmptyMuHashHash.AsArray()),
-		0x17c5f62fbb6,
-		0x1e7fffff,
-		0x14582,
+		0x17d68a3a68f,
+		0x1e8fffff,
+		0x14588,
 		0,
 		0,
 		big.NewInt(0),

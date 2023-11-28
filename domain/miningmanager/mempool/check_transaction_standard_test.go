@@ -9,17 +9,17 @@ import (
 	"math"
 	"testing"
 
-	"github.com/karlsen-network/karlsend/domain/consensusreference"
+	"github.com/hungyu99/freed/domain/consensusreference"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/testutils"
+	"github.com/hungyu99/freed/domain/consensus/utils/testutils"
 
-	"github.com/karlsen-network/karlsend/domain/consensus"
+	"github.com/hungyu99/freed/domain/consensus"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/constants"
+	"github.com/hungyu99/freed/domain/consensus/utils/constants"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/txscript"
-	"github.com/karlsen-network/karlsend/util"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/utils/txscript"
+	"github.com/hungyu99/freed/util"
 	"github.com/pkg/errors"
 )
 

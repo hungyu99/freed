@@ -5,15 +5,15 @@ import (
 	"sync/atomic"
 	"unsafe"
 
-	"github.com/karlsen-network/karlsend/domain/consensusreference"
+	"github.com/hungyu99/freed/domain/consensusreference"
 
-	"github.com/karlsen-network/karlsend/domain/consensus"
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/miningmanager"
-	"github.com/karlsen-network/karlsend/domain/miningmanager/mempool"
-	"github.com/karlsen-network/karlsend/domain/prefixmanager"
-	"github.com/karlsen-network/karlsend/domain/prefixmanager/prefix"
-	infrastructuredatabase "github.com/karlsen-network/karlsend/infrastructure/db/database"
+	"github.com/hungyu99/freed/domain/consensus"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/miningmanager"
+	"github.com/hungyu99/freed/domain/miningmanager/mempool"
+	"github.com/hungyu99/freed/domain/prefixmanager"
+	"github.com/hungyu99/freed/domain/prefixmanager/prefix"
+	infrastructuredatabase "github.com/hungyu99/freed/infrastructure/db/database"
 	"github.com/pkg/errors"
 )
 

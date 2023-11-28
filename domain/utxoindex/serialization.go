@@ -4,8 +4,8 @@ import (
 	"encoding/binary"
 	"io"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/database/serialization"
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/database/serialization"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
 	"github.com/pkg/errors"
 	"google.golang.org/protobuf/proto"
 )
