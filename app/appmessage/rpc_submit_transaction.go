@@ -42,7 +42,7 @@ func NewSubmitTransactionResponseMessage(transactionID string) *SubmitTransactio
 	}
 }
 
-// RPCTransaction is a karlsend transaction representation meant to be
+// RPCTransaction is a freed transaction representation meant to be
 // used over RPC
 type RPCTransaction struct {
 	Version      uint16
@@ -55,7 +55,7 @@ type RPCTransaction struct {
 	VerboseData  *RPCTransactionVerboseData
 }
 
-// RPCTransactionInput is a karlsend transaction input representation
+// RPCTransactionInput is a freed transaction input representation
 // meant to be used over RPC
 type RPCTransactionInput struct {
 	PreviousOutpoint *RPCOutpoint
@@ -65,13 +65,13 @@ type RPCTransactionInput struct {
 	VerboseData      *RPCTransactionInputVerboseData
 }
 
-// RPCScriptPublicKey is a karlsend ScriptPublicKey representation
+// RPCScriptPublicKey is a freed ScriptPublicKey representation
 type RPCScriptPublicKey struct {
 	Version uint16
 	Script  string
 }
 
-// RPCTransactionOutput is a karlsend transaction output representation
+// RPCTransactionOutput is a freed transaction output representation
 // meant to be used over RPC
 type RPCTransactionOutput struct {
 	Amount          uint64
@@ -79,14 +79,14 @@ type RPCTransactionOutput struct {
 	VerboseData     *RPCTransactionOutputVerboseData
 }
 
-// RPCOutpoint is a karlsend outpoint representation meant to be used
+// RPCOutpoint is a freed outpoint representation meant to be used
 // over RPC
 type RPCOutpoint struct {
 	TransactionID string
 	Index         uint32
 }
 
-// RPCUTXOEntry is a karlsend utxo entry representation meant to be used
+// RPCUTXOEntry is a freed utxo entry representation meant to be used
 // over RPC
 type RPCUTXOEntry struct {
 	Amount          uint64
