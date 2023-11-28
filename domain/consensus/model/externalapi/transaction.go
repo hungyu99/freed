@@ -224,7 +224,7 @@ func NewDomainOutpoint(id *DomainTransactionID, index uint32) *DomainOutpoint {
 	}
 }
 
-// ScriptPublicKey represents a Karlsend ScriptPublicKey
+// ScriptPublicKey represents a Freed ScriptPublicKey
 type ScriptPublicKey struct {
 	Script  []byte
 	Version uint16
@@ -260,7 +260,7 @@ func NewScriptPublicKeyFromString(ScriptPublicKeyString string) *ScriptPublicKey
 	return &ScriptPublicKey{Script: script, Version: version}
 }
 
-// DomainTransactionOutput represents a Karlsend transaction output
+// DomainTransactionOutput represents a Freed transaction output
 type DomainTransactionOutput struct {
 	Value           uint64
 	ScriptPublicKey *ScriptPublicKey

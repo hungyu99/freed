@@ -1,6 +1,6 @@
 package model
 
-import "github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
+import "github.com/hungyu99/freed/domain/consensus/model/externalapi"
 
 // BlockIterator is an iterator over blocks according to some order.
 type BlockIterator interface {

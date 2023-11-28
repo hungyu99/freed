@@ -1,8 +1,8 @@
 package model
 
-import "github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
+import "github.com/hungyu99/freed/domain/consensus/model/externalapi"
 
-// SyncManager exposes functions to support sync between karlsend nodes
+// SyncManager exposes functions to support sync between freed nodes
 type SyncManager interface {
 	GetHashesBetween(stagingArea *StagingArea, lowHash, highHash *externalapi.DomainHash, maxBlocks uint64) (
 		hashes []*externalapi.DomainHash, actualHighHash *externalapi.DomainHash, err error)

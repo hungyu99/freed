@@ -1,6 +1,6 @@
 package model
 
-import "github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
+import "github.com/hungyu99/freed/domain/consensus/model/externalapi"
 
 // PruningManager resolves and manages the current pruning point
 type PruningManager interface {

@@ -1,6 +1,6 @@
 package model
 
-import "github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
+import "github.com/hungyu99/freed/domain/consensus/model/externalapi"
 
 // BlockHeap represents a heap of block hashes, providing a priority-queue functionality
 type BlockHeap interface {

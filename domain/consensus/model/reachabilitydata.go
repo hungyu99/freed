@@ -3,7 +3,7 @@ package model
 import (
 	"fmt"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
 )
 
 // MutableReachabilityData represents a node in the reachability tree

@@ -1,6 +1,6 @@
 package model
 
-import "github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
+import "github.com/hungyu99/freed/domain/consensus/model/externalapi"
 
 // UTXODiffReversalData is used by ConsensusStateManager to reverse the UTXODiffs during a re-org
 type UTXODiffReversalData struct {
