@@ -4,14 +4,14 @@ import (
 	"math/big"
 	"sync"
 
-	"github.com/karlsen-network/karlsend/util/mstime"
+	"github.com/hungyu99/freed/util/mstime"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/database"
-	"github.com/karlsen-network/karlsend/domain/consensus/model"
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/ruleerrors"
-	"github.com/karlsen-network/karlsend/infrastructure/logger"
-	"github.com/karlsen-network/karlsend/util/staging"
+	"github.com/hungyu99/freed/domain/consensus/database"
+	"github.com/hungyu99/freed/domain/consensus/model"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/ruleerrors"
+	"github.com/hungyu99/freed/infrastructure/logger"
+	"github.com/hungyu99/freed/util/staging"
 	"github.com/pkg/errors"
 )
 
