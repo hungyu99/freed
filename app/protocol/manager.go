@@ -5,20 +5,20 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/karlsen-network/karlsend/app/protocol/common"
+	"github.com/hungyu99/freed/app/protocol/common"
 
 	"github.com/pkg/errors"
 
-	"github.com/karlsen-network/karlsend/domain"
+	"github.com/hungyu99/freed/domain"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
 
-	"github.com/karlsen-network/karlsend/app/protocol/flowcontext"
-	peerpkg "github.com/karlsen-network/karlsend/app/protocol/peer"
-	"github.com/karlsen-network/karlsend/infrastructure/config"
-	"github.com/karlsen-network/karlsend/infrastructure/network/addressmanager"
-	"github.com/karlsen-network/karlsend/infrastructure/network/connmanager"
-	"github.com/karlsen-network/karlsend/infrastructure/network/netadapter"
+	"github.com/hungyu99/freed/app/protocol/flowcontext"
+	peerpkg "github.com/hungyu99/freed/app/protocol/peer"
+	"github.com/hungyu99/freed/infrastructure/config"
+	"github.com/hungyu99/freed/infrastructure/network/addressmanager"
+	"github.com/hungyu99/freed/infrastructure/network/connmanager"
+	"github.com/hungyu99/freed/infrastructure/network/netadapter"
 )
 
 // Manager manages the p2p protocol
