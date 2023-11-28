@@ -1,7 +1,7 @@
 package mergedepthmanager
 
 import (
-	"github.com/karlsen-network/karlsend/infrastructure/logger"
+	"github.com/hungyu99/freed/infrastructure/logger"
 )
 
 var log = logger.RegisterSubSystem("MDMN")

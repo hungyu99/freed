@@ -1,9 +1,9 @@
 package transactionvalidator
 
 import (
-	"github.com/karlsen-network/karlsend/domain/consensus/model"
-	"github.com/karlsen-network/karlsend/domain/consensus/model/testapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/txscript"
+	"github.com/hungyu99/freed/domain/consensus/model"
+	"github.com/hungyu99/freed/domain/consensus/model/testapi"
+	"github.com/hungyu99/freed/domain/consensus/utils/txscript"
 )
 
 type testTransactionValidator struct {
