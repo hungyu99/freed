@@ -3,12 +3,12 @@ package rpccontext
 import (
 	"encoding/hex"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/txscript"
-	"github.com/karlsen-network/karlsend/util"
+	"github.com/hungyu99/freed/domain/consensus/utils/txscript"
+	"github.com/hungyu99/freed/util"
 	"github.com/pkg/errors"
 
-	"github.com/karlsen-network/karlsend/app/appmessage"
-	"github.com/karlsen-network/karlsend/domain/utxoindex"
+	"github.com/hungyu99/freed/app/appmessage"
+	"github.com/hungyu99/freed/domain/utxoindex"
 )
 
 // ConvertUTXOOutpointEntryPairsToUTXOsByAddressesEntries converts

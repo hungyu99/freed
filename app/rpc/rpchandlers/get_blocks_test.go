@@ -5,18 +5,18 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/model"
+	"github.com/hungyu99/freed/domain/consensus/model"
 
-	"github.com/karlsen-network/karlsend/app/appmessage"
-	"github.com/karlsen-network/karlsend/app/rpc/rpccontext"
-	"github.com/karlsen-network/karlsend/app/rpc/rpchandlers"
-	"github.com/karlsen-network/karlsend/domain/consensus"
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/model/testapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/hashes"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/testutils"
-	"github.com/karlsen-network/karlsend/domain/miningmanager"
-	"github.com/karlsen-network/karlsend/infrastructure/config"
+	"github.com/hungyu99/freed/app/appmessage"
+	"github.com/hungyu99/freed/app/rpc/rpccontext"
+	"github.com/hungyu99/freed/app/rpc/rpchandlers"
+	"github.com/hungyu99/freed/domain/consensus"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/model/testapi"
+	"github.com/hungyu99/freed/domain/consensus/utils/hashes"
+	"github.com/hungyu99/freed/domain/consensus/utils/testutils"
+	"github.com/hungyu99/freed/domain/miningmanager"
+	"github.com/hungyu99/freed/infrastructure/config"
 )
 
 type fakeDomain struct {

@@ -1,10 +1,10 @@
 package rpchandlers
 
 import (
-	"github.com/karlsen-network/karlsend/app/appmessage"
-	"github.com/karlsen-network/karlsend/app/rpc/rpccontext"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/hashes"
-	"github.com/karlsen-network/karlsend/infrastructure/network/netadapter/router"
+	"github.com/hungyu99/freed/app/appmessage"
+	"github.com/hungyu99/freed/app/rpc/rpccontext"
+	"github.com/hungyu99/freed/domain/consensus/utils/hashes"
+	"github.com/hungyu99/freed/infrastructure/network/netadapter/router"
 )
 
 // HandleGetBlockDAGInfo handles the respectively named RPC command

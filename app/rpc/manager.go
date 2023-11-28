@@ -1,17 +1,17 @@
 package rpc
 
 import (
-	"github.com/karlsen-network/karlsend/app/appmessage"
-	"github.com/karlsen-network/karlsend/app/protocol"
-	"github.com/karlsen-network/karlsend/app/rpc/rpccontext"
-	"github.com/karlsen-network/karlsend/domain"
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/utxoindex"
-	"github.com/karlsen-network/karlsend/infrastructure/config"
-	"github.com/karlsen-network/karlsend/infrastructure/logger"
-	"github.com/karlsen-network/karlsend/infrastructure/network/addressmanager"
-	"github.com/karlsen-network/karlsend/infrastructure/network/connmanager"
-	"github.com/karlsen-network/karlsend/infrastructure/network/netadapter"
+	"github.com/hungyu99/freed/app/appmessage"
+	"github.com/hungyu99/freed/app/protocol"
+	"github.com/hungyu99/freed/app/rpc/rpccontext"
+	"github.com/hungyu99/freed/domain"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/utxoindex"
+	"github.com/hungyu99/freed/infrastructure/config"
+	"github.com/hungyu99/freed/infrastructure/logger"
+	"github.com/hungyu99/freed/infrastructure/network/addressmanager"
+	"github.com/hungyu99/freed/infrastructure/network/connmanager"
+	"github.com/hungyu99/freed/infrastructure/network/netadapter"
 	"github.com/pkg/errors"
 )
 

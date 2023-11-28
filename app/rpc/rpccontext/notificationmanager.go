@@ -3,14 +3,14 @@ package rpccontext
 import (
 	"sync"
 
-	"github.com/karlsen-network/karlsend/domain/dagconfig"
+	"github.com/hungyu99/freed/domain/dagconfig"
 
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/domain/consensus/utils/txscript"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/domain/consensus/utils/txscript"
 
-	"github.com/karlsen-network/karlsend/app/appmessage"
-	"github.com/karlsen-network/karlsend/domain/utxoindex"
-	routerpkg "github.com/karlsen-network/karlsend/infrastructure/network/netadapter/router"
+	"github.com/hungyu99/freed/app/appmessage"
+	"github.com/hungyu99/freed/domain/utxoindex"
+	routerpkg "github.com/hungyu99/freed/infrastructure/network/netadapter/router"
 	"github.com/pkg/errors"
 )
 
@@ -21,7 +21,7 @@ type NotificationManager struct {
 	params    *dagconfig.Params
 }
 
-// UTXOsChangedNotificationAddress represents a karlsend address.
+// UTXOsChangedNotificationAddress represents a freed address.
 // This type is meant to be used in UTXOsChanged notifications
 type UTXOsChangedNotificationAddress struct {
 	Address               string

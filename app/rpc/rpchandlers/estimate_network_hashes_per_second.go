@@ -1,11 +1,11 @@
 package rpchandlers
 
 import (
-	"github.com/karlsen-network/karlsend/app/appmessage"
-	"github.com/karlsen-network/karlsend/app/rpc/rpccontext"
-	"github.com/karlsen-network/karlsend/domain/consensus/model"
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
-	"github.com/karlsen-network/karlsend/infrastructure/network/netadapter/router"
+	"github.com/hungyu99/freed/app/appmessage"
+	"github.com/hungyu99/freed/app/rpc/rpccontext"
+	"github.com/hungyu99/freed/domain/consensus/model"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/infrastructure/network/netadapter/router"
 )
 
 // HandleEstimateNetworkHashesPerSecond handles the respectively named RPC command
