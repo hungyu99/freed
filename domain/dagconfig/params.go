@@ -215,8 +215,8 @@ var MainnetParams = Params{
 	DefaultPort: "22111",
 	DNSSeeds: []string{
 		// Team DNS seed
-		"mainnet-dnsseed-1.freecoin.com",
-		"mainnet-dnsseed-2.freecoin.com",
+		//"mainnet-dnsseed-1.freecoin.com",
+		//"mainnet-dnsseed-2.freecoin.com",
 		"211.72.119.154",
 		"192.168.1.31",
 	},
