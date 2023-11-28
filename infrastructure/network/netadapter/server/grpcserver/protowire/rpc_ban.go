@@ -1,13 +1,13 @@
 package protowire
 
 import (
-	"github.com/karlsen-network/karlsend/app/appmessage"
+	"github.com/hungyu99/freed/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *KarlsendMessage_BanRequest) toAppMessage() (appmessage.Message, error) {
+func (x *FreedMessage_BanRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "KarlsendMessage_BanRequest is nil")
+		return nil, errors.Wrapf(errorNil, "FreedMessage_BanRequest is nil")
 	}
 	return x.BanRequest.toAppMessage()
 }
@@ -21,14 +21,14 @@ func (x *BanRequestMessage) toAppMessage() (appmessage.Message, error) {
 	}, nil
 }
 
-func (x *KarlsendMessage_BanRequest) fromAppMessage(message *appmessage.BanRequestMessage) error {
+func (x *FreedMessage_BanRequest) fromAppMessage(message *appmessage.BanRequestMessage) error {
 	x.BanRequest = &BanRequestMessage{Ip: message.IP}
 	return nil
 }
 
-func (x *KarlsendMessage_BanResponse) toAppMessage() (appmessage.Message, error) {
+func (x *FreedMessage_BanResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "KarlsendMessage_BanResponse is nil")
+		return nil, errors.Wrapf(errorNil, "FreedMessage_BanResponse is nil")
 	}
 	return x.BanResponse.toAppMessage()
 }
@@ -47,7 +47,7 @@ func (x *BanResponseMessage) toAppMessage() (appmessage.Message, error) {
 	}, nil
 }
 
-func (x *KarlsendMessage_BanResponse) fromAppMessage(message *appmessage.BanResponseMessage) error {
+func (x *FreedMessage_BanResponse) fromAppMessage(message *appmessage.BanResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}

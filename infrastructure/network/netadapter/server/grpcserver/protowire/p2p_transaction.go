@@ -3,18 +3,18 @@ package protowire
 import (
 	"math"
 
-	"github.com/karlsen-network/karlsend/app/appmessage"
+	"github.com/hungyu99/freed/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *KarlsendMessage_Transaction) toAppMessage() (appmessage.Message, error) {
+func (x *FreedMessage_Transaction) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "KarlsendMessage_Transaction is nil")
+		return nil, errors.Wrapf(errorNil, "FreedMessage_Transaction is nil")
 	}
 	return x.Transaction.toAppMessage()
 }
 
-func (x *KarlsendMessage_Transaction) fromAppMessage(msgTx *appmessage.MsgTx) error {
+func (x *FreedMessage_Transaction) fromAppMessage(msgTx *appmessage.MsgTx) error {
 	x.Transaction = new(TransactionMessage)
 	x.Transaction.fromAppMessage(msgTx)
 	return nil

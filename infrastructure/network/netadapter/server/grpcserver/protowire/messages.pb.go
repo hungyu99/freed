@@ -20,147 +20,147 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type KarlsendMessage struct {
+type FreedMessage struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// Types that are assignable to Payload:
-	//	*KarlsendMessage_Addresses
-	//	*KarlsendMessage_Block
-	//	*KarlsendMessage_Transaction
-	//	*KarlsendMessage_BlockLocator
-	//	*KarlsendMessage_RequestAddresses
-	//	*KarlsendMessage_RequestRelayBlocks
-	//	*KarlsendMessage_RequestTransactions
-	//	*KarlsendMessage_IbdBlock
-	//	*KarlsendMessage_InvRelayBlock
-	//	*KarlsendMessage_InvTransactions
-	//	*KarlsendMessage_Ping
-	//	*KarlsendMessage_Pong
-	//	*KarlsendMessage_Verack
-	//	*KarlsendMessage_Version
-	//	*KarlsendMessage_TransactionNotFound
-	//	*KarlsendMessage_Reject
-	//	*KarlsendMessage_PruningPointUtxoSetChunk
-	//	*KarlsendMessage_RequestIBDBlocks
-	//	*KarlsendMessage_UnexpectedPruningPoint
-	//	*KarlsendMessage_IbdBlockLocator
-	//	*KarlsendMessage_IbdBlockLocatorHighestHash
-	//	*KarlsendMessage_RequestNextPruningPointUtxoSetChunk
-	//	*KarlsendMessage_DonePruningPointUtxoSetChunks
-	//	*KarlsendMessage_IbdBlockLocatorHighestHashNotFound
-	//	*KarlsendMessage_BlockWithTrustedData
-	//	*KarlsendMessage_DoneBlocksWithTrustedData
-	//	*KarlsendMessage_RequestPruningPointAndItsAnticone
-	//	*KarlsendMessage_BlockHeaders
-	//	*KarlsendMessage_RequestNextHeaders
-	//	*KarlsendMessage_DoneHeaders
-	//	*KarlsendMessage_RequestPruningPointUTXOSet
-	//	*KarlsendMessage_RequestHeaders
-	//	*KarlsendMessage_RequestBlockLocator
-	//	*KarlsendMessage_PruningPoints
-	//	*KarlsendMessage_RequestPruningPointProof
-	//	*KarlsendMessage_PruningPointProof
-	//	*KarlsendMessage_Ready
-	//	*KarlsendMessage_BlockWithTrustedDataV4
-	//	*KarlsendMessage_TrustedData
-	//	*KarlsendMessage_RequestIBDChainBlockLocator
-	//	*KarlsendMessage_IbdChainBlockLocator
-	//	*KarlsendMessage_RequestAnticone
-	//	*KarlsendMessage_RequestNextPruningPointAndItsAnticoneBlocks
-	//	*KarlsendMessage_GetCurrentNetworkRequest
-	//	*KarlsendMessage_GetCurrentNetworkResponse
-	//	*KarlsendMessage_SubmitBlockRequest
-	//	*KarlsendMessage_SubmitBlockResponse
-	//	*KarlsendMessage_GetBlockTemplateRequest
-	//	*KarlsendMessage_GetBlockTemplateResponse
-	//	*KarlsendMessage_NotifyBlockAddedRequest
-	//	*KarlsendMessage_NotifyBlockAddedResponse
-	//	*KarlsendMessage_BlockAddedNotification
-	//	*KarlsendMessage_GetPeerAddressesRequest
-	//	*KarlsendMessage_GetPeerAddressesResponse
-	//	*KarlsendMessage_GetSelectedTipHashRequest
-	//	*KarlsendMessage_GetSelectedTipHashResponse
-	//	*KarlsendMessage_GetMempoolEntryRequest
-	//	*KarlsendMessage_GetMempoolEntryResponse
-	//	*KarlsendMessage_GetConnectedPeerInfoRequest
-	//	*KarlsendMessage_GetConnectedPeerInfoResponse
-	//	*KarlsendMessage_AddPeerRequest
-	//	*KarlsendMessage_AddPeerResponse
-	//	*KarlsendMessage_SubmitTransactionRequest
-	//	*KarlsendMessage_SubmitTransactionResponse
-	//	*KarlsendMessage_NotifyVirtualSelectedParentChainChangedRequest
-	//	*KarlsendMessage_NotifyVirtualSelectedParentChainChangedResponse
-	//	*KarlsendMessage_VirtualSelectedParentChainChangedNotification
-	//	*KarlsendMessage_GetBlockRequest
-	//	*KarlsendMessage_GetBlockResponse
-	//	*KarlsendMessage_GetSubnetworkRequest
-	//	*KarlsendMessage_GetSubnetworkResponse
-	//	*KarlsendMessage_GetVirtualSelectedParentChainFromBlockRequest
-	//	*KarlsendMessage_GetVirtualSelectedParentChainFromBlockResponse
-	//	*KarlsendMessage_GetBlocksRequest
-	//	*KarlsendMessage_GetBlocksResponse
-	//	*KarlsendMessage_GetBlockCountRequest
-	//	*KarlsendMessage_GetBlockCountResponse
-	//	*KarlsendMessage_GetBlockDagInfoRequest
-	//	*KarlsendMessage_GetBlockDagInfoResponse
-	//	*KarlsendMessage_ResolveFinalityConflictRequest
-	//	*KarlsendMessage_ResolveFinalityConflictResponse
-	//	*KarlsendMessage_NotifyFinalityConflictsRequest
-	//	*KarlsendMessage_NotifyFinalityConflictsResponse
-	//	*KarlsendMessage_FinalityConflictNotification
-	//	*KarlsendMessage_FinalityConflictResolvedNotification
-	//	*KarlsendMessage_GetMempoolEntriesRequest
-	//	*KarlsendMessage_GetMempoolEntriesResponse
-	//	*KarlsendMessage_ShutDownRequest
-	//	*KarlsendMessage_ShutDownResponse
-	//	*KarlsendMessage_GetHeadersRequest
-	//	*KarlsendMessage_GetHeadersResponse
-	//	*KarlsendMessage_NotifyUtxosChangedRequest
-	//	*KarlsendMessage_NotifyUtxosChangedResponse
-	//	*KarlsendMessage_UtxosChangedNotification
-	//	*KarlsendMessage_GetUtxosByAddressesRequest
-	//	*KarlsendMessage_GetUtxosByAddressesResponse
-	//	*KarlsendMessage_GetVirtualSelectedParentBlueScoreRequest
-	//	*KarlsendMessage_GetVirtualSelectedParentBlueScoreResponse
-	//	*KarlsendMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest
-	//	*KarlsendMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse
-	//	*KarlsendMessage_VirtualSelectedParentBlueScoreChangedNotification
-	//	*KarlsendMessage_BanRequest
-	//	*KarlsendMessage_BanResponse
-	//	*KarlsendMessage_UnbanRequest
-	//	*KarlsendMessage_UnbanResponse
-	//	*KarlsendMessage_GetInfoRequest
-	//	*KarlsendMessage_GetInfoResponse
-	//	*KarlsendMessage_StopNotifyingUtxosChangedRequest
-	//	*KarlsendMessage_StopNotifyingUtxosChangedResponse
-	//	*KarlsendMessage_NotifyPruningPointUTXOSetOverrideRequest
-	//	*KarlsendMessage_NotifyPruningPointUTXOSetOverrideResponse
-	//	*KarlsendMessage_PruningPointUTXOSetOverrideNotification
-	//	*KarlsendMessage_StopNotifyingPruningPointUTXOSetOverrideRequest
-	//	*KarlsendMessage_StopNotifyingPruningPointUTXOSetOverrideResponse
-	//	*KarlsendMessage_EstimateNetworkHashesPerSecondRequest
-	//	*KarlsendMessage_EstimateNetworkHashesPerSecondResponse
-	//	*KarlsendMessage_NotifyVirtualDaaScoreChangedRequest
-	//	*KarlsendMessage_NotifyVirtualDaaScoreChangedResponse
-	//	*KarlsendMessage_VirtualDaaScoreChangedNotification
-	//	*KarlsendMessage_GetBalanceByAddressRequest
-	//	*KarlsendMessage_GetBalanceByAddressResponse
-	//	*KarlsendMessage_GetBalancesByAddressesRequest
-	//	*KarlsendMessage_GetBalancesByAddressesResponse
-	//	*KarlsendMessage_NotifyNewBlockTemplateRequest
-	//	*KarlsendMessage_NotifyNewBlockTemplateResponse
-	//	*KarlsendMessage_NewBlockTemplateNotification
-	//	*KarlsendMessage_GetMempoolEntriesByAddressesRequest
-	//	*KarlsendMessage_GetMempoolEntriesByAddressesResponse
-	//	*KarlsendMessage_GetCoinSupplyRequest
-	//	*KarlsendMessage_GetCoinSupplyResponse
-	Payload isKarlsendMessage_Payload `protobuf_oneof:"payload"`
+	//	*FreedMessage_Addresses
+	//	*FreedMessage_Block
+	//	*FreedMessage_Transaction
+	//	*FreedMessage_BlockLocator
+	//	*FreedMessage_RequestAddresses
+	//	*FreedMessage_RequestRelayBlocks
+	//	*FreedMessage_RequestTransactions
+	//	*FreedMessage_IbdBlock
+	//	*FreedMessage_InvRelayBlock
+	//	*FreedMessage_InvTransactions
+	//	*FreedMessage_Ping
+	//	*FreedMessage_Pong
+	//	*FreedMessage_Verack
+	//	*FreedMessage_Version
+	//	*FreedMessage_TransactionNotFound
+	//	*FreedMessage_Reject
+	//	*FreedMessage_PruningPointUtxoSetChunk
+	//	*FreedMessage_RequestIBDBlocks
+	//	*FreedMessage_UnexpectedPruningPoint
+	//	*FreedMessage_IbdBlockLocator
+	//	*FreedMessage_IbdBlockLocatorHighestHash
+	//	*FreedMessage_RequestNextPruningPointUtxoSetChunk
+	//	*FreedMessage_DonePruningPointUtxoSetChunks
+	//	*FreedMessage_IbdBlockLocatorHighestHashNotFound
+	//	*FreedMessage_BlockWithTrustedData
+	//	*FreedMessage_DoneBlocksWithTrustedData
+	//	*FreedMessage_RequestPruningPointAndItsAnticone
+	//	*FreedMessage_BlockHeaders
+	//	*FreedMessage_RequestNextHeaders
+	//	*FreedMessage_DoneHeaders
+	//	*FreedMessage_RequestPruningPointUTXOSet
+	//	*FreedMessage_RequestHeaders
+	//	*FreedMessage_RequestBlockLocator
+	//	*FreedMessage_PruningPoints
+	//	*FreedMessage_RequestPruningPointProof
+	//	*FreedMessage_PruningPointProof
+	//	*FreedMessage_Ready
+	//	*FreedMessage_BlockWithTrustedDataV4
+	//	*FreedMessage_TrustedData
+	//	*FreedMessage_RequestIBDChainBlockLocator
+	//	*FreedMessage_IbdChainBlockLocator
+	//	*FreedMessage_RequestAnticone
+	//	*FreedMessage_RequestNextPruningPointAndItsAnticoneBlocks
+	//	*FreedMessage_GetCurrentNetworkRequest
+	//	*FreedMessage_GetCurrentNetworkResponse
+	//	*FreedMessage_SubmitBlockRequest
+	//	*FreedMessage_SubmitBlockResponse
+	//	*FreedMessage_GetBlockTemplateRequest
+	//	*FreedMessage_GetBlockTemplateResponse
+	//	*FreedMessage_NotifyBlockAddedRequest
+	//	*FreedMessage_NotifyBlockAddedResponse
+	//	*FreedMessage_BlockAddedNotification
+	//	*FreedMessage_GetPeerAddressesRequest
+	//	*FreedMessage_GetPeerAddressesResponse
+	//	*FreedMessage_GetSelectedTipHashRequest
+	//	*FreedMessage_GetSelectedTipHashResponse
+	//	*FreedMessage_GetMempoolEntryRequest
+	//	*FreedMessage_GetMempoolEntryResponse
+	//	*FreedMessage_GetConnectedPeerInfoRequest
+	//	*FreedMessage_GetConnectedPeerInfoResponse
+	//	*FreedMessage_AddPeerRequest
+	//	*FreedMessage_AddPeerResponse
+	//	*FreedMessage_SubmitTransactionRequest
+	//	*FreedMessage_SubmitTransactionResponse
+	//	*FreedMessage_NotifyVirtualSelectedParentChainChangedRequest
+	//	*FreedMessage_NotifyVirtualSelectedParentChainChangedResponse
+	//	*FreedMessage_VirtualSelectedParentChainChangedNotification
+	//	*FreedMessage_GetBlockRequest
+	//	*FreedMessage_GetBlockResponse
+	//	*FreedMessage_GetSubnetworkRequest
+	//	*FreedMessage_GetSubnetworkResponse
+	//	*FreedMessage_GetVirtualSelectedParentChainFromBlockRequest
+	//	*FreedMessage_GetVirtualSelectedParentChainFromBlockResponse
+	//	*FreedMessage_GetBlocksRequest
+	//	*FreedMessage_GetBlocksResponse
+	//	*FreedMessage_GetBlockCountRequest
+	//	*FreedMessage_GetBlockCountResponse
+	//	*FreedMessage_GetBlockDagInfoRequest
+	//	*FreedMessage_GetBlockDagInfoResponse
+	//	*FreedMessage_ResolveFinalityConflictRequest
+	//	*FreedMessage_ResolveFinalityConflictResponse
+	//	*FreedMessage_NotifyFinalityConflictsRequest
+	//	*FreedMessage_NotifyFinalityConflictsResponse
+	//	*FreedMessage_FinalityConflictNotification
+	//	*FreedMessage_FinalityConflictResolvedNotification
+	//	*FreedMessage_GetMempoolEntriesRequest
+	//	*FreedMessage_GetMempoolEntriesResponse
+	//	*FreedMessage_ShutDownRequest
+	//	*FreedMessage_ShutDownResponse
+	//	*FreedMessage_GetHeadersRequest
+	//	*FreedMessage_GetHeadersResponse
+	//	*FreedMessage_NotifyUtxosChangedRequest
+	//	*FreedMessage_NotifyUtxosChangedResponse
+	//	*FreedMessage_UtxosChangedNotification
+	//	*FreedMessage_GetUtxosByAddressesRequest
+	//	*FreedMessage_GetUtxosByAddressesResponse
+	//	*FreedMessage_GetVirtualSelectedParentBlueScoreRequest
+	//	*FreedMessage_GetVirtualSelectedParentBlueScoreResponse
+	//	*FreedMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest
+	//	*FreedMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse
+	//	*FreedMessage_VirtualSelectedParentBlueScoreChangedNotification
+	//	*FreedMessage_BanRequest
+	//	*FreedMessage_BanResponse
+	//	*FreedMessage_UnbanRequest
+	//	*FreedMessage_UnbanResponse
+	//	*FreedMessage_GetInfoRequest
+	//	*FreedMessage_GetInfoResponse
+	//	*FreedMessage_StopNotifyingUtxosChangedRequest
+	//	*FreedMessage_StopNotifyingUtxosChangedResponse
+	//	*FreedMessage_NotifyPruningPointUTXOSetOverrideRequest
+	//	*FreedMessage_NotifyPruningPointUTXOSetOverrideResponse
+	//	*FreedMessage_PruningPointUTXOSetOverrideNotification
+	//	*FreedMessage_StopNotifyingPruningPointUTXOSetOverrideRequest
+	//	*FreedMessage_StopNotifyingPruningPointUTXOSetOverrideResponse
+	//	*FreedMessage_EstimateNetworkHashesPerSecondRequest
+	//	*FreedMessage_EstimateNetworkHashesPerSecondResponse
+	//	*FreedMessage_NotifyVirtualDaaScoreChangedRequest
+	//	*FreedMessage_NotifyVirtualDaaScoreChangedResponse
+	//	*FreedMessage_VirtualDaaScoreChangedNotification
+	//	*FreedMessage_GetBalanceByAddressRequest
+	//	*FreedMessage_GetBalanceByAddressResponse
+	//	*FreedMessage_GetBalancesByAddressesRequest
+	//	*FreedMessage_GetBalancesByAddressesResponse
+	//	*FreedMessage_NotifyNewBlockTemplateRequest
+	//	*FreedMessage_NotifyNewBlockTemplateResponse
+	//	*FreedMessage_NewBlockTemplateNotification
+	//	*FreedMessage_GetMempoolEntriesByAddressesRequest
+	//	*FreedMessage_GetMempoolEntriesByAddressesResponse
+	//	*FreedMessage_GetCoinSupplyRequest
+	//	*FreedMessage_GetCoinSupplyResponse
+	Payload isFreedMessage_Payload `protobuf_oneof:"payload"`
 }
 
-func (x *KarlsendMessage) Reset() {
-	*x = KarlsendMessage{}
+func (x *FreedMessage) Reset() {
+	*x = FreedMessage{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_messages_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -168,13 +168,13 @@ func (x *KarlsendMessage) Reset() {
 	}
 }
 
-func (x *KarlsendMessage) String() string {
+func (x *FreedMessage) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*KarlsendMessage) ProtoMessage() {}
+func (*FreedMessage) ProtoMessage() {}
 
-func (x *KarlsendMessage) ProtoReflect() protoreflect.Message {
+func (x *FreedMessage) ProtoReflect() protoreflect.Message {
 	mi := &file_messages_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -186,1711 +186,1711 @@ func (x *KarlsendMessage) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use KarlsendMessage.ProtoReflect.Descriptor instead.
-func (*KarlsendMessage) Descriptor() ([]byte, []int) {
+// Deprecated: Use FreedMessage.ProtoReflect.Descriptor instead.
+func (*FreedMessage) Descriptor() ([]byte, []int) {
 	return file_messages_proto_rawDescGZIP(), []int{0}
 }
 
-func (m *KarlsendMessage) GetPayload() isKarlsendMessage_Payload {
+func (m *FreedMessage) GetPayload() isFreedMessage_Payload {
 	if m != nil {
 		return m.Payload
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetAddresses() *AddressesMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_Addresses); ok {
+func (x *FreedMessage) GetAddresses() *AddressesMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_Addresses); ok {
 		return x.Addresses
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetBlock() *BlockMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_Block); ok {
+func (x *FreedMessage) GetBlock() *BlockMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_Block); ok {
 		return x.Block
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetTransaction() *TransactionMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_Transaction); ok {
+func (x *FreedMessage) GetTransaction() *TransactionMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_Transaction); ok {
 		return x.Transaction
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetBlockLocator() *BlockLocatorMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_BlockLocator); ok {
+func (x *FreedMessage) GetBlockLocator() *BlockLocatorMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_BlockLocator); ok {
 		return x.BlockLocator
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetRequestAddresses() *RequestAddressesMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_RequestAddresses); ok {
+func (x *FreedMessage) GetRequestAddresses() *RequestAddressesMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_RequestAddresses); ok {
 		return x.RequestAddresses
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetRequestRelayBlocks() *RequestRelayBlocksMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_RequestRelayBlocks); ok {
+func (x *FreedMessage) GetRequestRelayBlocks() *RequestRelayBlocksMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_RequestRelayBlocks); ok {
 		return x.RequestRelayBlocks
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetRequestTransactions() *RequestTransactionsMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_RequestTransactions); ok {
+func (x *FreedMessage) GetRequestTransactions() *RequestTransactionsMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_RequestTransactions); ok {
 		return x.RequestTransactions
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetIbdBlock() *BlockMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_IbdBlock); ok {
+func (x *FreedMessage) GetIbdBlock() *BlockMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_IbdBlock); ok {
 		return x.IbdBlock
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetInvRelayBlock() *InvRelayBlockMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_InvRelayBlock); ok {
+func (x *FreedMessage) GetInvRelayBlock() *InvRelayBlockMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_InvRelayBlock); ok {
 		return x.InvRelayBlock
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetInvTransactions() *InvTransactionsMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_InvTransactions); ok {
+func (x *FreedMessage) GetInvTransactions() *InvTransactionsMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_InvTransactions); ok {
 		return x.InvTransactions
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetPing() *PingMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_Ping); ok {
+func (x *FreedMessage) GetPing() *PingMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_Ping); ok {
 		return x.Ping
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetPong() *PongMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_Pong); ok {
+func (x *FreedMessage) GetPong() *PongMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_Pong); ok {
 		return x.Pong
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetVerack() *VerackMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_Verack); ok {
+func (x *FreedMessage) GetVerack() *VerackMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_Verack); ok {
 		return x.Verack
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetVersion() *VersionMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_Version); ok {
+func (x *FreedMessage) GetVersion() *VersionMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_Version); ok {
 		return x.Version
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetTransactionNotFound() *TransactionNotFoundMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_TransactionNotFound); ok {
+func (x *FreedMessage) GetTransactionNotFound() *TransactionNotFoundMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_TransactionNotFound); ok {
 		return x.TransactionNotFound
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetReject() *RejectMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_Reject); ok {
+func (x *FreedMessage) GetReject() *RejectMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_Reject); ok {
 		return x.Reject
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetPruningPointUtxoSetChunk() *PruningPointUtxoSetChunkMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_PruningPointUtxoSetChunk); ok {
+func (x *FreedMessage) GetPruningPointUtxoSetChunk() *PruningPointUtxoSetChunkMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_PruningPointUtxoSetChunk); ok {
 		return x.PruningPointUtxoSetChunk
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetRequestIBDBlocks() *RequestIBDBlocksMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_RequestIBDBlocks); ok {
+func (x *FreedMessage) GetRequestIBDBlocks() *RequestIBDBlocksMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_RequestIBDBlocks); ok {
 		return x.RequestIBDBlocks
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetUnexpectedPruningPoint() *UnexpectedPruningPointMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_UnexpectedPruningPoint); ok {
+func (x *FreedMessage) GetUnexpectedPruningPoint() *UnexpectedPruningPointMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_UnexpectedPruningPoint); ok {
 		return x.UnexpectedPruningPoint
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetIbdBlockLocator() *IbdBlockLocatorMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_IbdBlockLocator); ok {
+func (x *FreedMessage) GetIbdBlockLocator() *IbdBlockLocatorMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_IbdBlockLocator); ok {
 		return x.IbdBlockLocator
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetIbdBlockLocatorHighestHash() *IbdBlockLocatorHighestHashMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_IbdBlockLocatorHighestHash); ok {
+func (x *FreedMessage) GetIbdBlockLocatorHighestHash() *IbdBlockLocatorHighestHashMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_IbdBlockLocatorHighestHash); ok {
 		return x.IbdBlockLocatorHighestHash
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetRequestNextPruningPointUtxoSetChunk() *RequestNextPruningPointUtxoSetChunkMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_RequestNextPruningPointUtxoSetChunk); ok {
+func (x *FreedMessage) GetRequestNextPruningPointUtxoSetChunk() *RequestNextPruningPointUtxoSetChunkMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_RequestNextPruningPointUtxoSetChunk); ok {
 		return x.RequestNextPruningPointUtxoSetChunk
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetDonePruningPointUtxoSetChunks() *DonePruningPointUtxoSetChunksMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_DonePruningPointUtxoSetChunks); ok {
+func (x *FreedMessage) GetDonePruningPointUtxoSetChunks() *DonePruningPointUtxoSetChunksMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_DonePruningPointUtxoSetChunks); ok {
 		return x.DonePruningPointUtxoSetChunks
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetIbdBlockLocatorHighestHashNotFound() *IbdBlockLocatorHighestHashNotFoundMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_IbdBlockLocatorHighestHashNotFound); ok {
+func (x *FreedMessage) GetIbdBlockLocatorHighestHashNotFound() *IbdBlockLocatorHighestHashNotFoundMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_IbdBlockLocatorHighestHashNotFound); ok {
 		return x.IbdBlockLocatorHighestHashNotFound
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetBlockWithTrustedData() *BlockWithTrustedDataMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_BlockWithTrustedData); ok {
+func (x *FreedMessage) GetBlockWithTrustedData() *BlockWithTrustedDataMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_BlockWithTrustedData); ok {
 		return x.BlockWithTrustedData
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetDoneBlocksWithTrustedData() *DoneBlocksWithTrustedDataMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_DoneBlocksWithTrustedData); ok {
+func (x *FreedMessage) GetDoneBlocksWithTrustedData() *DoneBlocksWithTrustedDataMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_DoneBlocksWithTrustedData); ok {
 		return x.DoneBlocksWithTrustedData
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetRequestPruningPointAndItsAnticone() *RequestPruningPointAndItsAnticoneMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_RequestPruningPointAndItsAnticone); ok {
+func (x *FreedMessage) GetRequestPruningPointAndItsAnticone() *RequestPruningPointAndItsAnticoneMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_RequestPruningPointAndItsAnticone); ok {
 		return x.RequestPruningPointAndItsAnticone
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetBlockHeaders() *BlockHeadersMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_BlockHeaders); ok {
+func (x *FreedMessage) GetBlockHeaders() *BlockHeadersMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_BlockHeaders); ok {
 		return x.BlockHeaders
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetRequestNextHeaders() *RequestNextHeadersMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_RequestNextHeaders); ok {
+func (x *FreedMessage) GetRequestNextHeaders() *RequestNextHeadersMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_RequestNextHeaders); ok {
 		return x.RequestNextHeaders
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetDoneHeaders() *DoneHeadersMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_DoneHeaders); ok {
+func (x *FreedMessage) GetDoneHeaders() *DoneHeadersMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_DoneHeaders); ok {
 		return x.DoneHeaders
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetRequestPruningPointUTXOSet() *RequestPruningPointUTXOSetMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_RequestPruningPointUTXOSet); ok {
+func (x *FreedMessage) GetRequestPruningPointUTXOSet() *RequestPruningPointUTXOSetMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_RequestPruningPointUTXOSet); ok {
 		return x.RequestPruningPointUTXOSet
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetRequestHeaders() *RequestHeadersMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_RequestHeaders); ok {
+func (x *FreedMessage) GetRequestHeaders() *RequestHeadersMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_RequestHeaders); ok {
 		return x.RequestHeaders
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetRequestBlockLocator() *RequestBlockLocatorMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_RequestBlockLocator); ok {
+func (x *FreedMessage) GetRequestBlockLocator() *RequestBlockLocatorMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_RequestBlockLocator); ok {
 		return x.RequestBlockLocator
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetPruningPoints() *PruningPointsMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_PruningPoints); ok {
+func (x *FreedMessage) GetPruningPoints() *PruningPointsMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_PruningPoints); ok {
 		return x.PruningPoints
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetRequestPruningPointProof() *RequestPruningPointProofMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_RequestPruningPointProof); ok {
+func (x *FreedMessage) GetRequestPruningPointProof() *RequestPruningPointProofMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_RequestPruningPointProof); ok {
 		return x.RequestPruningPointProof
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetPruningPointProof() *PruningPointProofMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_PruningPointProof); ok {
+func (x *FreedMessage) GetPruningPointProof() *PruningPointProofMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_PruningPointProof); ok {
 		return x.PruningPointProof
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetReady() *ReadyMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_Ready); ok {
+func (x *FreedMessage) GetReady() *ReadyMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_Ready); ok {
 		return x.Ready
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetBlockWithTrustedDataV4() *BlockWithTrustedDataV4Message {
-	if x, ok := x.GetPayload().(*KarlsendMessage_BlockWithTrustedDataV4); ok {
+func (x *FreedMessage) GetBlockWithTrustedDataV4() *BlockWithTrustedDataV4Message {
+	if x, ok := x.GetPayload().(*FreedMessage_BlockWithTrustedDataV4); ok {
 		return x.BlockWithTrustedDataV4
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetTrustedData() *TrustedDataMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_TrustedData); ok {
+func (x *FreedMessage) GetTrustedData() *TrustedDataMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_TrustedData); ok {
 		return x.TrustedData
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetRequestIBDChainBlockLocator() *RequestIBDChainBlockLocatorMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_RequestIBDChainBlockLocator); ok {
+func (x *FreedMessage) GetRequestIBDChainBlockLocator() *RequestIBDChainBlockLocatorMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_RequestIBDChainBlockLocator); ok {
 		return x.RequestIBDChainBlockLocator
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetIbdChainBlockLocator() *IbdChainBlockLocatorMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_IbdChainBlockLocator); ok {
+func (x *FreedMessage) GetIbdChainBlockLocator() *IbdChainBlockLocatorMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_IbdChainBlockLocator); ok {
 		return x.IbdChainBlockLocator
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetRequestAnticone() *RequestAnticoneMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_RequestAnticone); ok {
+func (x *FreedMessage) GetRequestAnticone() *RequestAnticoneMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_RequestAnticone); ok {
 		return x.RequestAnticone
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetRequestNextPruningPointAndItsAnticoneBlocks() *RequestNextPruningPointAndItsAnticoneBlocksMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_RequestNextPruningPointAndItsAnticoneBlocks); ok {
+func (x *FreedMessage) GetRequestNextPruningPointAndItsAnticoneBlocks() *RequestNextPruningPointAndItsAnticoneBlocksMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_RequestNextPruningPointAndItsAnticoneBlocks); ok {
 		return x.RequestNextPruningPointAndItsAnticoneBlocks
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetCurrentNetworkRequest() *GetCurrentNetworkRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetCurrentNetworkRequest); ok {
+func (x *FreedMessage) GetGetCurrentNetworkRequest() *GetCurrentNetworkRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetCurrentNetworkRequest); ok {
 		return x.GetCurrentNetworkRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetCurrentNetworkResponse() *GetCurrentNetworkResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetCurrentNetworkResponse); ok {
+func (x *FreedMessage) GetGetCurrentNetworkResponse() *GetCurrentNetworkResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetCurrentNetworkResponse); ok {
 		return x.GetCurrentNetworkResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetSubmitBlockRequest() *SubmitBlockRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_SubmitBlockRequest); ok {
+func (x *FreedMessage) GetSubmitBlockRequest() *SubmitBlockRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_SubmitBlockRequest); ok {
 		return x.SubmitBlockRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetSubmitBlockResponse() *SubmitBlockResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_SubmitBlockResponse); ok {
+func (x *FreedMessage) GetSubmitBlockResponse() *SubmitBlockResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_SubmitBlockResponse); ok {
 		return x.SubmitBlockResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetBlockTemplateRequest() *GetBlockTemplateRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetBlockTemplateRequest); ok {
+func (x *FreedMessage) GetGetBlockTemplateRequest() *GetBlockTemplateRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetBlockTemplateRequest); ok {
 		return x.GetBlockTemplateRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetBlockTemplateResponse() *GetBlockTemplateResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetBlockTemplateResponse); ok {
+func (x *FreedMessage) GetGetBlockTemplateResponse() *GetBlockTemplateResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetBlockTemplateResponse); ok {
 		return x.GetBlockTemplateResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetNotifyBlockAddedRequest() *NotifyBlockAddedRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_NotifyBlockAddedRequest); ok {
+func (x *FreedMessage) GetNotifyBlockAddedRequest() *NotifyBlockAddedRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_NotifyBlockAddedRequest); ok {
 		return x.NotifyBlockAddedRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetNotifyBlockAddedResponse() *NotifyBlockAddedResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_NotifyBlockAddedResponse); ok {
+func (x *FreedMessage) GetNotifyBlockAddedResponse() *NotifyBlockAddedResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_NotifyBlockAddedResponse); ok {
 		return x.NotifyBlockAddedResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetBlockAddedNotification() *BlockAddedNotificationMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_BlockAddedNotification); ok {
+func (x *FreedMessage) GetBlockAddedNotification() *BlockAddedNotificationMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_BlockAddedNotification); ok {
 		return x.BlockAddedNotification
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetPeerAddressesRequest() *GetPeerAddressesRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetPeerAddressesRequest); ok {
+func (x *FreedMessage) GetGetPeerAddressesRequest() *GetPeerAddressesRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetPeerAddressesRequest); ok {
 		return x.GetPeerAddressesRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetPeerAddressesResponse() *GetPeerAddressesResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetPeerAddressesResponse); ok {
+func (x *FreedMessage) GetGetPeerAddressesResponse() *GetPeerAddressesResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetPeerAddressesResponse); ok {
 		return x.GetPeerAddressesResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetSelectedTipHashRequest() *GetSelectedTipHashRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetSelectedTipHashRequest); ok {
+func (x *FreedMessage) GetGetSelectedTipHashRequest() *GetSelectedTipHashRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetSelectedTipHashRequest); ok {
 		return x.GetSelectedTipHashRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetSelectedTipHashResponse() *GetSelectedTipHashResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetSelectedTipHashResponse); ok {
+func (x *FreedMessage) GetGetSelectedTipHashResponse() *GetSelectedTipHashResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetSelectedTipHashResponse); ok {
 		return x.GetSelectedTipHashResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetMempoolEntryRequest() *GetMempoolEntryRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetMempoolEntryRequest); ok {
+func (x *FreedMessage) GetGetMempoolEntryRequest() *GetMempoolEntryRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetMempoolEntryRequest); ok {
 		return x.GetMempoolEntryRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetMempoolEntryResponse() *GetMempoolEntryResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetMempoolEntryResponse); ok {
+func (x *FreedMessage) GetGetMempoolEntryResponse() *GetMempoolEntryResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetMempoolEntryResponse); ok {
 		return x.GetMempoolEntryResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetConnectedPeerInfoRequest() *GetConnectedPeerInfoRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetConnectedPeerInfoRequest); ok {
+func (x *FreedMessage) GetGetConnectedPeerInfoRequest() *GetConnectedPeerInfoRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetConnectedPeerInfoRequest); ok {
 		return x.GetConnectedPeerInfoRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetConnectedPeerInfoResponse() *GetConnectedPeerInfoResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetConnectedPeerInfoResponse); ok {
+func (x *FreedMessage) GetGetConnectedPeerInfoResponse() *GetConnectedPeerInfoResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetConnectedPeerInfoResponse); ok {
 		return x.GetConnectedPeerInfoResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetAddPeerRequest() *AddPeerRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_AddPeerRequest); ok {
+func (x *FreedMessage) GetAddPeerRequest() *AddPeerRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_AddPeerRequest); ok {
 		return x.AddPeerRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetAddPeerResponse() *AddPeerResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_AddPeerResponse); ok {
+func (x *FreedMessage) GetAddPeerResponse() *AddPeerResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_AddPeerResponse); ok {
 		return x.AddPeerResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetSubmitTransactionRequest() *SubmitTransactionRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_SubmitTransactionRequest); ok {
+func (x *FreedMessage) GetSubmitTransactionRequest() *SubmitTransactionRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_SubmitTransactionRequest); ok {
 		return x.SubmitTransactionRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetSubmitTransactionResponse() *SubmitTransactionResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_SubmitTransactionResponse); ok {
+func (x *FreedMessage) GetSubmitTransactionResponse() *SubmitTransactionResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_SubmitTransactionResponse); ok {
 		return x.SubmitTransactionResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetNotifyVirtualSelectedParentChainChangedRequest() *NotifyVirtualSelectedParentChainChangedRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_NotifyVirtualSelectedParentChainChangedRequest); ok {
+func (x *FreedMessage) GetNotifyVirtualSelectedParentChainChangedRequest() *NotifyVirtualSelectedParentChainChangedRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_NotifyVirtualSelectedParentChainChangedRequest); ok {
 		return x.NotifyVirtualSelectedParentChainChangedRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetNotifyVirtualSelectedParentChainChangedResponse() *NotifyVirtualSelectedParentChainChangedResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_NotifyVirtualSelectedParentChainChangedResponse); ok {
+func (x *FreedMessage) GetNotifyVirtualSelectedParentChainChangedResponse() *NotifyVirtualSelectedParentChainChangedResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_NotifyVirtualSelectedParentChainChangedResponse); ok {
 		return x.NotifyVirtualSelectedParentChainChangedResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetVirtualSelectedParentChainChangedNotification() *VirtualSelectedParentChainChangedNotificationMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_VirtualSelectedParentChainChangedNotification); ok {
+func (x *FreedMessage) GetVirtualSelectedParentChainChangedNotification() *VirtualSelectedParentChainChangedNotificationMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_VirtualSelectedParentChainChangedNotification); ok {
 		return x.VirtualSelectedParentChainChangedNotification
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetBlockRequest() *GetBlockRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetBlockRequest); ok {
+func (x *FreedMessage) GetGetBlockRequest() *GetBlockRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetBlockRequest); ok {
 		return x.GetBlockRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetBlockResponse() *GetBlockResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetBlockResponse); ok {
+func (x *FreedMessage) GetGetBlockResponse() *GetBlockResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetBlockResponse); ok {
 		return x.GetBlockResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetSubnetworkRequest() *GetSubnetworkRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetSubnetworkRequest); ok {
+func (x *FreedMessage) GetGetSubnetworkRequest() *GetSubnetworkRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetSubnetworkRequest); ok {
 		return x.GetSubnetworkRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetSubnetworkResponse() *GetSubnetworkResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetSubnetworkResponse); ok {
+func (x *FreedMessage) GetGetSubnetworkResponse() *GetSubnetworkResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetSubnetworkResponse); ok {
 		return x.GetSubnetworkResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetVirtualSelectedParentChainFromBlockRequest() *GetVirtualSelectedParentChainFromBlockRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetVirtualSelectedParentChainFromBlockRequest); ok {
+func (x *FreedMessage) GetGetVirtualSelectedParentChainFromBlockRequest() *GetVirtualSelectedParentChainFromBlockRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetVirtualSelectedParentChainFromBlockRequest); ok {
 		return x.GetVirtualSelectedParentChainFromBlockRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetVirtualSelectedParentChainFromBlockResponse() *GetVirtualSelectedParentChainFromBlockResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetVirtualSelectedParentChainFromBlockResponse); ok {
+func (x *FreedMessage) GetGetVirtualSelectedParentChainFromBlockResponse() *GetVirtualSelectedParentChainFromBlockResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetVirtualSelectedParentChainFromBlockResponse); ok {
 		return x.GetVirtualSelectedParentChainFromBlockResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetBlocksRequest() *GetBlocksRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetBlocksRequest); ok {
+func (x *FreedMessage) GetGetBlocksRequest() *GetBlocksRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetBlocksRequest); ok {
 		return x.GetBlocksRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetBlocksResponse() *GetBlocksResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetBlocksResponse); ok {
+func (x *FreedMessage) GetGetBlocksResponse() *GetBlocksResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetBlocksResponse); ok {
 		return x.GetBlocksResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetBlockCountRequest() *GetBlockCountRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetBlockCountRequest); ok {
+func (x *FreedMessage) GetGetBlockCountRequest() *GetBlockCountRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetBlockCountRequest); ok {
 		return x.GetBlockCountRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetBlockCountResponse() *GetBlockCountResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetBlockCountResponse); ok {
+func (x *FreedMessage) GetGetBlockCountResponse() *GetBlockCountResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetBlockCountResponse); ok {
 		return x.GetBlockCountResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetBlockDagInfoRequest() *GetBlockDagInfoRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetBlockDagInfoRequest); ok {
+func (x *FreedMessage) GetGetBlockDagInfoRequest() *GetBlockDagInfoRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetBlockDagInfoRequest); ok {
 		return x.GetBlockDagInfoRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetBlockDagInfoResponse() *GetBlockDagInfoResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetBlockDagInfoResponse); ok {
+func (x *FreedMessage) GetGetBlockDagInfoResponse() *GetBlockDagInfoResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetBlockDagInfoResponse); ok {
 		return x.GetBlockDagInfoResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetResolveFinalityConflictRequest() *ResolveFinalityConflictRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_ResolveFinalityConflictRequest); ok {
+func (x *FreedMessage) GetResolveFinalityConflictRequest() *ResolveFinalityConflictRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_ResolveFinalityConflictRequest); ok {
 		return x.ResolveFinalityConflictRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetResolveFinalityConflictResponse() *ResolveFinalityConflictResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_ResolveFinalityConflictResponse); ok {
+func (x *FreedMessage) GetResolveFinalityConflictResponse() *ResolveFinalityConflictResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_ResolveFinalityConflictResponse); ok {
 		return x.ResolveFinalityConflictResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetNotifyFinalityConflictsRequest() *NotifyFinalityConflictsRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_NotifyFinalityConflictsRequest); ok {
+func (x *FreedMessage) GetNotifyFinalityConflictsRequest() *NotifyFinalityConflictsRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_NotifyFinalityConflictsRequest); ok {
 		return x.NotifyFinalityConflictsRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetNotifyFinalityConflictsResponse() *NotifyFinalityConflictsResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_NotifyFinalityConflictsResponse); ok {
+func (x *FreedMessage) GetNotifyFinalityConflictsResponse() *NotifyFinalityConflictsResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_NotifyFinalityConflictsResponse); ok {
 		return x.NotifyFinalityConflictsResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetFinalityConflictNotification() *FinalityConflictNotificationMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_FinalityConflictNotification); ok {
+func (x *FreedMessage) GetFinalityConflictNotification() *FinalityConflictNotificationMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_FinalityConflictNotification); ok {
 		return x.FinalityConflictNotification
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetFinalityConflictResolvedNotification() *FinalityConflictResolvedNotificationMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_FinalityConflictResolvedNotification); ok {
+func (x *FreedMessage) GetFinalityConflictResolvedNotification() *FinalityConflictResolvedNotificationMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_FinalityConflictResolvedNotification); ok {
 		return x.FinalityConflictResolvedNotification
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetMempoolEntriesRequest() *GetMempoolEntriesRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetMempoolEntriesRequest); ok {
+func (x *FreedMessage) GetGetMempoolEntriesRequest() *GetMempoolEntriesRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetMempoolEntriesRequest); ok {
 		return x.GetMempoolEntriesRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetMempoolEntriesResponse() *GetMempoolEntriesResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetMempoolEntriesResponse); ok {
+func (x *FreedMessage) GetGetMempoolEntriesResponse() *GetMempoolEntriesResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetMempoolEntriesResponse); ok {
 		return x.GetMempoolEntriesResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetShutDownRequest() *ShutDownRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_ShutDownRequest); ok {
+func (x *FreedMessage) GetShutDownRequest() *ShutDownRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_ShutDownRequest); ok {
 		return x.ShutDownRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetShutDownResponse() *ShutDownResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_ShutDownResponse); ok {
+func (x *FreedMessage) GetShutDownResponse() *ShutDownResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_ShutDownResponse); ok {
 		return x.ShutDownResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetHeadersRequest() *GetHeadersRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetHeadersRequest); ok {
+func (x *FreedMessage) GetGetHeadersRequest() *GetHeadersRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetHeadersRequest); ok {
 		return x.GetHeadersRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetHeadersResponse() *GetHeadersResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetHeadersResponse); ok {
+func (x *FreedMessage) GetGetHeadersResponse() *GetHeadersResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetHeadersResponse); ok {
 		return x.GetHeadersResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetNotifyUtxosChangedRequest() *NotifyUtxosChangedRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_NotifyUtxosChangedRequest); ok {
+func (x *FreedMessage) GetNotifyUtxosChangedRequest() *NotifyUtxosChangedRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_NotifyUtxosChangedRequest); ok {
 		return x.NotifyUtxosChangedRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetNotifyUtxosChangedResponse() *NotifyUtxosChangedResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_NotifyUtxosChangedResponse); ok {
+func (x *FreedMessage) GetNotifyUtxosChangedResponse() *NotifyUtxosChangedResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_NotifyUtxosChangedResponse); ok {
 		return x.NotifyUtxosChangedResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetUtxosChangedNotification() *UtxosChangedNotificationMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_UtxosChangedNotification); ok {
+func (x *FreedMessage) GetUtxosChangedNotification() *UtxosChangedNotificationMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_UtxosChangedNotification); ok {
 		return x.UtxosChangedNotification
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetUtxosByAddressesRequest() *GetUtxosByAddressesRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetUtxosByAddressesRequest); ok {
+func (x *FreedMessage) GetGetUtxosByAddressesRequest() *GetUtxosByAddressesRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetUtxosByAddressesRequest); ok {
 		return x.GetUtxosByAddressesRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetUtxosByAddressesResponse() *GetUtxosByAddressesResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetUtxosByAddressesResponse); ok {
+func (x *FreedMessage) GetGetUtxosByAddressesResponse() *GetUtxosByAddressesResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetUtxosByAddressesResponse); ok {
 		return x.GetUtxosByAddressesResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetVirtualSelectedParentBlueScoreRequest() *GetVirtualSelectedParentBlueScoreRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetVirtualSelectedParentBlueScoreRequest); ok {
+func (x *FreedMessage) GetGetVirtualSelectedParentBlueScoreRequest() *GetVirtualSelectedParentBlueScoreRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetVirtualSelectedParentBlueScoreRequest); ok {
 		return x.GetVirtualSelectedParentBlueScoreRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetVirtualSelectedParentBlueScoreResponse() *GetVirtualSelectedParentBlueScoreResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetVirtualSelectedParentBlueScoreResponse); ok {
+func (x *FreedMessage) GetGetVirtualSelectedParentBlueScoreResponse() *GetVirtualSelectedParentBlueScoreResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetVirtualSelectedParentBlueScoreResponse); ok {
 		return x.GetVirtualSelectedParentBlueScoreResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetNotifyVirtualSelectedParentBlueScoreChangedRequest() *NotifyVirtualSelectedParentBlueScoreChangedRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest); ok {
+func (x *FreedMessage) GetNotifyVirtualSelectedParentBlueScoreChangedRequest() *NotifyVirtualSelectedParentBlueScoreChangedRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest); ok {
 		return x.NotifyVirtualSelectedParentBlueScoreChangedRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetNotifyVirtualSelectedParentBlueScoreChangedResponse() *NotifyVirtualSelectedParentBlueScoreChangedResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse); ok {
+func (x *FreedMessage) GetNotifyVirtualSelectedParentBlueScoreChangedResponse() *NotifyVirtualSelectedParentBlueScoreChangedResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse); ok {
 		return x.NotifyVirtualSelectedParentBlueScoreChangedResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetVirtualSelectedParentBlueScoreChangedNotification() *VirtualSelectedParentBlueScoreChangedNotificationMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_VirtualSelectedParentBlueScoreChangedNotification); ok {
+func (x *FreedMessage) GetVirtualSelectedParentBlueScoreChangedNotification() *VirtualSelectedParentBlueScoreChangedNotificationMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_VirtualSelectedParentBlueScoreChangedNotification); ok {
 		return x.VirtualSelectedParentBlueScoreChangedNotification
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetBanRequest() *BanRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_BanRequest); ok {
+func (x *FreedMessage) GetBanRequest() *BanRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_BanRequest); ok {
 		return x.BanRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetBanResponse() *BanResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_BanResponse); ok {
+func (x *FreedMessage) GetBanResponse() *BanResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_BanResponse); ok {
 		return x.BanResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetUnbanRequest() *UnbanRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_UnbanRequest); ok {
+func (x *FreedMessage) GetUnbanRequest() *UnbanRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_UnbanRequest); ok {
 		return x.UnbanRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetUnbanResponse() *UnbanResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_UnbanResponse); ok {
+func (x *FreedMessage) GetUnbanResponse() *UnbanResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_UnbanResponse); ok {
 		return x.UnbanResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetInfoRequest() *GetInfoRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetInfoRequest); ok {
+func (x *FreedMessage) GetGetInfoRequest() *GetInfoRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetInfoRequest); ok {
 		return x.GetInfoRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetInfoResponse() *GetInfoResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetInfoResponse); ok {
+func (x *FreedMessage) GetGetInfoResponse() *GetInfoResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetInfoResponse); ok {
 		return x.GetInfoResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetStopNotifyingUtxosChangedRequest() *StopNotifyingUtxosChangedRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_StopNotifyingUtxosChangedRequest); ok {
+func (x *FreedMessage) GetStopNotifyingUtxosChangedRequest() *StopNotifyingUtxosChangedRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_StopNotifyingUtxosChangedRequest); ok {
 		return x.StopNotifyingUtxosChangedRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetStopNotifyingUtxosChangedResponse() *StopNotifyingUtxosChangedResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_StopNotifyingUtxosChangedResponse); ok {
+func (x *FreedMessage) GetStopNotifyingUtxosChangedResponse() *StopNotifyingUtxosChangedResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_StopNotifyingUtxosChangedResponse); ok {
 		return x.StopNotifyingUtxosChangedResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetNotifyPruningPointUTXOSetOverrideRequest() *NotifyPruningPointUTXOSetOverrideRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_NotifyPruningPointUTXOSetOverrideRequest); ok {
+func (x *FreedMessage) GetNotifyPruningPointUTXOSetOverrideRequest() *NotifyPruningPointUTXOSetOverrideRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_NotifyPruningPointUTXOSetOverrideRequest); ok {
 		return x.NotifyPruningPointUTXOSetOverrideRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetNotifyPruningPointUTXOSetOverrideResponse() *NotifyPruningPointUTXOSetOverrideResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_NotifyPruningPointUTXOSetOverrideResponse); ok {
+func (x *FreedMessage) GetNotifyPruningPointUTXOSetOverrideResponse() *NotifyPruningPointUTXOSetOverrideResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_NotifyPruningPointUTXOSetOverrideResponse); ok {
 		return x.NotifyPruningPointUTXOSetOverrideResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetPruningPointUTXOSetOverrideNotification() *PruningPointUTXOSetOverrideNotificationMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_PruningPointUTXOSetOverrideNotification); ok {
+func (x *FreedMessage) GetPruningPointUTXOSetOverrideNotification() *PruningPointUTXOSetOverrideNotificationMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_PruningPointUTXOSetOverrideNotification); ok {
 		return x.PruningPointUTXOSetOverrideNotification
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetStopNotifyingPruningPointUTXOSetOverrideRequest() *StopNotifyingPruningPointUTXOSetOverrideRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_StopNotifyingPruningPointUTXOSetOverrideRequest); ok {
+func (x *FreedMessage) GetStopNotifyingPruningPointUTXOSetOverrideRequest() *StopNotifyingPruningPointUTXOSetOverrideRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_StopNotifyingPruningPointUTXOSetOverrideRequest); ok {
 		return x.StopNotifyingPruningPointUTXOSetOverrideRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetStopNotifyingPruningPointUTXOSetOverrideResponse() *StopNotifyingPruningPointUTXOSetOverrideResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_StopNotifyingPruningPointUTXOSetOverrideResponse); ok {
+func (x *FreedMessage) GetStopNotifyingPruningPointUTXOSetOverrideResponse() *StopNotifyingPruningPointUTXOSetOverrideResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_StopNotifyingPruningPointUTXOSetOverrideResponse); ok {
 		return x.StopNotifyingPruningPointUTXOSetOverrideResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetEstimateNetworkHashesPerSecondRequest() *EstimateNetworkHashesPerSecondRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_EstimateNetworkHashesPerSecondRequest); ok {
+func (x *FreedMessage) GetEstimateNetworkHashesPerSecondRequest() *EstimateNetworkHashesPerSecondRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_EstimateNetworkHashesPerSecondRequest); ok {
 		return x.EstimateNetworkHashesPerSecondRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetEstimateNetworkHashesPerSecondResponse() *EstimateNetworkHashesPerSecondResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_EstimateNetworkHashesPerSecondResponse); ok {
+func (x *FreedMessage) GetEstimateNetworkHashesPerSecondResponse() *EstimateNetworkHashesPerSecondResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_EstimateNetworkHashesPerSecondResponse); ok {
 		return x.EstimateNetworkHashesPerSecondResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetNotifyVirtualDaaScoreChangedRequest() *NotifyVirtualDaaScoreChangedRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_NotifyVirtualDaaScoreChangedRequest); ok {
+func (x *FreedMessage) GetNotifyVirtualDaaScoreChangedRequest() *NotifyVirtualDaaScoreChangedRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_NotifyVirtualDaaScoreChangedRequest); ok {
 		return x.NotifyVirtualDaaScoreChangedRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetNotifyVirtualDaaScoreChangedResponse() *NotifyVirtualDaaScoreChangedResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_NotifyVirtualDaaScoreChangedResponse); ok {
+func (x *FreedMessage) GetNotifyVirtualDaaScoreChangedResponse() *NotifyVirtualDaaScoreChangedResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_NotifyVirtualDaaScoreChangedResponse); ok {
 		return x.NotifyVirtualDaaScoreChangedResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetVirtualDaaScoreChangedNotification() *VirtualDaaScoreChangedNotificationMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_VirtualDaaScoreChangedNotification); ok {
+func (x *FreedMessage) GetVirtualDaaScoreChangedNotification() *VirtualDaaScoreChangedNotificationMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_VirtualDaaScoreChangedNotification); ok {
 		return x.VirtualDaaScoreChangedNotification
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetBalanceByAddressRequest() *GetBalanceByAddressRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetBalanceByAddressRequest); ok {
+func (x *FreedMessage) GetGetBalanceByAddressRequest() *GetBalanceByAddressRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetBalanceByAddressRequest); ok {
 		return x.GetBalanceByAddressRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetBalanceByAddressResponse() *GetBalanceByAddressResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetBalanceByAddressResponse); ok {
+func (x *FreedMessage) GetGetBalanceByAddressResponse() *GetBalanceByAddressResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetBalanceByAddressResponse); ok {
 		return x.GetBalanceByAddressResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetBalancesByAddressesRequest() *GetBalancesByAddressesRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetBalancesByAddressesRequest); ok {
+func (x *FreedMessage) GetGetBalancesByAddressesRequest() *GetBalancesByAddressesRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetBalancesByAddressesRequest); ok {
 		return x.GetBalancesByAddressesRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetBalancesByAddressesResponse() *GetBalancesByAddressesResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetBalancesByAddressesResponse); ok {
+func (x *FreedMessage) GetGetBalancesByAddressesResponse() *GetBalancesByAddressesResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetBalancesByAddressesResponse); ok {
 		return x.GetBalancesByAddressesResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetNotifyNewBlockTemplateRequest() *NotifyNewBlockTemplateRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_NotifyNewBlockTemplateRequest); ok {
+func (x *FreedMessage) GetNotifyNewBlockTemplateRequest() *NotifyNewBlockTemplateRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_NotifyNewBlockTemplateRequest); ok {
 		return x.NotifyNewBlockTemplateRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetNotifyNewBlockTemplateResponse() *NotifyNewBlockTemplateResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_NotifyNewBlockTemplateResponse); ok {
+func (x *FreedMessage) GetNotifyNewBlockTemplateResponse() *NotifyNewBlockTemplateResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_NotifyNewBlockTemplateResponse); ok {
 		return x.NotifyNewBlockTemplateResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetNewBlockTemplateNotification() *NewBlockTemplateNotificationMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_NewBlockTemplateNotification); ok {
+func (x *FreedMessage) GetNewBlockTemplateNotification() *NewBlockTemplateNotificationMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_NewBlockTemplateNotification); ok {
 		return x.NewBlockTemplateNotification
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetMempoolEntriesByAddressesRequest() *GetMempoolEntriesByAddressesRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetMempoolEntriesByAddressesRequest); ok {
+func (x *FreedMessage) GetGetMempoolEntriesByAddressesRequest() *GetMempoolEntriesByAddressesRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetMempoolEntriesByAddressesRequest); ok {
 		return x.GetMempoolEntriesByAddressesRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetMempoolEntriesByAddressesResponse() *GetMempoolEntriesByAddressesResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetMempoolEntriesByAddressesResponse); ok {
+func (x *FreedMessage) GetGetMempoolEntriesByAddressesResponse() *GetMempoolEntriesByAddressesResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetMempoolEntriesByAddressesResponse); ok {
 		return x.GetMempoolEntriesByAddressesResponse
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetCoinSupplyRequest() *GetCoinSupplyRequestMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetCoinSupplyRequest); ok {
+func (x *FreedMessage) GetGetCoinSupplyRequest() *GetCoinSupplyRequestMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetCoinSupplyRequest); ok {
 		return x.GetCoinSupplyRequest
 	}
 	return nil
 }
 
-func (x *KarlsendMessage) GetGetCoinSupplyResponse() *GetCoinSupplyResponseMessage {
-	if x, ok := x.GetPayload().(*KarlsendMessage_GetCoinSupplyResponse); ok {
+func (x *FreedMessage) GetGetCoinSupplyResponse() *GetCoinSupplyResponseMessage {
+	if x, ok := x.GetPayload().(*FreedMessage_GetCoinSupplyResponse); ok {
 		return x.GetCoinSupplyResponse
 	}
 	return nil
 }
 
-type isKarlsendMessage_Payload interface {
-	isKarlsendMessage_Payload()
+type isFreedMessage_Payload interface {
+	isFreedMessage_Payload()
 }
 
-type KarlsendMessage_Addresses struct {
+type FreedMessage_Addresses struct {
 	Addresses *AddressesMessage `protobuf:"bytes,1,opt,name=addresses,proto3,oneof"`
 }
 
-type KarlsendMessage_Block struct {
+type FreedMessage_Block struct {
 	Block *BlockMessage `protobuf:"bytes,2,opt,name=block,proto3,oneof"`
 }
 
-type KarlsendMessage_Transaction struct {
+type FreedMessage_Transaction struct {
 	Transaction *TransactionMessage `protobuf:"bytes,3,opt,name=transaction,proto3,oneof"`
 }
 
-type KarlsendMessage_BlockLocator struct {
+type FreedMessage_BlockLocator struct {
 	BlockLocator *BlockLocatorMessage `protobuf:"bytes,5,opt,name=blockLocator,proto3,oneof"`
 }
 
-type KarlsendMessage_RequestAddresses struct {
+type FreedMessage_RequestAddresses struct {
 	RequestAddresses *RequestAddressesMessage `protobuf:"bytes,6,opt,name=requestAddresses,proto3,oneof"`
 }
 
-type KarlsendMessage_RequestRelayBlocks struct {
+type FreedMessage_RequestRelayBlocks struct {
 	RequestRelayBlocks *RequestRelayBlocksMessage `protobuf:"bytes,10,opt,name=requestRelayBlocks,proto3,oneof"`
 }
 
-type KarlsendMessage_RequestTransactions struct {
+type FreedMessage_RequestTransactions struct {
 	RequestTransactions *RequestTransactionsMessage `protobuf:"bytes,12,opt,name=requestTransactions,proto3,oneof"`
 }
 
-type KarlsendMessage_IbdBlock struct {
+type FreedMessage_IbdBlock struct {
 	IbdBlock *BlockMessage `protobuf:"bytes,13,opt,name=ibdBlock,proto3,oneof"`
 }
 
-type KarlsendMessage_InvRelayBlock struct {
+type FreedMessage_InvRelayBlock struct {
 	InvRelayBlock *InvRelayBlockMessage `protobuf:"bytes,14,opt,name=invRelayBlock,proto3,oneof"`
 }
 
-type KarlsendMessage_InvTransactions struct {
+type FreedMessage_InvTransactions struct {
 	InvTransactions *InvTransactionsMessage `protobuf:"bytes,15,opt,name=invTransactions,proto3,oneof"`
 }
 
-type KarlsendMessage_Ping struct {
+type FreedMessage_Ping struct {
 	Ping *PingMessage `protobuf:"bytes,16,opt,name=ping,proto3,oneof"`
 }
 
-type KarlsendMessage_Pong struct {
+type FreedMessage_Pong struct {
 	Pong *PongMessage `protobuf:"bytes,17,opt,name=pong,proto3,oneof"`
 }
 
-type KarlsendMessage_Verack struct {
+type FreedMessage_Verack struct {
 	Verack *VerackMessage `protobuf:"bytes,19,opt,name=verack,proto3,oneof"`
 }
 
-type KarlsendMessage_Version struct {
+type FreedMessage_Version struct {
 	Version *VersionMessage `protobuf:"bytes,20,opt,name=version,proto3,oneof"`
 }
 
-type KarlsendMessage_TransactionNotFound struct {
+type FreedMessage_TransactionNotFound struct {
 	TransactionNotFound *TransactionNotFoundMessage `protobuf:"bytes,21,opt,name=transactionNotFound,proto3,oneof"`
 }
 
-type KarlsendMessage_Reject struct {
+type FreedMessage_Reject struct {
 	Reject *RejectMessage `protobuf:"bytes,22,opt,name=reject,proto3,oneof"`
 }
 
-type KarlsendMessage_PruningPointUtxoSetChunk struct {
+type FreedMessage_PruningPointUtxoSetChunk struct {
 	PruningPointUtxoSetChunk *PruningPointUtxoSetChunkMessage `protobuf:"bytes,25,opt,name=pruningPointUtxoSetChunk,proto3,oneof"`
 }
 
-type KarlsendMessage_RequestIBDBlocks struct {
+type FreedMessage_RequestIBDBlocks struct {
 	RequestIBDBlocks *RequestIBDBlocksMessage `protobuf:"bytes,26,opt,name=requestIBDBlocks,proto3,oneof"`
 }
 
-type KarlsendMessage_UnexpectedPruningPoint struct {
+type FreedMessage_UnexpectedPruningPoint struct {
 	UnexpectedPruningPoint *UnexpectedPruningPointMessage `protobuf:"bytes,27,opt,name=unexpectedPruningPoint,proto3,oneof"`
 }
 
-type KarlsendMessage_IbdBlockLocator struct {
+type FreedMessage_IbdBlockLocator struct {
 	IbdBlockLocator *IbdBlockLocatorMessage `protobuf:"bytes,30,opt,name=ibdBlockLocator,proto3,oneof"`
 }
 
-type KarlsendMessage_IbdBlockLocatorHighestHash struct {
+type FreedMessage_IbdBlockLocatorHighestHash struct {
 	IbdBlockLocatorHighestHash *IbdBlockLocatorHighestHashMessage `protobuf:"bytes,31,opt,name=ibdBlockLocatorHighestHash,proto3,oneof"`
 }
 
-type KarlsendMessage_RequestNextPruningPointUtxoSetChunk struct {
+type FreedMessage_RequestNextPruningPointUtxoSetChunk struct {
 	RequestNextPruningPointUtxoSetChunk *RequestNextPruningPointUtxoSetChunkMessage `protobuf:"bytes,33,opt,name=requestNextPruningPointUtxoSetChunk,proto3,oneof"`
 }
 
-type KarlsendMessage_DonePruningPointUtxoSetChunks struct {
+type FreedMessage_DonePruningPointUtxoSetChunks struct {
 	DonePruningPointUtxoSetChunks *DonePruningPointUtxoSetChunksMessage `protobuf:"bytes,34,opt,name=donePruningPointUtxoSetChunks,proto3,oneof"`
 }
 
-type KarlsendMessage_IbdBlockLocatorHighestHashNotFound struct {
+type FreedMessage_IbdBlockLocatorHighestHashNotFound struct {
 	IbdBlockLocatorHighestHashNotFound *IbdBlockLocatorHighestHashNotFoundMessage `protobuf:"bytes,35,opt,name=ibdBlockLocatorHighestHashNotFound,proto3,oneof"`
 }
 
-type KarlsendMessage_BlockWithTrustedData struct {
+type FreedMessage_BlockWithTrustedData struct {
 	BlockWithTrustedData *BlockWithTrustedDataMessage `protobuf:"bytes,36,opt,name=blockWithTrustedData,proto3,oneof"`
 }
 
-type KarlsendMessage_DoneBlocksWithTrustedData struct {
+type FreedMessage_DoneBlocksWithTrustedData struct {
 	DoneBlocksWithTrustedData *DoneBlocksWithTrustedDataMessage `protobuf:"bytes,37,opt,name=doneBlocksWithTrustedData,proto3,oneof"`
 }
 
-type KarlsendMessage_RequestPruningPointAndItsAnticone struct {
+type FreedMessage_RequestPruningPointAndItsAnticone struct {
 	RequestPruningPointAndItsAnticone *RequestPruningPointAndItsAnticoneMessage `protobuf:"bytes,40,opt,name=requestPruningPointAndItsAnticone,proto3,oneof"`
 }
 
-type KarlsendMessage_BlockHeaders struct {
+type FreedMessage_BlockHeaders struct {
 	BlockHeaders *BlockHeadersMessage `protobuf:"bytes,41,opt,name=blockHeaders,proto3,oneof"`
 }
 
-type KarlsendMessage_RequestNextHeaders struct {
+type FreedMessage_RequestNextHeaders struct {
 	RequestNextHeaders *RequestNextHeadersMessage `protobuf:"bytes,42,opt,name=requestNextHeaders,proto3,oneof"`
 }
 
-type KarlsendMessage_DoneHeaders struct {
+type FreedMessage_DoneHeaders struct {
 	DoneHeaders *DoneHeadersMessage `protobuf:"bytes,43,opt,name=DoneHeaders,proto3,oneof"`
 }
 
-type KarlsendMessage_RequestPruningPointUTXOSet struct {
+type FreedMessage_RequestPruningPointUTXOSet struct {
 	RequestPruningPointUTXOSet *RequestPruningPointUTXOSetMessage `protobuf:"bytes,44,opt,name=requestPruningPointUTXOSet,proto3,oneof"`
 }
 
-type KarlsendMessage_RequestHeaders struct {
+type FreedMessage_RequestHeaders struct {
 	RequestHeaders *RequestHeadersMessage `protobuf:"bytes,45,opt,name=requestHeaders,proto3,oneof"`
 }
 
-type KarlsendMessage_RequestBlockLocator struct {
+type FreedMessage_RequestBlockLocator struct {
 	RequestBlockLocator *RequestBlockLocatorMessage `protobuf:"bytes,46,opt,name=requestBlockLocator,proto3,oneof"`
 }
 
-type KarlsendMessage_PruningPoints struct {
+type FreedMessage_PruningPoints struct {
 	PruningPoints *PruningPointsMessage `protobuf:"bytes,47,opt,name=pruningPoints,proto3,oneof"`
 }
 
-type KarlsendMessage_RequestPruningPointProof struct {
+type FreedMessage_RequestPruningPointProof struct {
 	RequestPruningPointProof *RequestPruningPointProofMessage `protobuf:"bytes,48,opt,name=requestPruningPointProof,proto3,oneof"`
 }
 
-type KarlsendMessage_PruningPointProof struct {
+type FreedMessage_PruningPointProof struct {
 	PruningPointProof *PruningPointProofMessage `protobuf:"bytes,49,opt,name=pruningPointProof,proto3,oneof"`
 }
 
-type KarlsendMessage_Ready struct {
+type FreedMessage_Ready struct {
 	Ready *ReadyMessage `protobuf:"bytes,50,opt,name=ready,proto3,oneof"`
 }
 
-type KarlsendMessage_BlockWithTrustedDataV4 struct {
+type FreedMessage_BlockWithTrustedDataV4 struct {
 	BlockWithTrustedDataV4 *BlockWithTrustedDataV4Message `protobuf:"bytes,51,opt,name=blockWithTrustedDataV4,proto3,oneof"`
 }
 
-type KarlsendMessage_TrustedData struct {
+type FreedMessage_TrustedData struct {
 	TrustedData *TrustedDataMessage `protobuf:"bytes,52,opt,name=trustedData,proto3,oneof"`
 }
 
-type KarlsendMessage_RequestIBDChainBlockLocator struct {
+type FreedMessage_RequestIBDChainBlockLocator struct {
 	RequestIBDChainBlockLocator *RequestIBDChainBlockLocatorMessage `protobuf:"bytes,53,opt,name=requestIBDChainBlockLocator,proto3,oneof"`
 }
 
-type KarlsendMessage_IbdChainBlockLocator struct {
+type FreedMessage_IbdChainBlockLocator struct {
 	IbdChainBlockLocator *IbdChainBlockLocatorMessage `protobuf:"bytes,54,opt,name=ibdChainBlockLocator,proto3,oneof"`
 }
 
-type KarlsendMessage_RequestAnticone struct {
+type FreedMessage_RequestAnticone struct {
 	RequestAnticone *RequestAnticoneMessage `protobuf:"bytes,55,opt,name=requestAnticone,proto3,oneof"`
 }
 
-type KarlsendMessage_RequestNextPruningPointAndItsAnticoneBlocks struct {
+type FreedMessage_RequestNextPruningPointAndItsAnticoneBlocks struct {
 	RequestNextPruningPointAndItsAnticoneBlocks *RequestNextPruningPointAndItsAnticoneBlocksMessage `protobuf:"bytes,56,opt,name=requestNextPruningPointAndItsAnticoneBlocks,proto3,oneof"`
 }
 
-type KarlsendMessage_GetCurrentNetworkRequest struct {
+type FreedMessage_GetCurrentNetworkRequest struct {
 	GetCurrentNetworkRequest *GetCurrentNetworkRequestMessage `protobuf:"bytes,1001,opt,name=getCurrentNetworkRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_GetCurrentNetworkResponse struct {
+type FreedMessage_GetCurrentNetworkResponse struct {
 	GetCurrentNetworkResponse *GetCurrentNetworkResponseMessage `protobuf:"bytes,1002,opt,name=getCurrentNetworkResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_SubmitBlockRequest struct {
+type FreedMessage_SubmitBlockRequest struct {
 	SubmitBlockRequest *SubmitBlockRequestMessage `protobuf:"bytes,1003,opt,name=submitBlockRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_SubmitBlockResponse struct {
+type FreedMessage_SubmitBlockResponse struct {
 	SubmitBlockResponse *SubmitBlockResponseMessage `protobuf:"bytes,1004,opt,name=submitBlockResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_GetBlockTemplateRequest struct {
+type FreedMessage_GetBlockTemplateRequest struct {
 	GetBlockTemplateRequest *GetBlockTemplateRequestMessage `protobuf:"bytes,1005,opt,name=getBlockTemplateRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_GetBlockTemplateResponse struct {
+type FreedMessage_GetBlockTemplateResponse struct {
 	GetBlockTemplateResponse *GetBlockTemplateResponseMessage `protobuf:"bytes,1006,opt,name=getBlockTemplateResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_NotifyBlockAddedRequest struct {
+type FreedMessage_NotifyBlockAddedRequest struct {
 	NotifyBlockAddedRequest *NotifyBlockAddedRequestMessage `protobuf:"bytes,1007,opt,name=notifyBlockAddedRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_NotifyBlockAddedResponse struct {
+type FreedMessage_NotifyBlockAddedResponse struct {
 	NotifyBlockAddedResponse *NotifyBlockAddedResponseMessage `protobuf:"bytes,1008,opt,name=notifyBlockAddedResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_BlockAddedNotification struct {
+type FreedMessage_BlockAddedNotification struct {
 	BlockAddedNotification *BlockAddedNotificationMessage `protobuf:"bytes,1009,opt,name=blockAddedNotification,proto3,oneof"`
 }
 
-type KarlsendMessage_GetPeerAddressesRequest struct {
+type FreedMessage_GetPeerAddressesRequest struct {
 	GetPeerAddressesRequest *GetPeerAddressesRequestMessage `protobuf:"bytes,1010,opt,name=getPeerAddressesRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_GetPeerAddressesResponse struct {
+type FreedMessage_GetPeerAddressesResponse struct {
 	GetPeerAddressesResponse *GetPeerAddressesResponseMessage `protobuf:"bytes,1011,opt,name=getPeerAddressesResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_GetSelectedTipHashRequest struct {
+type FreedMessage_GetSelectedTipHashRequest struct {
 	GetSelectedTipHashRequest *GetSelectedTipHashRequestMessage `protobuf:"bytes,1012,opt,name=getSelectedTipHashRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_GetSelectedTipHashResponse struct {
+type FreedMessage_GetSelectedTipHashResponse struct {
 	GetSelectedTipHashResponse *GetSelectedTipHashResponseMessage `protobuf:"bytes,1013,opt,name=getSelectedTipHashResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_GetMempoolEntryRequest struct {
+type FreedMessage_GetMempoolEntryRequest struct {
 	GetMempoolEntryRequest *GetMempoolEntryRequestMessage `protobuf:"bytes,1014,opt,name=getMempoolEntryRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_GetMempoolEntryResponse struct {
+type FreedMessage_GetMempoolEntryResponse struct {
 	GetMempoolEntryResponse *GetMempoolEntryResponseMessage `protobuf:"bytes,1015,opt,name=getMempoolEntryResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_GetConnectedPeerInfoRequest struct {
+type FreedMessage_GetConnectedPeerInfoRequest struct {
 	GetConnectedPeerInfoRequest *GetConnectedPeerInfoRequestMessage `protobuf:"bytes,1016,opt,name=getConnectedPeerInfoRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_GetConnectedPeerInfoResponse struct {
+type FreedMessage_GetConnectedPeerInfoResponse struct {
 	GetConnectedPeerInfoResponse *GetConnectedPeerInfoResponseMessage `protobuf:"bytes,1017,opt,name=getConnectedPeerInfoResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_AddPeerRequest struct {
+type FreedMessage_AddPeerRequest struct {
 	AddPeerRequest *AddPeerRequestMessage `protobuf:"bytes,1018,opt,name=addPeerRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_AddPeerResponse struct {
+type FreedMessage_AddPeerResponse struct {
 	AddPeerResponse *AddPeerResponseMessage `protobuf:"bytes,1019,opt,name=addPeerResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_SubmitTransactionRequest struct {
+type FreedMessage_SubmitTransactionRequest struct {
 	SubmitTransactionRequest *SubmitTransactionRequestMessage `protobuf:"bytes,1020,opt,name=submitTransactionRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_SubmitTransactionResponse struct {
+type FreedMessage_SubmitTransactionResponse struct {
 	SubmitTransactionResponse *SubmitTransactionResponseMessage `protobuf:"bytes,1021,opt,name=submitTransactionResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_NotifyVirtualSelectedParentChainChangedRequest struct {
+type FreedMessage_NotifyVirtualSelectedParentChainChangedRequest struct {
 	NotifyVirtualSelectedParentChainChangedRequest *NotifyVirtualSelectedParentChainChangedRequestMessage `protobuf:"bytes,1022,opt,name=notifyVirtualSelectedParentChainChangedRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_NotifyVirtualSelectedParentChainChangedResponse struct {
+type FreedMessage_NotifyVirtualSelectedParentChainChangedResponse struct {
 	NotifyVirtualSelectedParentChainChangedResponse *NotifyVirtualSelectedParentChainChangedResponseMessage `protobuf:"bytes,1023,opt,name=notifyVirtualSelectedParentChainChangedResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_VirtualSelectedParentChainChangedNotification struct {
+type FreedMessage_VirtualSelectedParentChainChangedNotification struct {
 	VirtualSelectedParentChainChangedNotification *VirtualSelectedParentChainChangedNotificationMessage `protobuf:"bytes,1024,opt,name=virtualSelectedParentChainChangedNotification,proto3,oneof"`
 }
 
-type KarlsendMessage_GetBlockRequest struct {
+type FreedMessage_GetBlockRequest struct {
 	GetBlockRequest *GetBlockRequestMessage `protobuf:"bytes,1025,opt,name=getBlockRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_GetBlockResponse struct {
+type FreedMessage_GetBlockResponse struct {
 	GetBlockResponse *GetBlockResponseMessage `protobuf:"bytes,1026,opt,name=getBlockResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_GetSubnetworkRequest struct {
+type FreedMessage_GetSubnetworkRequest struct {
 	GetSubnetworkRequest *GetSubnetworkRequestMessage `protobuf:"bytes,1027,opt,name=getSubnetworkRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_GetSubnetworkResponse struct {
+type FreedMessage_GetSubnetworkResponse struct {
 	GetSubnetworkResponse *GetSubnetworkResponseMessage `protobuf:"bytes,1028,opt,name=getSubnetworkResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_GetVirtualSelectedParentChainFromBlockRequest struct {
+type FreedMessage_GetVirtualSelectedParentChainFromBlockRequest struct {
 	GetVirtualSelectedParentChainFromBlockRequest *GetVirtualSelectedParentChainFromBlockRequestMessage `protobuf:"bytes,1029,opt,name=getVirtualSelectedParentChainFromBlockRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_GetVirtualSelectedParentChainFromBlockResponse struct {
+type FreedMessage_GetVirtualSelectedParentChainFromBlockResponse struct {
 	GetVirtualSelectedParentChainFromBlockResponse *GetVirtualSelectedParentChainFromBlockResponseMessage `protobuf:"bytes,1030,opt,name=getVirtualSelectedParentChainFromBlockResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_GetBlocksRequest struct {
+type FreedMessage_GetBlocksRequest struct {
 	GetBlocksRequest *GetBlocksRequestMessage `protobuf:"bytes,1031,opt,name=getBlocksRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_GetBlocksResponse struct {
+type FreedMessage_GetBlocksResponse struct {
 	GetBlocksResponse *GetBlocksResponseMessage `protobuf:"bytes,1032,opt,name=getBlocksResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_GetBlockCountRequest struct {
+type FreedMessage_GetBlockCountRequest struct {
 	GetBlockCountRequest *GetBlockCountRequestMessage `protobuf:"bytes,1033,opt,name=getBlockCountRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_GetBlockCountResponse struct {
+type FreedMessage_GetBlockCountResponse struct {
 	GetBlockCountResponse *GetBlockCountResponseMessage `protobuf:"bytes,1034,opt,name=getBlockCountResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_GetBlockDagInfoRequest struct {
+type FreedMessage_GetBlockDagInfoRequest struct {
 	GetBlockDagInfoRequest *GetBlockDagInfoRequestMessage `protobuf:"bytes,1035,opt,name=getBlockDagInfoRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_GetBlockDagInfoResponse struct {
+type FreedMessage_GetBlockDagInfoResponse struct {
 	GetBlockDagInfoResponse *GetBlockDagInfoResponseMessage `protobuf:"bytes,1036,opt,name=getBlockDagInfoResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_ResolveFinalityConflictRequest struct {
+type FreedMessage_ResolveFinalityConflictRequest struct {
 	ResolveFinalityConflictRequest *ResolveFinalityConflictRequestMessage `protobuf:"bytes,1037,opt,name=resolveFinalityConflictRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_ResolveFinalityConflictResponse struct {
+type FreedMessage_ResolveFinalityConflictResponse struct {
 	ResolveFinalityConflictResponse *ResolveFinalityConflictResponseMessage `protobuf:"bytes,1038,opt,name=resolveFinalityConflictResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_NotifyFinalityConflictsRequest struct {
+type FreedMessage_NotifyFinalityConflictsRequest struct {
 	NotifyFinalityConflictsRequest *NotifyFinalityConflictsRequestMessage `protobuf:"bytes,1039,opt,name=notifyFinalityConflictsRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_NotifyFinalityConflictsResponse struct {
+type FreedMessage_NotifyFinalityConflictsResponse struct {
 	NotifyFinalityConflictsResponse *NotifyFinalityConflictsResponseMessage `protobuf:"bytes,1040,opt,name=notifyFinalityConflictsResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_FinalityConflictNotification struct {
+type FreedMessage_FinalityConflictNotification struct {
 	FinalityConflictNotification *FinalityConflictNotificationMessage `protobuf:"bytes,1041,opt,name=finalityConflictNotification,proto3,oneof"`
 }
 
-type KarlsendMessage_FinalityConflictResolvedNotification struct {
+type FreedMessage_FinalityConflictResolvedNotification struct {
 	FinalityConflictResolvedNotification *FinalityConflictResolvedNotificationMessage `protobuf:"bytes,1042,opt,name=finalityConflictResolvedNotification,proto3,oneof"`
 }
 
-type KarlsendMessage_GetMempoolEntriesRequest struct {
+type FreedMessage_GetMempoolEntriesRequest struct {
 	GetMempoolEntriesRequest *GetMempoolEntriesRequestMessage `protobuf:"bytes,1043,opt,name=getMempoolEntriesRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_GetMempoolEntriesResponse struct {
+type FreedMessage_GetMempoolEntriesResponse struct {
 	GetMempoolEntriesResponse *GetMempoolEntriesResponseMessage `protobuf:"bytes,1044,opt,name=getMempoolEntriesResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_ShutDownRequest struct {
+type FreedMessage_ShutDownRequest struct {
 	ShutDownRequest *ShutDownRequestMessage `protobuf:"bytes,1045,opt,name=shutDownRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_ShutDownResponse struct {
+type FreedMessage_ShutDownResponse struct {
 	ShutDownResponse *ShutDownResponseMessage `protobuf:"bytes,1046,opt,name=shutDownResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_GetHeadersRequest struct {
+type FreedMessage_GetHeadersRequest struct {
 	GetHeadersRequest *GetHeadersRequestMessage `protobuf:"bytes,1047,opt,name=getHeadersRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_GetHeadersResponse struct {
+type FreedMessage_GetHeadersResponse struct {
 	GetHeadersResponse *GetHeadersResponseMessage `protobuf:"bytes,1048,opt,name=getHeadersResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_NotifyUtxosChangedRequest struct {
+type FreedMessage_NotifyUtxosChangedRequest struct {
 	NotifyUtxosChangedRequest *NotifyUtxosChangedRequestMessage `protobuf:"bytes,1049,opt,name=notifyUtxosChangedRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_NotifyUtxosChangedResponse struct {
+type FreedMessage_NotifyUtxosChangedResponse struct {
 	NotifyUtxosChangedResponse *NotifyUtxosChangedResponseMessage `protobuf:"bytes,1050,opt,name=notifyUtxosChangedResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_UtxosChangedNotification struct {
+type FreedMessage_UtxosChangedNotification struct {
 	UtxosChangedNotification *UtxosChangedNotificationMessage `protobuf:"bytes,1051,opt,name=utxosChangedNotification,proto3,oneof"`
 }
 
-type KarlsendMessage_GetUtxosByAddressesRequest struct {
+type FreedMessage_GetUtxosByAddressesRequest struct {
 	GetUtxosByAddressesRequest *GetUtxosByAddressesRequestMessage `protobuf:"bytes,1052,opt,name=getUtxosByAddressesRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_GetUtxosByAddressesResponse struct {
+type FreedMessage_GetUtxosByAddressesResponse struct {
 	GetUtxosByAddressesResponse *GetUtxosByAddressesResponseMessage `protobuf:"bytes,1053,opt,name=getUtxosByAddressesResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_GetVirtualSelectedParentBlueScoreRequest struct {
+type FreedMessage_GetVirtualSelectedParentBlueScoreRequest struct {
 	GetVirtualSelectedParentBlueScoreRequest *GetVirtualSelectedParentBlueScoreRequestMessage `protobuf:"bytes,1054,opt,name=getVirtualSelectedParentBlueScoreRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_GetVirtualSelectedParentBlueScoreResponse struct {
+type FreedMessage_GetVirtualSelectedParentBlueScoreResponse struct {
 	GetVirtualSelectedParentBlueScoreResponse *GetVirtualSelectedParentBlueScoreResponseMessage `protobuf:"bytes,1055,opt,name=getVirtualSelectedParentBlueScoreResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest struct {
+type FreedMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest struct {
 	NotifyVirtualSelectedParentBlueScoreChangedRequest *NotifyVirtualSelectedParentBlueScoreChangedRequestMessage `protobuf:"bytes,1056,opt,name=notifyVirtualSelectedParentBlueScoreChangedRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse struct {
+type FreedMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse struct {
 	NotifyVirtualSelectedParentBlueScoreChangedResponse *NotifyVirtualSelectedParentBlueScoreChangedResponseMessage `protobuf:"bytes,1057,opt,name=notifyVirtualSelectedParentBlueScoreChangedResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_VirtualSelectedParentBlueScoreChangedNotification struct {
+type FreedMessage_VirtualSelectedParentBlueScoreChangedNotification struct {
 	VirtualSelectedParentBlueScoreChangedNotification *VirtualSelectedParentBlueScoreChangedNotificationMessage `protobuf:"bytes,1058,opt,name=virtualSelectedParentBlueScoreChangedNotification,proto3,oneof"`
 }
 
-type KarlsendMessage_BanRequest struct {
+type FreedMessage_BanRequest struct {
 	BanRequest *BanRequestMessage `protobuf:"bytes,1059,opt,name=banRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_BanResponse struct {
+type FreedMessage_BanResponse struct {
 	BanResponse *BanResponseMessage `protobuf:"bytes,1060,opt,name=banResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_UnbanRequest struct {
+type FreedMessage_UnbanRequest struct {
 	UnbanRequest *UnbanRequestMessage `protobuf:"bytes,1061,opt,name=unbanRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_UnbanResponse struct {
+type FreedMessage_UnbanResponse struct {
 	UnbanResponse *UnbanResponseMessage `protobuf:"bytes,1062,opt,name=unbanResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_GetInfoRequest struct {
+type FreedMessage_GetInfoRequest struct {
 	GetInfoRequest *GetInfoRequestMessage `protobuf:"bytes,1063,opt,name=getInfoRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_GetInfoResponse struct {
+type FreedMessage_GetInfoResponse struct {
 	GetInfoResponse *GetInfoResponseMessage `protobuf:"bytes,1064,opt,name=getInfoResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_StopNotifyingUtxosChangedRequest struct {
+type FreedMessage_StopNotifyingUtxosChangedRequest struct {
 	StopNotifyingUtxosChangedRequest *StopNotifyingUtxosChangedRequestMessage `protobuf:"bytes,1065,opt,name=stopNotifyingUtxosChangedRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_StopNotifyingUtxosChangedResponse struct {
+type FreedMessage_StopNotifyingUtxosChangedResponse struct {
 	StopNotifyingUtxosChangedResponse *StopNotifyingUtxosChangedResponseMessage `protobuf:"bytes,1066,opt,name=stopNotifyingUtxosChangedResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_NotifyPruningPointUTXOSetOverrideRequest struct {
+type FreedMessage_NotifyPruningPointUTXOSetOverrideRequest struct {
 	NotifyPruningPointUTXOSetOverrideRequest *NotifyPruningPointUTXOSetOverrideRequestMessage `protobuf:"bytes,1067,opt,name=notifyPruningPointUTXOSetOverrideRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_NotifyPruningPointUTXOSetOverrideResponse struct {
+type FreedMessage_NotifyPruningPointUTXOSetOverrideResponse struct {
 	NotifyPruningPointUTXOSetOverrideResponse *NotifyPruningPointUTXOSetOverrideResponseMessage `protobuf:"bytes,1068,opt,name=notifyPruningPointUTXOSetOverrideResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_PruningPointUTXOSetOverrideNotification struct {
+type FreedMessage_PruningPointUTXOSetOverrideNotification struct {
 	PruningPointUTXOSetOverrideNotification *PruningPointUTXOSetOverrideNotificationMessage `protobuf:"bytes,1069,opt,name=pruningPointUTXOSetOverrideNotification,proto3,oneof"`
 }
 
-type KarlsendMessage_StopNotifyingPruningPointUTXOSetOverrideRequest struct {
+type FreedMessage_StopNotifyingPruningPointUTXOSetOverrideRequest struct {
 	StopNotifyingPruningPointUTXOSetOverrideRequest *StopNotifyingPruningPointUTXOSetOverrideRequestMessage `protobuf:"bytes,1070,opt,name=stopNotifyingPruningPointUTXOSetOverrideRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_StopNotifyingPruningPointUTXOSetOverrideResponse struct {
+type FreedMessage_StopNotifyingPruningPointUTXOSetOverrideResponse struct {
 	StopNotifyingPruningPointUTXOSetOverrideResponse *StopNotifyingPruningPointUTXOSetOverrideResponseMessage `protobuf:"bytes,1071,opt,name=stopNotifyingPruningPointUTXOSetOverrideResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_EstimateNetworkHashesPerSecondRequest struct {
+type FreedMessage_EstimateNetworkHashesPerSecondRequest struct {
 	EstimateNetworkHashesPerSecondRequest *EstimateNetworkHashesPerSecondRequestMessage `protobuf:"bytes,1072,opt,name=estimateNetworkHashesPerSecondRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_EstimateNetworkHashesPerSecondResponse struct {
+type FreedMessage_EstimateNetworkHashesPerSecondResponse struct {
 	EstimateNetworkHashesPerSecondResponse *EstimateNetworkHashesPerSecondResponseMessage `protobuf:"bytes,1073,opt,name=estimateNetworkHashesPerSecondResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_NotifyVirtualDaaScoreChangedRequest struct {
+type FreedMessage_NotifyVirtualDaaScoreChangedRequest struct {
 	NotifyVirtualDaaScoreChangedRequest *NotifyVirtualDaaScoreChangedRequestMessage `protobuf:"bytes,1074,opt,name=notifyVirtualDaaScoreChangedRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_NotifyVirtualDaaScoreChangedResponse struct {
+type FreedMessage_NotifyVirtualDaaScoreChangedResponse struct {
 	NotifyVirtualDaaScoreChangedResponse *NotifyVirtualDaaScoreChangedResponseMessage `protobuf:"bytes,1075,opt,name=notifyVirtualDaaScoreChangedResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_VirtualDaaScoreChangedNotification struct {
+type FreedMessage_VirtualDaaScoreChangedNotification struct {
 	VirtualDaaScoreChangedNotification *VirtualDaaScoreChangedNotificationMessage `protobuf:"bytes,1076,opt,name=virtualDaaScoreChangedNotification,proto3,oneof"`
 }
 
-type KarlsendMessage_GetBalanceByAddressRequest struct {
+type FreedMessage_GetBalanceByAddressRequest struct {
 	GetBalanceByAddressRequest *GetBalanceByAddressRequestMessage `protobuf:"bytes,1077,opt,name=getBalanceByAddressRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_GetBalanceByAddressResponse struct {
+type FreedMessage_GetBalanceByAddressResponse struct {
 	GetBalanceByAddressResponse *GetBalanceByAddressResponseMessage `protobuf:"bytes,1078,opt,name=getBalanceByAddressResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_GetBalancesByAddressesRequest struct {
+type FreedMessage_GetBalancesByAddressesRequest struct {
 	GetBalancesByAddressesRequest *GetBalancesByAddressesRequestMessage `protobuf:"bytes,1079,opt,name=getBalancesByAddressesRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_GetBalancesByAddressesResponse struct {
+type FreedMessage_GetBalancesByAddressesResponse struct {
 	GetBalancesByAddressesResponse *GetBalancesByAddressesResponseMessage `protobuf:"bytes,1080,opt,name=getBalancesByAddressesResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_NotifyNewBlockTemplateRequest struct {
+type FreedMessage_NotifyNewBlockTemplateRequest struct {
 	NotifyNewBlockTemplateRequest *NotifyNewBlockTemplateRequestMessage `protobuf:"bytes,1081,opt,name=notifyNewBlockTemplateRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_NotifyNewBlockTemplateResponse struct {
+type FreedMessage_NotifyNewBlockTemplateResponse struct {
 	NotifyNewBlockTemplateResponse *NotifyNewBlockTemplateResponseMessage `protobuf:"bytes,1082,opt,name=notifyNewBlockTemplateResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_NewBlockTemplateNotification struct {
+type FreedMessage_NewBlockTemplateNotification struct {
 	NewBlockTemplateNotification *NewBlockTemplateNotificationMessage `protobuf:"bytes,1083,opt,name=newBlockTemplateNotification,proto3,oneof"`
 }
 
-type KarlsendMessage_GetMempoolEntriesByAddressesRequest struct {
+type FreedMessage_GetMempoolEntriesByAddressesRequest struct {
 	GetMempoolEntriesByAddressesRequest *GetMempoolEntriesByAddressesRequestMessage `protobuf:"bytes,1084,opt,name=getMempoolEntriesByAddressesRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_GetMempoolEntriesByAddressesResponse struct {
+type FreedMessage_GetMempoolEntriesByAddressesResponse struct {
 	GetMempoolEntriesByAddressesResponse *GetMempoolEntriesByAddressesResponseMessage `protobuf:"bytes,1085,opt,name=getMempoolEntriesByAddressesResponse,proto3,oneof"`
 }
 
-type KarlsendMessage_GetCoinSupplyRequest struct {
+type FreedMessage_GetCoinSupplyRequest struct {
 	GetCoinSupplyRequest *GetCoinSupplyRequestMessage `protobuf:"bytes,1086,opt,name=getCoinSupplyRequest,proto3,oneof"`
 }
 
-type KarlsendMessage_GetCoinSupplyResponse struct {
+type FreedMessage_GetCoinSupplyResponse struct {
 	GetCoinSupplyResponse *GetCoinSupplyResponseMessage `protobuf:"bytes,1087,opt,name=getCoinSupplyResponse,proto3,oneof"`
 }
 
-func (*KarlsendMessage_Addresses) isKarlsendMessage_Payload() {}
+func (*FreedMessage_Addresses) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_Block) isKarlsendMessage_Payload() {}
+func (*FreedMessage_Block) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_Transaction) isKarlsendMessage_Payload() {}
+func (*FreedMessage_Transaction) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_BlockLocator) isKarlsendMessage_Payload() {}
+func (*FreedMessage_BlockLocator) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_RequestAddresses) isKarlsendMessage_Payload() {}
+func (*FreedMessage_RequestAddresses) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_RequestRelayBlocks) isKarlsendMessage_Payload() {}
+func (*FreedMessage_RequestRelayBlocks) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_RequestTransactions) isKarlsendMessage_Payload() {}
+func (*FreedMessage_RequestTransactions) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_IbdBlock) isKarlsendMessage_Payload() {}
+func (*FreedMessage_IbdBlock) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_InvRelayBlock) isKarlsendMessage_Payload() {}
+func (*FreedMessage_InvRelayBlock) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_InvTransactions) isKarlsendMessage_Payload() {}
+func (*FreedMessage_InvTransactions) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_Ping) isKarlsendMessage_Payload() {}
+func (*FreedMessage_Ping) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_Pong) isKarlsendMessage_Payload() {}
+func (*FreedMessage_Pong) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_Verack) isKarlsendMessage_Payload() {}
+func (*FreedMessage_Verack) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_Version) isKarlsendMessage_Payload() {}
+func (*FreedMessage_Version) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_TransactionNotFound) isKarlsendMessage_Payload() {}
+func (*FreedMessage_TransactionNotFound) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_Reject) isKarlsendMessage_Payload() {}
+func (*FreedMessage_Reject) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_PruningPointUtxoSetChunk) isKarlsendMessage_Payload() {}
+func (*FreedMessage_PruningPointUtxoSetChunk) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_RequestIBDBlocks) isKarlsendMessage_Payload() {}
+func (*FreedMessage_RequestIBDBlocks) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_UnexpectedPruningPoint) isKarlsendMessage_Payload() {}
+func (*FreedMessage_UnexpectedPruningPoint) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_IbdBlockLocator) isKarlsendMessage_Payload() {}
+func (*FreedMessage_IbdBlockLocator) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_IbdBlockLocatorHighestHash) isKarlsendMessage_Payload() {}
+func (*FreedMessage_IbdBlockLocatorHighestHash) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_RequestNextPruningPointUtxoSetChunk) isKarlsendMessage_Payload() {}
+func (*FreedMessage_RequestNextPruningPointUtxoSetChunk) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_DonePruningPointUtxoSetChunks) isKarlsendMessage_Payload() {}
+func (*FreedMessage_DonePruningPointUtxoSetChunks) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_IbdBlockLocatorHighestHashNotFound) isKarlsendMessage_Payload() {}
+func (*FreedMessage_IbdBlockLocatorHighestHashNotFound) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_BlockWithTrustedData) isKarlsendMessage_Payload() {}
+func (*FreedMessage_BlockWithTrustedData) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_DoneBlocksWithTrustedData) isKarlsendMessage_Payload() {}
+func (*FreedMessage_DoneBlocksWithTrustedData) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_RequestPruningPointAndItsAnticone) isKarlsendMessage_Payload() {}
+func (*FreedMessage_RequestPruningPointAndItsAnticone) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_BlockHeaders) isKarlsendMessage_Payload() {}
+func (*FreedMessage_BlockHeaders) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_RequestNextHeaders) isKarlsendMessage_Payload() {}
+func (*FreedMessage_RequestNextHeaders) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_DoneHeaders) isKarlsendMessage_Payload() {}
+func (*FreedMessage_DoneHeaders) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_RequestPruningPointUTXOSet) isKarlsendMessage_Payload() {}
+func (*FreedMessage_RequestPruningPointUTXOSet) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_RequestHeaders) isKarlsendMessage_Payload() {}
+func (*FreedMessage_RequestHeaders) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_RequestBlockLocator) isKarlsendMessage_Payload() {}
+func (*FreedMessage_RequestBlockLocator) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_PruningPoints) isKarlsendMessage_Payload() {}
+func (*FreedMessage_PruningPoints) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_RequestPruningPointProof) isKarlsendMessage_Payload() {}
+func (*FreedMessage_RequestPruningPointProof) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_PruningPointProof) isKarlsendMessage_Payload() {}
+func (*FreedMessage_PruningPointProof) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_Ready) isKarlsendMessage_Payload() {}
+func (*FreedMessage_Ready) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_BlockWithTrustedDataV4) isKarlsendMessage_Payload() {}
+func (*FreedMessage_BlockWithTrustedDataV4) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_TrustedData) isKarlsendMessage_Payload() {}
+func (*FreedMessage_TrustedData) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_RequestIBDChainBlockLocator) isKarlsendMessage_Payload() {}
+func (*FreedMessage_RequestIBDChainBlockLocator) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_IbdChainBlockLocator) isKarlsendMessage_Payload() {}
+func (*FreedMessage_IbdChainBlockLocator) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_RequestAnticone) isKarlsendMessage_Payload() {}
+func (*FreedMessage_RequestAnticone) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_RequestNextPruningPointAndItsAnticoneBlocks) isKarlsendMessage_Payload() {}
+func (*FreedMessage_RequestNextPruningPointAndItsAnticoneBlocks) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetCurrentNetworkRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetCurrentNetworkRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetCurrentNetworkResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetCurrentNetworkResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_SubmitBlockRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_SubmitBlockRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_SubmitBlockResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_SubmitBlockResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetBlockTemplateRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetBlockTemplateRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetBlockTemplateResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetBlockTemplateResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_NotifyBlockAddedRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_NotifyBlockAddedRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_NotifyBlockAddedResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_NotifyBlockAddedResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_BlockAddedNotification) isKarlsendMessage_Payload() {}
+func (*FreedMessage_BlockAddedNotification) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetPeerAddressesRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetPeerAddressesRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetPeerAddressesResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetPeerAddressesResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetSelectedTipHashRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetSelectedTipHashRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetSelectedTipHashResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetSelectedTipHashResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetMempoolEntryRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetMempoolEntryRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetMempoolEntryResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetMempoolEntryResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetConnectedPeerInfoRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetConnectedPeerInfoRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetConnectedPeerInfoResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetConnectedPeerInfoResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_AddPeerRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_AddPeerRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_AddPeerResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_AddPeerResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_SubmitTransactionRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_SubmitTransactionRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_SubmitTransactionResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_SubmitTransactionResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_NotifyVirtualSelectedParentChainChangedRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_NotifyVirtualSelectedParentChainChangedRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_NotifyVirtualSelectedParentChainChangedResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_NotifyVirtualSelectedParentChainChangedResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_VirtualSelectedParentChainChangedNotification) isKarlsendMessage_Payload() {}
+func (*FreedMessage_VirtualSelectedParentChainChangedNotification) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetBlockRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetBlockRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetBlockResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetBlockResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetSubnetworkRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetSubnetworkRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetSubnetworkResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetSubnetworkResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetVirtualSelectedParentChainFromBlockRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetVirtualSelectedParentChainFromBlockRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetVirtualSelectedParentChainFromBlockResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetVirtualSelectedParentChainFromBlockResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetBlocksRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetBlocksRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetBlocksResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetBlocksResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetBlockCountRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetBlockCountRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetBlockCountResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetBlockCountResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetBlockDagInfoRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetBlockDagInfoRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetBlockDagInfoResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetBlockDagInfoResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_ResolveFinalityConflictRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_ResolveFinalityConflictRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_ResolveFinalityConflictResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_ResolveFinalityConflictResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_NotifyFinalityConflictsRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_NotifyFinalityConflictsRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_NotifyFinalityConflictsResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_NotifyFinalityConflictsResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_FinalityConflictNotification) isKarlsendMessage_Payload() {}
+func (*FreedMessage_FinalityConflictNotification) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_FinalityConflictResolvedNotification) isKarlsendMessage_Payload() {}
+func (*FreedMessage_FinalityConflictResolvedNotification) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetMempoolEntriesRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetMempoolEntriesRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetMempoolEntriesResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetMempoolEntriesResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_ShutDownRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_ShutDownRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_ShutDownResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_ShutDownResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetHeadersRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetHeadersRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetHeadersResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetHeadersResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_NotifyUtxosChangedRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_NotifyUtxosChangedRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_NotifyUtxosChangedResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_NotifyUtxosChangedResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_UtxosChangedNotification) isKarlsendMessage_Payload() {}
+func (*FreedMessage_UtxosChangedNotification) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetUtxosByAddressesRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetUtxosByAddressesRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetUtxosByAddressesResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetUtxosByAddressesResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetVirtualSelectedParentBlueScoreRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetVirtualSelectedParentBlueScoreRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetVirtualSelectedParentBlueScoreResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetVirtualSelectedParentBlueScoreResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_VirtualSelectedParentBlueScoreChangedNotification) isKarlsendMessage_Payload() {}
+func (*FreedMessage_VirtualSelectedParentBlueScoreChangedNotification) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_BanRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_BanRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_BanResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_BanResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_UnbanRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_UnbanRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_UnbanResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_UnbanResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetInfoRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetInfoRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetInfoResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetInfoResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_StopNotifyingUtxosChangedRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_StopNotifyingUtxosChangedRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_StopNotifyingUtxosChangedResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_StopNotifyingUtxosChangedResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_NotifyPruningPointUTXOSetOverrideRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_NotifyPruningPointUTXOSetOverrideRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_NotifyPruningPointUTXOSetOverrideResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_NotifyPruningPointUTXOSetOverrideResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_PruningPointUTXOSetOverrideNotification) isKarlsendMessage_Payload() {}
+func (*FreedMessage_PruningPointUTXOSetOverrideNotification) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_StopNotifyingPruningPointUTXOSetOverrideRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_StopNotifyingPruningPointUTXOSetOverrideRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_StopNotifyingPruningPointUTXOSetOverrideResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_StopNotifyingPruningPointUTXOSetOverrideResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_EstimateNetworkHashesPerSecondRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_EstimateNetworkHashesPerSecondRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_EstimateNetworkHashesPerSecondResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_EstimateNetworkHashesPerSecondResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_NotifyVirtualDaaScoreChangedRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_NotifyVirtualDaaScoreChangedRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_NotifyVirtualDaaScoreChangedResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_NotifyVirtualDaaScoreChangedResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_VirtualDaaScoreChangedNotification) isKarlsendMessage_Payload() {}
+func (*FreedMessage_VirtualDaaScoreChangedNotification) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetBalanceByAddressRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetBalanceByAddressRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetBalanceByAddressResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetBalanceByAddressResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetBalancesByAddressesRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetBalancesByAddressesRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetBalancesByAddressesResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetBalancesByAddressesResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_NotifyNewBlockTemplateRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_NotifyNewBlockTemplateRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_NotifyNewBlockTemplateResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_NotifyNewBlockTemplateResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_NewBlockTemplateNotification) isKarlsendMessage_Payload() {}
+func (*FreedMessage_NewBlockTemplateNotification) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetMempoolEntriesByAddressesRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetMempoolEntriesByAddressesRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetMempoolEntriesByAddressesResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetMempoolEntriesByAddressesResponse) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetCoinSupplyRequest) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetCoinSupplyRequest) isFreedMessage_Payload() {}
 
-func (*KarlsendMessage_GetCoinSupplyResponse) isKarlsendMessage_Payload() {}
+func (*FreedMessage_GetCoinSupplyResponse) isFreedMessage_Payload() {}
 
 var File_messages_proto protoreflect.FileDescriptor
 
@@ -2804,7 +2804,7 @@ func file_messages_proto_rawDescGZIP() []byte {
 
 var file_messages_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_messages_proto_goTypes = []interface{}{
-	(*KarlsendMessage)(nil),                                              // 0: protowire.KarlsendMessage
+	(*FreedMessage)(nil),                                              // 0: protowire.FreedMessage
 	(*AddressesMessage)(nil),                                           // 1: protowire.AddressesMessage
 	(*BlockMessage)(nil),                                               // 2: protowire.BlockMessage
 	(*TransactionMessage)(nil),                                         // 3: protowire.TransactionMessage
@@ -2936,140 +2936,140 @@ var file_messages_proto_goTypes = []interface{}{
 	(*GetCoinSupplyResponseMessage)(nil),                               // 129: protowire.GetCoinSupplyResponseMessage
 }
 var file_messages_proto_depIdxs = []int32{
-	1,   // 0: protowire.KarlsendMessage.addresses:type_name -> protowire.AddressesMessage
-	2,   // 1: protowire.KarlsendMessage.block:type_name -> protowire.BlockMessage
-	3,   // 2: protowire.KarlsendMessage.transaction:type_name -> protowire.TransactionMessage
-	4,   // 3: protowire.KarlsendMessage.blockLocator:type_name -> protowire.BlockLocatorMessage
-	5,   // 4: protowire.KarlsendMessage.requestAddresses:type_name -> protowire.RequestAddressesMessage
-	6,   // 5: protowire.KarlsendMessage.requestRelayBlocks:type_name -> protowire.RequestRelayBlocksMessage
-	7,   // 6: protowire.KarlsendMessage.requestTransactions:type_name -> protowire.RequestTransactionsMessage
-	2,   // 7: protowire.KarlsendMessage.ibdBlock:type_name -> protowire.BlockMessage
-	8,   // 8: protowire.KarlsendMessage.invRelayBlock:type_name -> protowire.InvRelayBlockMessage
-	9,   // 9: protowire.KarlsendMessage.invTransactions:type_name -> protowire.InvTransactionsMessage
-	10,  // 10: protowire.KarlsendMessage.ping:type_name -> protowire.PingMessage
-	11,  // 11: protowire.KarlsendMessage.pong:type_name -> protowire.PongMessage
-	12,  // 12: protowire.KarlsendMessage.verack:type_name -> protowire.VerackMessage
-	13,  // 13: protowire.KarlsendMessage.version:type_name -> protowire.VersionMessage
-	14,  // 14: protowire.KarlsendMessage.transactionNotFound:type_name -> protowire.TransactionNotFoundMessage
-	15,  // 15: protowire.KarlsendMessage.reject:type_name -> protowire.RejectMessage
-	16,  // 16: protowire.KarlsendMessage.pruningPointUtxoSetChunk:type_name -> protowire.PruningPointUtxoSetChunkMessage
-	17,  // 17: protowire.KarlsendMessage.requestIBDBlocks:type_name -> protowire.RequestIBDBlocksMessage
-	18,  // 18: protowire.KarlsendMessage.unexpectedPruningPoint:type_name -> protowire.UnexpectedPruningPointMessage
-	19,  // 19: protowire.KarlsendMessage.ibdBlockLocator:type_name -> protowire.IbdBlockLocatorMessage
-	20,  // 20: protowire.KarlsendMessage.ibdBlockLocatorHighestHash:type_name -> protowire.IbdBlockLocatorHighestHashMessage
-	21,  // 21: protowire.KarlsendMessage.requestNextPruningPointUtxoSetChunk:type_name -> protowire.RequestNextPruningPointUtxoSetChunkMessage
-	22,  // 22: protowire.KarlsendMessage.donePruningPointUtxoSetChunks:type_name -> protowire.DonePruningPointUtxoSetChunksMessage
-	23,  // 23: protowire.KarlsendMessage.ibdBlockLocatorHighestHashNotFound:type_name -> protowire.IbdBlockLocatorHighestHashNotFoundMessage
-	24,  // 24: protowire.KarlsendMessage.blockWithTrustedData:type_name -> protowire.BlockWithTrustedDataMessage
-	25,  // 25: protowire.KarlsendMessage.doneBlocksWithTrustedData:type_name -> protowire.DoneBlocksWithTrustedDataMessage
-	26,  // 26: protowire.KarlsendMessage.requestPruningPointAndItsAnticone:type_name -> protowire.RequestPruningPointAndItsAnticoneMessage
-	27,  // 27: protowire.KarlsendMessage.blockHeaders:type_name -> protowire.BlockHeadersMessage
-	28,  // 28: protowire.KarlsendMessage.requestNextHeaders:type_name -> protowire.RequestNextHeadersMessage
-	29,  // 29: protowire.KarlsendMessage.DoneHeaders:type_name -> protowire.DoneHeadersMessage
-	30,  // 30: protowire.KarlsendMessage.requestPruningPointUTXOSet:type_name -> protowire.RequestPruningPointUTXOSetMessage
-	31,  // 31: protowire.KarlsendMessage.requestHeaders:type_name -> protowire.RequestHeadersMessage
-	32,  // 32: protowire.KarlsendMessage.requestBlockLocator:type_name -> protowire.RequestBlockLocatorMessage
-	33,  // 33: protowire.KarlsendMessage.pruningPoints:type_name -> protowire.PruningPointsMessage
-	34,  // 34: protowire.KarlsendMessage.requestPruningPointProof:type_name -> protowire.RequestPruningPointProofMessage
-	35,  // 35: protowire.KarlsendMessage.pruningPointProof:type_name -> protowire.PruningPointProofMessage
-	36,  // 36: protowire.KarlsendMessage.ready:type_name -> protowire.ReadyMessage
-	37,  // 37: protowire.KarlsendMessage.blockWithTrustedDataV4:type_name -> protowire.BlockWithTrustedDataV4Message
-	38,  // 38: protowire.KarlsendMessage.trustedData:type_name -> protowire.TrustedDataMessage
-	39,  // 39: protowire.KarlsendMessage.requestIBDChainBlockLocator:type_name -> protowire.RequestIBDChainBlockLocatorMessage
-	40,  // 40: protowire.KarlsendMessage.ibdChainBlockLocator:type_name -> protowire.IbdChainBlockLocatorMessage
-	41,  // 41: protowire.KarlsendMessage.requestAnticone:type_name -> protowire.RequestAnticoneMessage
-	42,  // 42: protowire.KarlsendMessage.requestNextPruningPointAndItsAnticoneBlocks:type_name -> protowire.RequestNextPruningPointAndItsAnticoneBlocksMessage
-	43,  // 43: protowire.KarlsendMessage.getCurrentNetworkRequest:type_name -> protowire.GetCurrentNetworkRequestMessage
-	44,  // 44: protowire.KarlsendMessage.getCurrentNetworkResponse:type_name -> protowire.GetCurrentNetworkResponseMessage
-	45,  // 45: protowire.KarlsendMessage.submitBlockRequest:type_name -> protowire.SubmitBlockRequestMessage
-	46,  // 46: protowire.KarlsendMessage.submitBlockResponse:type_name -> protowire.SubmitBlockResponseMessage
-	47,  // 47: protowire.KarlsendMessage.getBlockTemplateRequest:type_name -> protowire.GetBlockTemplateRequestMessage
-	48,  // 48: protowire.KarlsendMessage.getBlockTemplateResponse:type_name -> protowire.GetBlockTemplateResponseMessage
-	49,  // 49: protowire.KarlsendMessage.notifyBlockAddedRequest:type_name -> protowire.NotifyBlockAddedRequestMessage
-	50,  // 50: protowire.KarlsendMessage.notifyBlockAddedResponse:type_name -> protowire.NotifyBlockAddedResponseMessage
-	51,  // 51: protowire.KarlsendMessage.blockAddedNotification:type_name -> protowire.BlockAddedNotificationMessage
-	52,  // 52: protowire.KarlsendMessage.getPeerAddressesRequest:type_name -> protowire.GetPeerAddressesRequestMessage
-	53,  // 53: protowire.KarlsendMessage.getPeerAddressesResponse:type_name -> protowire.GetPeerAddressesResponseMessage
-	54,  // 54: protowire.KarlsendMessage.getSelectedTipHashRequest:type_name -> protowire.GetSelectedTipHashRequestMessage
-	55,  // 55: protowire.KarlsendMessage.getSelectedTipHashResponse:type_name -> protowire.GetSelectedTipHashResponseMessage
-	56,  // 56: protowire.KarlsendMessage.getMempoolEntryRequest:type_name -> protowire.GetMempoolEntryRequestMessage
-	57,  // 57: protowire.KarlsendMessage.getMempoolEntryResponse:type_name -> protowire.GetMempoolEntryResponseMessage
-	58,  // 58: protowire.KarlsendMessage.getConnectedPeerInfoRequest:type_name -> protowire.GetConnectedPeerInfoRequestMessage
-	59,  // 59: protowire.KarlsendMessage.getConnectedPeerInfoResponse:type_name -> protowire.GetConnectedPeerInfoResponseMessage
-	60,  // 60: protowire.KarlsendMessage.addPeerRequest:type_name -> protowire.AddPeerRequestMessage
-	61,  // 61: protowire.KarlsendMessage.addPeerResponse:type_name -> protowire.AddPeerResponseMessage
-	62,  // 62: protowire.KarlsendMessage.submitTransactionRequest:type_name -> protowire.SubmitTransactionRequestMessage
-	63,  // 63: protowire.KarlsendMessage.submitTransactionResponse:type_name -> protowire.SubmitTransactionResponseMessage
-	64,  // 64: protowire.KarlsendMessage.notifyVirtualSelectedParentChainChangedRequest:type_name -> protowire.NotifyVirtualSelectedParentChainChangedRequestMessage
-	65,  // 65: protowire.KarlsendMessage.notifyVirtualSelectedParentChainChangedResponse:type_name -> protowire.NotifyVirtualSelectedParentChainChangedResponseMessage
-	66,  // 66: protowire.KarlsendMessage.virtualSelectedParentChainChangedNotification:type_name -> protowire.VirtualSelectedParentChainChangedNotificationMessage
-	67,  // 67: protowire.KarlsendMessage.getBlockRequest:type_name -> protowire.GetBlockRequestMessage
-	68,  // 68: protowire.KarlsendMessage.getBlockResponse:type_name -> protowire.GetBlockResponseMessage
-	69,  // 69: protowire.KarlsendMessage.getSubnetworkRequest:type_name -> protowire.GetSubnetworkRequestMessage
-	70,  // 70: protowire.KarlsendMessage.getSubnetworkResponse:type_name -> protowire.GetSubnetworkResponseMessage
-	71,  // 71: protowire.KarlsendMessage.getVirtualSelectedParentChainFromBlockRequest:type_name -> protowire.GetVirtualSelectedParentChainFromBlockRequestMessage
-	72,  // 72: protowire.KarlsendMessage.getVirtualSelectedParentChainFromBlockResponse:type_name -> protowire.GetVirtualSelectedParentChainFromBlockResponseMessage
-	73,  // 73: protowire.KarlsendMessage.getBlocksRequest:type_name -> protowire.GetBlocksRequestMessage
-	74,  // 74: protowire.KarlsendMessage.getBlocksResponse:type_name -> protowire.GetBlocksResponseMessage
-	75,  // 75: protowire.KarlsendMessage.getBlockCountRequest:type_name -> protowire.GetBlockCountRequestMessage
-	76,  // 76: protowire.KarlsendMessage.getBlockCountResponse:type_name -> protowire.GetBlockCountResponseMessage
-	77,  // 77: protowire.KarlsendMessage.getBlockDagInfoRequest:type_name -> protowire.GetBlockDagInfoRequestMessage
-	78,  // 78: protowire.KarlsendMessage.getBlockDagInfoResponse:type_name -> protowire.GetBlockDagInfoResponseMessage
-	79,  // 79: protowire.KarlsendMessage.resolveFinalityConflictRequest:type_name -> protowire.ResolveFinalityConflictRequestMessage
-	80,  // 80: protowire.KarlsendMessage.resolveFinalityConflictResponse:type_name -> protowire.ResolveFinalityConflictResponseMessage
-	81,  // 81: protowire.KarlsendMessage.notifyFinalityConflictsRequest:type_name -> protowire.NotifyFinalityConflictsRequestMessage
-	82,  // 82: protowire.KarlsendMessage.notifyFinalityConflictsResponse:type_name -> protowire.NotifyFinalityConflictsResponseMessage
-	83,  // 83: protowire.KarlsendMessage.finalityConflictNotification:type_name -> protowire.FinalityConflictNotificationMessage
-	84,  // 84: protowire.KarlsendMessage.finalityConflictResolvedNotification:type_name -> protowire.FinalityConflictResolvedNotificationMessage
-	85,  // 85: protowire.KarlsendMessage.getMempoolEntriesRequest:type_name -> protowire.GetMempoolEntriesRequestMessage
-	86,  // 86: protowire.KarlsendMessage.getMempoolEntriesResponse:type_name -> protowire.GetMempoolEntriesResponseMessage
-	87,  // 87: protowire.KarlsendMessage.shutDownRequest:type_name -> protowire.ShutDownRequestMessage
-	88,  // 88: protowire.KarlsendMessage.shutDownResponse:type_name -> protowire.ShutDownResponseMessage
-	89,  // 89: protowire.KarlsendMessage.getHeadersRequest:type_name -> protowire.GetHeadersRequestMessage
-	90,  // 90: protowire.KarlsendMessage.getHeadersResponse:type_name -> protowire.GetHeadersResponseMessage
-	91,  // 91: protowire.KarlsendMessage.notifyUtxosChangedRequest:type_name -> protowire.NotifyUtxosChangedRequestMessage
-	92,  // 92: protowire.KarlsendMessage.notifyUtxosChangedResponse:type_name -> protowire.NotifyUtxosChangedResponseMessage
-	93,  // 93: protowire.KarlsendMessage.utxosChangedNotification:type_name -> protowire.UtxosChangedNotificationMessage
-	94,  // 94: protowire.KarlsendMessage.getUtxosByAddressesRequest:type_name -> protowire.GetUtxosByAddressesRequestMessage
-	95,  // 95: protowire.KarlsendMessage.getUtxosByAddressesResponse:type_name -> protowire.GetUtxosByAddressesResponseMessage
-	96,  // 96: protowire.KarlsendMessage.getVirtualSelectedParentBlueScoreRequest:type_name -> protowire.GetVirtualSelectedParentBlueScoreRequestMessage
-	97,  // 97: protowire.KarlsendMessage.getVirtualSelectedParentBlueScoreResponse:type_name -> protowire.GetVirtualSelectedParentBlueScoreResponseMessage
-	98,  // 98: protowire.KarlsendMessage.notifyVirtualSelectedParentBlueScoreChangedRequest:type_name -> protowire.NotifyVirtualSelectedParentBlueScoreChangedRequestMessage
-	99,  // 99: protowire.KarlsendMessage.notifyVirtualSelectedParentBlueScoreChangedResponse:type_name -> protowire.NotifyVirtualSelectedParentBlueScoreChangedResponseMessage
-	100, // 100: protowire.KarlsendMessage.virtualSelectedParentBlueScoreChangedNotification:type_name -> protowire.VirtualSelectedParentBlueScoreChangedNotificationMessage
-	101, // 101: protowire.KarlsendMessage.banRequest:type_name -> protowire.BanRequestMessage
-	102, // 102: protowire.KarlsendMessage.banResponse:type_name -> protowire.BanResponseMessage
-	103, // 103: protowire.KarlsendMessage.unbanRequest:type_name -> protowire.UnbanRequestMessage
-	104, // 104: protowire.KarlsendMessage.unbanResponse:type_name -> protowire.UnbanResponseMessage
-	105, // 105: protowire.KarlsendMessage.getInfoRequest:type_name -> protowire.GetInfoRequestMessage
-	106, // 106: protowire.KarlsendMessage.getInfoResponse:type_name -> protowire.GetInfoResponseMessage
-	107, // 107: protowire.KarlsendMessage.stopNotifyingUtxosChangedRequest:type_name -> protowire.StopNotifyingUtxosChangedRequestMessage
-	108, // 108: protowire.KarlsendMessage.stopNotifyingUtxosChangedResponse:type_name -> protowire.StopNotifyingUtxosChangedResponseMessage
-	109, // 109: protowire.KarlsendMessage.notifyPruningPointUTXOSetOverrideRequest:type_name -> protowire.NotifyPruningPointUTXOSetOverrideRequestMessage
-	110, // 110: protowire.KarlsendMessage.notifyPruningPointUTXOSetOverrideResponse:type_name -> protowire.NotifyPruningPointUTXOSetOverrideResponseMessage
-	111, // 111: protowire.KarlsendMessage.pruningPointUTXOSetOverrideNotification:type_name -> protowire.PruningPointUTXOSetOverrideNotificationMessage
-	112, // 112: protowire.KarlsendMessage.stopNotifyingPruningPointUTXOSetOverrideRequest:type_name -> protowire.StopNotifyingPruningPointUTXOSetOverrideRequestMessage
-	113, // 113: protowire.KarlsendMessage.stopNotifyingPruningPointUTXOSetOverrideResponse:type_name -> protowire.StopNotifyingPruningPointUTXOSetOverrideResponseMessage
-	114, // 114: protowire.KarlsendMessage.estimateNetworkHashesPerSecondRequest:type_name -> protowire.EstimateNetworkHashesPerSecondRequestMessage
-	115, // 115: protowire.KarlsendMessage.estimateNetworkHashesPerSecondResponse:type_name -> protowire.EstimateNetworkHashesPerSecondResponseMessage
-	116, // 116: protowire.KarlsendMessage.notifyVirtualDaaScoreChangedRequest:type_name -> protowire.NotifyVirtualDaaScoreChangedRequestMessage
-	117, // 117: protowire.KarlsendMessage.notifyVirtualDaaScoreChangedResponse:type_name -> protowire.NotifyVirtualDaaScoreChangedResponseMessage
-	118, // 118: protowire.KarlsendMessage.virtualDaaScoreChangedNotification:type_name -> protowire.VirtualDaaScoreChangedNotificationMessage
-	119, // 119: protowire.KarlsendMessage.getBalanceByAddressRequest:type_name -> protowire.GetBalanceByAddressRequestMessage
-	120, // 120: protowire.KarlsendMessage.getBalanceByAddressResponse:type_name -> protowire.GetBalanceByAddressResponseMessage
-	121, // 121: protowire.KarlsendMessage.getBalancesByAddressesRequest:type_name -> protowire.GetBalancesByAddressesRequestMessage
-	122, // 122: protowire.KarlsendMessage.getBalancesByAddressesResponse:type_name -> protowire.GetBalancesByAddressesResponseMessage
-	123, // 123: protowire.KarlsendMessage.notifyNewBlockTemplateRequest:type_name -> protowire.NotifyNewBlockTemplateRequestMessage
-	124, // 124: protowire.KarlsendMessage.notifyNewBlockTemplateResponse:type_name -> protowire.NotifyNewBlockTemplateResponseMessage
-	125, // 125: protowire.KarlsendMessage.newBlockTemplateNotification:type_name -> protowire.NewBlockTemplateNotificationMessage
-	126, // 126: protowire.KarlsendMessage.getMempoolEntriesByAddressesRequest:type_name -> protowire.GetMempoolEntriesByAddressesRequestMessage
-	127, // 127: protowire.KarlsendMessage.getMempoolEntriesByAddressesResponse:type_name -> protowire.GetMempoolEntriesByAddressesResponseMessage
-	128, // 128: protowire.KarlsendMessage.getCoinSupplyRequest:type_name -> protowire.GetCoinSupplyRequestMessage
-	129, // 129: protowire.KarlsendMessage.getCoinSupplyResponse:type_name -> protowire.GetCoinSupplyResponseMessage
-	0,   // 130: protowire.P2P.MessageStream:input_type -> protowire.KarlsendMessage
-	0,   // 131: protowire.RPC.MessageStream:input_type -> protowire.KarlsendMessage
-	0,   // 132: protowire.P2P.MessageStream:output_type -> protowire.KarlsendMessage
-	0,   // 133: protowire.RPC.MessageStream:output_type -> protowire.KarlsendMessage
+	1,   // 0: protowire.FreedMessage.addresses:type_name -> protowire.AddressesMessage
+	2,   // 1: protowire.FreedMessage.block:type_name -> protowire.BlockMessage
+	3,   // 2: protowire.FreedMessage.transaction:type_name -> protowire.TransactionMessage
+	4,   // 3: protowire.FreedMessage.blockLocator:type_name -> protowire.BlockLocatorMessage
+	5,   // 4: protowire.FreedMessage.requestAddresses:type_name -> protowire.RequestAddressesMessage
+	6,   // 5: protowire.FreedMessage.requestRelayBlocks:type_name -> protowire.RequestRelayBlocksMessage
+	7,   // 6: protowire.FreedMessage.requestTransactions:type_name -> protowire.RequestTransactionsMessage
+	2,   // 7: protowire.FreedMessage.ibdBlock:type_name -> protowire.BlockMessage
+	8,   // 8: protowire.FreedMessage.invRelayBlock:type_name -> protowire.InvRelayBlockMessage
+	9,   // 9: protowire.FreedMessage.invTransactions:type_name -> protowire.InvTransactionsMessage
+	10,  // 10: protowire.FreedMessage.ping:type_name -> protowire.PingMessage
+	11,  // 11: protowire.FreedMessage.pong:type_name -> protowire.PongMessage
+	12,  // 12: protowire.FreedMessage.verack:type_name -> protowire.VerackMessage
+	13,  // 13: protowire.FreedMessage.version:type_name -> protowire.VersionMessage
+	14,  // 14: protowire.FreedMessage.transactionNotFound:type_name -> protowire.TransactionNotFoundMessage
+	15,  // 15: protowire.FreedMessage.reject:type_name -> protowire.RejectMessage
+	16,  // 16: protowire.FreedMessage.pruningPointUtxoSetChunk:type_name -> protowire.PruningPointUtxoSetChunkMessage
+	17,  // 17: protowire.FreedMessage.requestIBDBlocks:type_name -> protowire.RequestIBDBlocksMessage
+	18,  // 18: protowire.FreedMessage.unexpectedPruningPoint:type_name -> protowire.UnexpectedPruningPointMessage
+	19,  // 19: protowire.FreedMessage.ibdBlockLocator:type_name -> protowire.IbdBlockLocatorMessage
+	20,  // 20: protowire.FreedMessage.ibdBlockLocatorHighestHash:type_name -> protowire.IbdBlockLocatorHighestHashMessage
+	21,  // 21: protowire.FreedMessage.requestNextPruningPointUtxoSetChunk:type_name -> protowire.RequestNextPruningPointUtxoSetChunkMessage
+	22,  // 22: protowire.FreedMessage.donePruningPointUtxoSetChunks:type_name -> protowire.DonePruningPointUtxoSetChunksMessage
+	23,  // 23: protowire.FreedMessage.ibdBlockLocatorHighestHashNotFound:type_name -> protowire.IbdBlockLocatorHighestHashNotFoundMessage
+	24,  // 24: protowire.FreedMessage.blockWithTrustedData:type_name -> protowire.BlockWithTrustedDataMessage
+	25,  // 25: protowire.FreedMessage.doneBlocksWithTrustedData:type_name -> protowire.DoneBlocksWithTrustedDataMessage
+	26,  // 26: protowire.FreedMessage.requestPruningPointAndItsAnticone:type_name -> protowire.RequestPruningPointAndItsAnticoneMessage
+	27,  // 27: protowire.FreedMessage.blockHeaders:type_name -> protowire.BlockHeadersMessage
+	28,  // 28: protowire.FreedMessage.requestNextHeaders:type_name -> protowire.RequestNextHeadersMessage
+	29,  // 29: protowire.FreedMessage.DoneHeaders:type_name -> protowire.DoneHeadersMessage
+	30,  // 30: protowire.FreedMessage.requestPruningPointUTXOSet:type_name -> protowire.RequestPruningPointUTXOSetMessage
+	31,  // 31: protowire.FreedMessage.requestHeaders:type_name -> protowire.RequestHeadersMessage
+	32,  // 32: protowire.FreedMessage.requestBlockLocator:type_name -> protowire.RequestBlockLocatorMessage
+	33,  // 33: protowire.FreedMessage.pruningPoints:type_name -> protowire.PruningPointsMessage
+	34,  // 34: protowire.FreedMessage.requestPruningPointProof:type_name -> protowire.RequestPruningPointProofMessage
+	35,  // 35: protowire.FreedMessage.pruningPointProof:type_name -> protowire.PruningPointProofMessage
+	36,  // 36: protowire.FreedMessage.ready:type_name -> protowire.ReadyMessage
+	37,  // 37: protowire.FreedMessage.blockWithTrustedDataV4:type_name -> protowire.BlockWithTrustedDataV4Message
+	38,  // 38: protowire.FreedMessage.trustedData:type_name -> protowire.TrustedDataMessage
+	39,  // 39: protowire.FreedMessage.requestIBDChainBlockLocator:type_name -> protowire.RequestIBDChainBlockLocatorMessage
+	40,  // 40: protowire.FreedMessage.ibdChainBlockLocator:type_name -> protowire.IbdChainBlockLocatorMessage
+	41,  // 41: protowire.FreedMessage.requestAnticone:type_name -> protowire.RequestAnticoneMessage
+	42,  // 42: protowire.FreedMessage.requestNextPruningPointAndItsAnticoneBlocks:type_name -> protowire.RequestNextPruningPointAndItsAnticoneBlocksMessage
+	43,  // 43: protowire.FreedMessage.getCurrentNetworkRequest:type_name -> protowire.GetCurrentNetworkRequestMessage
+	44,  // 44: protowire.FreedMessage.getCurrentNetworkResponse:type_name -> protowire.GetCurrentNetworkResponseMessage
+	45,  // 45: protowire.FreedMessage.submitBlockRequest:type_name -> protowire.SubmitBlockRequestMessage
+	46,  // 46: protowire.FreedMessage.submitBlockResponse:type_name -> protowire.SubmitBlockResponseMessage
+	47,  // 47: protowire.FreedMessage.getBlockTemplateRequest:type_name -> protowire.GetBlockTemplateRequestMessage
+	48,  // 48: protowire.FreedMessage.getBlockTemplateResponse:type_name -> protowire.GetBlockTemplateResponseMessage
+	49,  // 49: protowire.FreedMessage.notifyBlockAddedRequest:type_name -> protowire.NotifyBlockAddedRequestMessage
+	50,  // 50: protowire.FreedMessage.notifyBlockAddedResponse:type_name -> protowire.NotifyBlockAddedResponseMessage
+	51,  // 51: protowire.FreedMessage.blockAddedNotification:type_name -> protowire.BlockAddedNotificationMessage
+	52,  // 52: protowire.FreedMessage.getPeerAddressesRequest:type_name -> protowire.GetPeerAddressesRequestMessage
+	53,  // 53: protowire.FreedMessage.getPeerAddressesResponse:type_name -> protowire.GetPeerAddressesResponseMessage
+	54,  // 54: protowire.FreedMessage.getSelectedTipHashRequest:type_name -> protowire.GetSelectedTipHashRequestMessage
+	55,  // 55: protowire.FreedMessage.getSelectedTipHashResponse:type_name -> protowire.GetSelectedTipHashResponseMessage
+	56,  // 56: protowire.FreedMessage.getMempoolEntryRequest:type_name -> protowire.GetMempoolEntryRequestMessage
+	57,  // 57: protowire.FreedMessage.getMempoolEntryResponse:type_name -> protowire.GetMempoolEntryResponseMessage
+	58,  // 58: protowire.FreedMessage.getConnectedPeerInfoRequest:type_name -> protowire.GetConnectedPeerInfoRequestMessage
+	59,  // 59: protowire.FreedMessage.getConnectedPeerInfoResponse:type_name -> protowire.GetConnectedPeerInfoResponseMessage
+	60,  // 60: protowire.FreedMessage.addPeerRequest:type_name -> protowire.AddPeerRequestMessage
+	61,  // 61: protowire.FreedMessage.addPeerResponse:type_name -> protowire.AddPeerResponseMessage
+	62,  // 62: protowire.FreedMessage.submitTransactionRequest:type_name -> protowire.SubmitTransactionRequestMessage
+	63,  // 63: protowire.FreedMessage.submitTransactionResponse:type_name -> protowire.SubmitTransactionResponseMessage
+	64,  // 64: protowire.FreedMessage.notifyVirtualSelectedParentChainChangedRequest:type_name -> protowire.NotifyVirtualSelectedParentChainChangedRequestMessage
+	65,  // 65: protowire.FreedMessage.notifyVirtualSelectedParentChainChangedResponse:type_name -> protowire.NotifyVirtualSelectedParentChainChangedResponseMessage
+	66,  // 66: protowire.FreedMessage.virtualSelectedParentChainChangedNotification:type_name -> protowire.VirtualSelectedParentChainChangedNotificationMessage
+	67,  // 67: protowire.FreedMessage.getBlockRequest:type_name -> protowire.GetBlockRequestMessage
+	68,  // 68: protowire.FreedMessage.getBlockResponse:type_name -> protowire.GetBlockResponseMessage
+	69,  // 69: protowire.FreedMessage.getSubnetworkRequest:type_name -> protowire.GetSubnetworkRequestMessage
+	70,  // 70: protowire.FreedMessage.getSubnetworkResponse:type_name -> protowire.GetSubnetworkResponseMessage
+	71,  // 71: protowire.FreedMessage.getVirtualSelectedParentChainFromBlockRequest:type_name -> protowire.GetVirtualSelectedParentChainFromBlockRequestMessage
+	72,  // 72: protowire.FreedMessage.getVirtualSelectedParentChainFromBlockResponse:type_name -> protowire.GetVirtualSelectedParentChainFromBlockResponseMessage
+	73,  // 73: protowire.FreedMessage.getBlocksRequest:type_name -> protowire.GetBlocksRequestMessage
+	74,  // 74: protowire.FreedMessage.getBlocksResponse:type_name -> protowire.GetBlocksResponseMessage
+	75,  // 75: protowire.FreedMessage.getBlockCountRequest:type_name -> protowire.GetBlockCountRequestMessage
+	76,  // 76: protowire.FreedMessage.getBlockCountResponse:type_name -> protowire.GetBlockCountResponseMessage
+	77,  // 77: protowire.FreedMessage.getBlockDagInfoRequest:type_name -> protowire.GetBlockDagInfoRequestMessage
+	78,  // 78: protowire.FreedMessage.getBlockDagInfoResponse:type_name -> protowire.GetBlockDagInfoResponseMessage
+	79,  // 79: protowire.FreedMessage.resolveFinalityConflictRequest:type_name -> protowire.ResolveFinalityConflictRequestMessage
+	80,  // 80: protowire.FreedMessage.resolveFinalityConflictResponse:type_name -> protowire.ResolveFinalityConflictResponseMessage
+	81,  // 81: protowire.FreedMessage.notifyFinalityConflictsRequest:type_name -> protowire.NotifyFinalityConflictsRequestMessage
+	82,  // 82: protowire.FreedMessage.notifyFinalityConflictsResponse:type_name -> protowire.NotifyFinalityConflictsResponseMessage
+	83,  // 83: protowire.FreedMessage.finalityConflictNotification:type_name -> protowire.FinalityConflictNotificationMessage
+	84,  // 84: protowire.FreedMessage.finalityConflictResolvedNotification:type_name -> protowire.FinalityConflictResolvedNotificationMessage
+	85,  // 85: protowire.FreedMessage.getMempoolEntriesRequest:type_name -> protowire.GetMempoolEntriesRequestMessage
+	86,  // 86: protowire.FreedMessage.getMempoolEntriesResponse:type_name -> protowire.GetMempoolEntriesResponseMessage
+	87,  // 87: protowire.FreedMessage.shutDownRequest:type_name -> protowire.ShutDownRequestMessage
+	88,  // 88: protowire.FreedMessage.shutDownResponse:type_name -> protowire.ShutDownResponseMessage
+	89,  // 89: protowire.FreedMessage.getHeadersRequest:type_name -> protowire.GetHeadersRequestMessage
+	90,  // 90: protowire.FreedMessage.getHeadersResponse:type_name -> protowire.GetHeadersResponseMessage
+	91,  // 91: protowire.FreedMessage.notifyUtxosChangedRequest:type_name -> protowire.NotifyUtxosChangedRequestMessage
+	92,  // 92: protowire.FreedMessage.notifyUtxosChangedResponse:type_name -> protowire.NotifyUtxosChangedResponseMessage
+	93,  // 93: protowire.FreedMessage.utxosChangedNotification:type_name -> protowire.UtxosChangedNotificationMessage
+	94,  // 94: protowire.FreedMessage.getUtxosByAddressesRequest:type_name -> protowire.GetUtxosByAddressesRequestMessage
+	95,  // 95: protowire.FreedMessage.getUtxosByAddressesResponse:type_name -> protowire.GetUtxosByAddressesResponseMessage
+	96,  // 96: protowire.FreedMessage.getVirtualSelectedParentBlueScoreRequest:type_name -> protowire.GetVirtualSelectedParentBlueScoreRequestMessage
+	97,  // 97: protowire.FreedMessage.getVirtualSelectedParentBlueScoreResponse:type_name -> protowire.GetVirtualSelectedParentBlueScoreResponseMessage
+	98,  // 98: protowire.FreedMessage.notifyVirtualSelectedParentBlueScoreChangedRequest:type_name -> protowire.NotifyVirtualSelectedParentBlueScoreChangedRequestMessage
+	99,  // 99: protowire.FreedMessage.notifyVirtualSelectedParentBlueScoreChangedResponse:type_name -> protowire.NotifyVirtualSelectedParentBlueScoreChangedResponseMessage
+	100, // 100: protowire.FreedMessage.virtualSelectedParentBlueScoreChangedNotification:type_name -> protowire.VirtualSelectedParentBlueScoreChangedNotificationMessage
+	101, // 101: protowire.FreedMessage.banRequest:type_name -> protowire.BanRequestMessage
+	102, // 102: protowire.FreedMessage.banResponse:type_name -> protowire.BanResponseMessage
+	103, // 103: protowire.FreedMessage.unbanRequest:type_name -> protowire.UnbanRequestMessage
+	104, // 104: protowire.FreedMessage.unbanResponse:type_name -> protowire.UnbanResponseMessage
+	105, // 105: protowire.FreedMessage.getInfoRequest:type_name -> protowire.GetInfoRequestMessage
+	106, // 106: protowire.FreedMessage.getInfoResponse:type_name -> protowire.GetInfoResponseMessage
+	107, // 107: protowire.FreedMessage.stopNotifyingUtxosChangedRequest:type_name -> protowire.StopNotifyingUtxosChangedRequestMessage
+	108, // 108: protowire.FreedMessage.stopNotifyingUtxosChangedResponse:type_name -> protowire.StopNotifyingUtxosChangedResponseMessage
+	109, // 109: protowire.FreedMessage.notifyPruningPointUTXOSetOverrideRequest:type_name -> protowire.NotifyPruningPointUTXOSetOverrideRequestMessage
+	110, // 110: protowire.FreedMessage.notifyPruningPointUTXOSetOverrideResponse:type_name -> protowire.NotifyPruningPointUTXOSetOverrideResponseMessage
+	111, // 111: protowire.FreedMessage.pruningPointUTXOSetOverrideNotification:type_name -> protowire.PruningPointUTXOSetOverrideNotificationMessage
+	112, // 112: protowire.FreedMessage.stopNotifyingPruningPointUTXOSetOverrideRequest:type_name -> protowire.StopNotifyingPruningPointUTXOSetOverrideRequestMessage
+	113, // 113: protowire.FreedMessage.stopNotifyingPruningPointUTXOSetOverrideResponse:type_name -> protowire.StopNotifyingPruningPointUTXOSetOverrideResponseMessage
+	114, // 114: protowire.FreedMessage.estimateNetworkHashesPerSecondRequest:type_name -> protowire.EstimateNetworkHashesPerSecondRequestMessage
+	115, // 115: protowire.FreedMessage.estimateNetworkHashesPerSecondResponse:type_name -> protowire.EstimateNetworkHashesPerSecondResponseMessage
+	116, // 116: protowire.FreedMessage.notifyVirtualDaaScoreChangedRequest:type_name -> protowire.NotifyVirtualDaaScoreChangedRequestMessage
+	117, // 117: protowire.FreedMessage.notifyVirtualDaaScoreChangedResponse:type_name -> protowire.NotifyVirtualDaaScoreChangedResponseMessage
+	118, // 118: protowire.FreedMessage.virtualDaaScoreChangedNotification:type_name -> protowire.VirtualDaaScoreChangedNotificationMessage
+	119, // 119: protowire.FreedMessage.getBalanceByAddressRequest:type_name -> protowire.GetBalanceByAddressRequestMessage
+	120, // 120: protowire.FreedMessage.getBalanceByAddressResponse:type_name -> protowire.GetBalanceByAddressResponseMessage
+	121, // 121: protowire.FreedMessage.getBalancesByAddressesRequest:type_name -> protowire.GetBalancesByAddressesRequestMessage
+	122, // 122: protowire.FreedMessage.getBalancesByAddressesResponse:type_name -> protowire.GetBalancesByAddressesResponseMessage
+	123, // 123: protowire.FreedMessage.notifyNewBlockTemplateRequest:type_name -> protowire.NotifyNewBlockTemplateRequestMessage
+	124, // 124: protowire.FreedMessage.notifyNewBlockTemplateResponse:type_name -> protowire.NotifyNewBlockTemplateResponseMessage
+	125, // 125: protowire.FreedMessage.newBlockTemplateNotification:type_name -> protowire.NewBlockTemplateNotificationMessage
+	126, // 126: protowire.FreedMessage.getMempoolEntriesByAddressesRequest:type_name -> protowire.GetMempoolEntriesByAddressesRequestMessage
+	127, // 127: protowire.FreedMessage.getMempoolEntriesByAddressesResponse:type_name -> protowire.GetMempoolEntriesByAddressesResponseMessage
+	128, // 128: protowire.FreedMessage.getCoinSupplyRequest:type_name -> protowire.GetCoinSupplyRequestMessage
+	129, // 129: protowire.FreedMessage.getCoinSupplyResponse:type_name -> protowire.GetCoinSupplyResponseMessage
+	0,   // 130: protowire.P2P.MessageStream:input_type -> protowire.FreedMessage
+	0,   // 131: protowire.RPC.MessageStream:input_type -> protowire.FreedMessage
+	0,   // 132: protowire.P2P.MessageStream:output_type -> protowire.FreedMessage
+	0,   // 133: protowire.RPC.MessageStream:output_type -> protowire.FreedMessage
 	132, // [132:134] is the sub-list for method output_type
 	130, // [130:132] is the sub-list for method input_type
 	130, // [130:130] is the sub-list for extension type_name
@@ -3086,7 +3086,7 @@ func file_messages_proto_init() {
 	file_rpc_proto_init()
 	if !protoimpl.UnsafeEnabled {
 		file_messages_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*KarlsendMessage); i {
+			switch v := v.(*FreedMessage); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3099,136 +3099,136 @@ func file_messages_proto_init() {
 		}
 	}
 	file_messages_proto_msgTypes[0].OneofWrappers = []interface{}{
-		(*KarlsendMessage_Addresses)(nil),
-		(*KarlsendMessage_Block)(nil),
-		(*KarlsendMessage_Transaction)(nil),
-		(*KarlsendMessage_BlockLocator)(nil),
-		(*KarlsendMessage_RequestAddresses)(nil),
-		(*KarlsendMessage_RequestRelayBlocks)(nil),
-		(*KarlsendMessage_RequestTransactions)(nil),
-		(*KarlsendMessage_IbdBlock)(nil),
-		(*KarlsendMessage_InvRelayBlock)(nil),
-		(*KarlsendMessage_InvTransactions)(nil),
-		(*KarlsendMessage_Ping)(nil),
-		(*KarlsendMessage_Pong)(nil),
-		(*KarlsendMessage_Verack)(nil),
-		(*KarlsendMessage_Version)(nil),
-		(*KarlsendMessage_TransactionNotFound)(nil),
-		(*KarlsendMessage_Reject)(nil),
-		(*KarlsendMessage_PruningPointUtxoSetChunk)(nil),
-		(*KarlsendMessage_RequestIBDBlocks)(nil),
-		(*KarlsendMessage_UnexpectedPruningPoint)(nil),
-		(*KarlsendMessage_IbdBlockLocator)(nil),
-		(*KarlsendMessage_IbdBlockLocatorHighestHash)(nil),
-		(*KarlsendMessage_RequestNextPruningPointUtxoSetChunk)(nil),
-		(*KarlsendMessage_DonePruningPointUtxoSetChunks)(nil),
-		(*KarlsendMessage_IbdBlockLocatorHighestHashNotFound)(nil),
-		(*KarlsendMessage_BlockWithTrustedData)(nil),
-		(*KarlsendMessage_DoneBlocksWithTrustedData)(nil),
-		(*KarlsendMessage_RequestPruningPointAndItsAnticone)(nil),
-		(*KarlsendMessage_BlockHeaders)(nil),
-		(*KarlsendMessage_RequestNextHeaders)(nil),
-		(*KarlsendMessage_DoneHeaders)(nil),
-		(*KarlsendMessage_RequestPruningPointUTXOSet)(nil),
-		(*KarlsendMessage_RequestHeaders)(nil),
-		(*KarlsendMessage_RequestBlockLocator)(nil),
-		(*KarlsendMessage_PruningPoints)(nil),
-		(*KarlsendMessage_RequestPruningPointProof)(nil),
-		(*KarlsendMessage_PruningPointProof)(nil),
-		(*KarlsendMessage_Ready)(nil),
-		(*KarlsendMessage_BlockWithTrustedDataV4)(nil),
-		(*KarlsendMessage_TrustedData)(nil),
-		(*KarlsendMessage_RequestIBDChainBlockLocator)(nil),
-		(*KarlsendMessage_IbdChainBlockLocator)(nil),
-		(*KarlsendMessage_RequestAnticone)(nil),
-		(*KarlsendMessage_RequestNextPruningPointAndItsAnticoneBlocks)(nil),
-		(*KarlsendMessage_GetCurrentNetworkRequest)(nil),
-		(*KarlsendMessage_GetCurrentNetworkResponse)(nil),
-		(*KarlsendMessage_SubmitBlockRequest)(nil),
-		(*KarlsendMessage_SubmitBlockResponse)(nil),
-		(*KarlsendMessage_GetBlockTemplateRequest)(nil),
-		(*KarlsendMessage_GetBlockTemplateResponse)(nil),
-		(*KarlsendMessage_NotifyBlockAddedRequest)(nil),
-		(*KarlsendMessage_NotifyBlockAddedResponse)(nil),
-		(*KarlsendMessage_BlockAddedNotification)(nil),
-		(*KarlsendMessage_GetPeerAddressesRequest)(nil),
-		(*KarlsendMessage_GetPeerAddressesResponse)(nil),
-		(*KarlsendMessage_GetSelectedTipHashRequest)(nil),
-		(*KarlsendMessage_GetSelectedTipHashResponse)(nil),
-		(*KarlsendMessage_GetMempoolEntryRequest)(nil),
-		(*KarlsendMessage_GetMempoolEntryResponse)(nil),
-		(*KarlsendMessage_GetConnectedPeerInfoRequest)(nil),
-		(*KarlsendMessage_GetConnectedPeerInfoResponse)(nil),
-		(*KarlsendMessage_AddPeerRequest)(nil),
-		(*KarlsendMessage_AddPeerResponse)(nil),
-		(*KarlsendMessage_SubmitTransactionRequest)(nil),
-		(*KarlsendMessage_SubmitTransactionResponse)(nil),
-		(*KarlsendMessage_NotifyVirtualSelectedParentChainChangedRequest)(nil),
-		(*KarlsendMessage_NotifyVirtualSelectedParentChainChangedResponse)(nil),
-		(*KarlsendMessage_VirtualSelectedParentChainChangedNotification)(nil),
-		(*KarlsendMessage_GetBlockRequest)(nil),
-		(*KarlsendMessage_GetBlockResponse)(nil),
-		(*KarlsendMessage_GetSubnetworkRequest)(nil),
-		(*KarlsendMessage_GetSubnetworkResponse)(nil),
-		(*KarlsendMessage_GetVirtualSelectedParentChainFromBlockRequest)(nil),
-		(*KarlsendMessage_GetVirtualSelectedParentChainFromBlockResponse)(nil),
-		(*KarlsendMessage_GetBlocksRequest)(nil),
-		(*KarlsendMessage_GetBlocksResponse)(nil),
-		(*KarlsendMessage_GetBlockCountRequest)(nil),
-		(*KarlsendMessage_GetBlockCountResponse)(nil),
-		(*KarlsendMessage_GetBlockDagInfoRequest)(nil),
-		(*KarlsendMessage_GetBlockDagInfoResponse)(nil),
-		(*KarlsendMessage_ResolveFinalityConflictRequest)(nil),
-		(*KarlsendMessage_ResolveFinalityConflictResponse)(nil),
-		(*KarlsendMessage_NotifyFinalityConflictsRequest)(nil),
-		(*KarlsendMessage_NotifyFinalityConflictsResponse)(nil),
-		(*KarlsendMessage_FinalityConflictNotification)(nil),
-		(*KarlsendMessage_FinalityConflictResolvedNotification)(nil),
-		(*KarlsendMessage_GetMempoolEntriesRequest)(nil),
-		(*KarlsendMessage_GetMempoolEntriesResponse)(nil),
-		(*KarlsendMessage_ShutDownRequest)(nil),
-		(*KarlsendMessage_ShutDownResponse)(nil),
-		(*KarlsendMessage_GetHeadersRequest)(nil),
-		(*KarlsendMessage_GetHeadersResponse)(nil),
-		(*KarlsendMessage_NotifyUtxosChangedRequest)(nil),
-		(*KarlsendMessage_NotifyUtxosChangedResponse)(nil),
-		(*KarlsendMessage_UtxosChangedNotification)(nil),
-		(*KarlsendMessage_GetUtxosByAddressesRequest)(nil),
-		(*KarlsendMessage_GetUtxosByAddressesResponse)(nil),
-		(*KarlsendMessage_GetVirtualSelectedParentBlueScoreRequest)(nil),
-		(*KarlsendMessage_GetVirtualSelectedParentBlueScoreResponse)(nil),
-		(*KarlsendMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest)(nil),
-		(*KarlsendMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse)(nil),
-		(*KarlsendMessage_VirtualSelectedParentBlueScoreChangedNotification)(nil),
-		(*KarlsendMessage_BanRequest)(nil),
-		(*KarlsendMessage_BanResponse)(nil),
-		(*KarlsendMessage_UnbanRequest)(nil),
-		(*KarlsendMessage_UnbanResponse)(nil),
-		(*KarlsendMessage_GetInfoRequest)(nil),
-		(*KarlsendMessage_GetInfoResponse)(nil),
-		(*KarlsendMessage_StopNotifyingUtxosChangedRequest)(nil),
-		(*KarlsendMessage_StopNotifyingUtxosChangedResponse)(nil),
-		(*KarlsendMessage_NotifyPruningPointUTXOSetOverrideRequest)(nil),
-		(*KarlsendMessage_NotifyPruningPointUTXOSetOverrideResponse)(nil),
-		(*KarlsendMessage_PruningPointUTXOSetOverrideNotification)(nil),
-		(*KarlsendMessage_StopNotifyingPruningPointUTXOSetOverrideRequest)(nil),
-		(*KarlsendMessage_StopNotifyingPruningPointUTXOSetOverrideResponse)(nil),
-		(*KarlsendMessage_EstimateNetworkHashesPerSecondRequest)(nil),
-		(*KarlsendMessage_EstimateNetworkHashesPerSecondResponse)(nil),
-		(*KarlsendMessage_NotifyVirtualDaaScoreChangedRequest)(nil),
-		(*KarlsendMessage_NotifyVirtualDaaScoreChangedResponse)(nil),
-		(*KarlsendMessage_VirtualDaaScoreChangedNotification)(nil),
-		(*KarlsendMessage_GetBalanceByAddressRequest)(nil),
-		(*KarlsendMessage_GetBalanceByAddressResponse)(nil),
-		(*KarlsendMessage_GetBalancesByAddressesRequest)(nil),
-		(*KarlsendMessage_GetBalancesByAddressesResponse)(nil),
-		(*KarlsendMessage_NotifyNewBlockTemplateRequest)(nil),
-		(*KarlsendMessage_NotifyNewBlockTemplateResponse)(nil),
-		(*KarlsendMessage_NewBlockTemplateNotification)(nil),
-		(*KarlsendMessage_GetMempoolEntriesByAddressesRequest)(nil),
-		(*KarlsendMessage_GetMempoolEntriesByAddressesResponse)(nil),
-		(*KarlsendMessage_GetCoinSupplyRequest)(nil),
-		(*KarlsendMessage_GetCoinSupplyResponse)(nil),
+		(*FreedMessage_Addresses)(nil),
+		(*FreedMessage_Block)(nil),
+		(*FreedMessage_Transaction)(nil),
+		(*FreedMessage_BlockLocator)(nil),
+		(*FreedMessage_RequestAddresses)(nil),
+		(*FreedMessage_RequestRelayBlocks)(nil),
+		(*FreedMessage_RequestTransactions)(nil),
+		(*FreedMessage_IbdBlock)(nil),
+		(*FreedMessage_InvRelayBlock)(nil),
+		(*FreedMessage_InvTransactions)(nil),
+		(*FreedMessage_Ping)(nil),
+		(*FreedMessage_Pong)(nil),
+		(*FreedMessage_Verack)(nil),
+		(*FreedMessage_Version)(nil),
+		(*FreedMessage_TransactionNotFound)(nil),
+		(*FreedMessage_Reject)(nil),
+		(*FreedMessage_PruningPointUtxoSetChunk)(nil),
+		(*FreedMessage_RequestIBDBlocks)(nil),
+		(*FreedMessage_UnexpectedPruningPoint)(nil),
+		(*FreedMessage_IbdBlockLocator)(nil),
+		(*FreedMessage_IbdBlockLocatorHighestHash)(nil),
+		(*FreedMessage_RequestNextPruningPointUtxoSetChunk)(nil),
+		(*FreedMessage_DonePruningPointUtxoSetChunks)(nil),
+		(*FreedMessage_IbdBlockLocatorHighestHashNotFound)(nil),
+		(*FreedMessage_BlockWithTrustedData)(nil),
+		(*FreedMessage_DoneBlocksWithTrustedData)(nil),
+		(*FreedMessage_RequestPruningPointAndItsAnticone)(nil),
+		(*FreedMessage_BlockHeaders)(nil),
+		(*FreedMessage_RequestNextHeaders)(nil),
+		(*FreedMessage_DoneHeaders)(nil),
+		(*FreedMessage_RequestPruningPointUTXOSet)(nil),
+		(*FreedMessage_RequestHeaders)(nil),
+		(*FreedMessage_RequestBlockLocator)(nil),
+		(*FreedMessage_PruningPoints)(nil),
+		(*FreedMessage_RequestPruningPointProof)(nil),
+		(*FreedMessage_PruningPointProof)(nil),
+		(*FreedMessage_Ready)(nil),
+		(*FreedMessage_BlockWithTrustedDataV4)(nil),
+		(*FreedMessage_TrustedData)(nil),
+		(*FreedMessage_RequestIBDChainBlockLocator)(nil),
+		(*FreedMessage_IbdChainBlockLocator)(nil),
+		(*FreedMessage_RequestAnticone)(nil),
+		(*FreedMessage_RequestNextPruningPointAndItsAnticoneBlocks)(nil),
+		(*FreedMessage_GetCurrentNetworkRequest)(nil),
+		(*FreedMessage_GetCurrentNetworkResponse)(nil),
+		(*FreedMessage_SubmitBlockRequest)(nil),
+		(*FreedMessage_SubmitBlockResponse)(nil),
+		(*FreedMessage_GetBlockTemplateRequest)(nil),
+		(*FreedMessage_GetBlockTemplateResponse)(nil),
+		(*FreedMessage_NotifyBlockAddedRequest)(nil),
+		(*FreedMessage_NotifyBlockAddedResponse)(nil),
+		(*FreedMessage_BlockAddedNotification)(nil),
+		(*FreedMessage_GetPeerAddressesRequest)(nil),
+		(*FreedMessage_GetPeerAddressesResponse)(nil),
+		(*FreedMessage_GetSelectedTipHashRequest)(nil),
+		(*FreedMessage_GetSelectedTipHashResponse)(nil),
+		(*FreedMessage_GetMempoolEntryRequest)(nil),
+		(*FreedMessage_GetMempoolEntryResponse)(nil),
+		(*FreedMessage_GetConnectedPeerInfoRequest)(nil),
+		(*FreedMessage_GetConnectedPeerInfoResponse)(nil),
+		(*FreedMessage_AddPeerRequest)(nil),
+		(*FreedMessage_AddPeerResponse)(nil),
+		(*FreedMessage_SubmitTransactionRequest)(nil),
+		(*FreedMessage_SubmitTransactionResponse)(nil),
+		(*FreedMessage_NotifyVirtualSelectedParentChainChangedRequest)(nil),
+		(*FreedMessage_NotifyVirtualSelectedParentChainChangedResponse)(nil),
+		(*FreedMessage_VirtualSelectedParentChainChangedNotification)(nil),
+		(*FreedMessage_GetBlockRequest)(nil),
+		(*FreedMessage_GetBlockResponse)(nil),
+		(*FreedMessage_GetSubnetworkRequest)(nil),
+		(*FreedMessage_GetSubnetworkResponse)(nil),
+		(*FreedMessage_GetVirtualSelectedParentChainFromBlockRequest)(nil),
+		(*FreedMessage_GetVirtualSelectedParentChainFromBlockResponse)(nil),
+		(*FreedMessage_GetBlocksRequest)(nil),
+		(*FreedMessage_GetBlocksResponse)(nil),
+		(*FreedMessage_GetBlockCountRequest)(nil),
+		(*FreedMessage_GetBlockCountResponse)(nil),
+		(*FreedMessage_GetBlockDagInfoRequest)(nil),
+		(*FreedMessage_GetBlockDagInfoResponse)(nil),
+		(*FreedMessage_ResolveFinalityConflictRequest)(nil),
+		(*FreedMessage_ResolveFinalityConflictResponse)(nil),
+		(*FreedMessage_NotifyFinalityConflictsRequest)(nil),
+		(*FreedMessage_NotifyFinalityConflictsResponse)(nil),
+		(*FreedMessage_FinalityConflictNotification)(nil),
+		(*FreedMessage_FinalityConflictResolvedNotification)(nil),
+		(*FreedMessage_GetMempoolEntriesRequest)(nil),
+		(*FreedMessage_GetMempoolEntriesResponse)(nil),
+		(*FreedMessage_ShutDownRequest)(nil),
+		(*FreedMessage_ShutDownResponse)(nil),
+		(*FreedMessage_GetHeadersRequest)(nil),
+		(*FreedMessage_GetHeadersResponse)(nil),
+		(*FreedMessage_NotifyUtxosChangedRequest)(nil),
+		(*FreedMessage_NotifyUtxosChangedResponse)(nil),
+		(*FreedMessage_UtxosChangedNotification)(nil),
+		(*FreedMessage_GetUtxosByAddressesRequest)(nil),
+		(*FreedMessage_GetUtxosByAddressesResponse)(nil),
+		(*FreedMessage_GetVirtualSelectedParentBlueScoreRequest)(nil),
+		(*FreedMessage_GetVirtualSelectedParentBlueScoreResponse)(nil),
+		(*FreedMessage_NotifyVirtualSelectedParentBlueScoreChangedRequest)(nil),
+		(*FreedMessage_NotifyVirtualSelectedParentBlueScoreChangedResponse)(nil),
+		(*FreedMessage_VirtualSelectedParentBlueScoreChangedNotification)(nil),
+		(*FreedMessage_BanRequest)(nil),
+		(*FreedMessage_BanResponse)(nil),
+		(*FreedMessage_UnbanRequest)(nil),
+		(*FreedMessage_UnbanResponse)(nil),
+		(*FreedMessage_GetInfoRequest)(nil),
+		(*FreedMessage_GetInfoResponse)(nil),
+		(*FreedMessage_StopNotifyingUtxosChangedRequest)(nil),
+		(*FreedMessage_StopNotifyingUtxosChangedResponse)(nil),
+		(*FreedMessage_NotifyPruningPointUTXOSetOverrideRequest)(nil),
+		(*FreedMessage_NotifyPruningPointUTXOSetOverrideResponse)(nil),
+		(*FreedMessage_PruningPointUTXOSetOverrideNotification)(nil),
+		(*FreedMessage_StopNotifyingPruningPointUTXOSetOverrideRequest)(nil),
+		(*FreedMessage_StopNotifyingPruningPointUTXOSetOverrideResponse)(nil),
+		(*FreedMessage_EstimateNetworkHashesPerSecondRequest)(nil),
+		(*FreedMessage_EstimateNetworkHashesPerSecondResponse)(nil),
+		(*FreedMessage_NotifyVirtualDaaScoreChangedRequest)(nil),
+		(*FreedMessage_NotifyVirtualDaaScoreChangedResponse)(nil),
+		(*FreedMessage_VirtualDaaScoreChangedNotification)(nil),
+		(*FreedMessage_GetBalanceByAddressRequest)(nil),
+		(*FreedMessage_GetBalanceByAddressResponse)(nil),
+		(*FreedMessage_GetBalancesByAddressesRequest)(nil),
+		(*FreedMessage_GetBalancesByAddressesResponse)(nil),
+		(*FreedMessage_NotifyNewBlockTemplateRequest)(nil),
+		(*FreedMessage_NotifyNewBlockTemplateResponse)(nil),
+		(*FreedMessage_NewBlockTemplateNotification)(nil),
+		(*FreedMessage_GetMempoolEntriesByAddressesRequest)(nil),
+		(*FreedMessage_GetMempoolEntriesByAddressesResponse)(nil),
+		(*FreedMessage_GetCoinSupplyRequest)(nil),
+		(*FreedMessage_GetCoinSupplyResponse)(nil),
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{

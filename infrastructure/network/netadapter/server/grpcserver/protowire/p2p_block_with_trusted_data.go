@@ -3,14 +3,14 @@ package protowire
 import (
 	"math/big"
 
-	"github.com/karlsen-network/karlsend/app/appmessage"
-	"github.com/karlsen-network/karlsend/domain/consensus/model/externalapi"
+	"github.com/hungyu99/freed/app/appmessage"
+	"github.com/hungyu99/freed/domain/consensus/model/externalapi"
 	"github.com/pkg/errors"
 )
 
-func (x *KarlsendMessage_BlockWithTrustedData) toAppMessage() (appmessage.Message, error) {
+func (x *FreedMessage_BlockWithTrustedData) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "KarlsendMessage_BlockWithTrustedData is nil")
+		return nil, errors.Wrapf(errorNil, "FreedMessage_BlockWithTrustedData is nil")
 	}
 
 	msgBlock, err := x.BlockWithTrustedData.Block.toAppMessage()
@@ -52,7 +52,7 @@ func (x *KarlsendMessage_BlockWithTrustedData) toAppMessage() (appmessage.Messag
 	}, nil
 }
 
-func (x *KarlsendMessage_BlockWithTrustedData) fromAppMessage(msgBlockWithTrustedData *appmessage.MsgBlockWithTrustedData) error {
+func (x *FreedMessage_BlockWithTrustedData) fromAppMessage(msgBlockWithTrustedData *appmessage.MsgBlockWithTrustedData) error {
 	x.BlockWithTrustedData = &BlockWithTrustedDataMessage{
 		Block:        &BlockMessage{},
 		DaaScore:     msgBlockWithTrustedData.DAAScore,

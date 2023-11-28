@@ -1,15 +1,15 @@
 package protowire
 
 import (
-	"github.com/karlsen-network/karlsend/app/appmessage"
-	"github.com/karlsen-network/karlsend/infrastructure/network/netadapter/id"
-	"github.com/karlsen-network/karlsend/util/mstime"
+	"github.com/hungyu99/freed/app/appmessage"
+	"github.com/hungyu99/freed/infrastructure/network/netadapter/id"
+	"github.com/hungyu99/freed/util/mstime"
 	"github.com/pkg/errors"
 )
 
-func (x *KarlsendMessage_Version) toAppMessage() (appmessage.Message, error) {
+func (x *FreedMessage_Version) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "KarlsendMessage_Version is nil")
+		return nil, errors.Wrapf(errorNil, "FreedMessage_Version is nil")
 	}
 	return x.Version.toAppMessage()
 }
@@ -57,7 +57,7 @@ func (x *VersionMessage) toAppMessage() (appmessage.Message, error) {
 	}, nil
 }
 
-func (x *KarlsendMessage_Version) fromAppMessage(msgVersion *appmessage.MsgVersion) error {
+func (x *FreedMessage_Version) fromAppMessage(msgVersion *appmessage.MsgVersion) error {
 	err := appmessage.ValidateUserAgent(msgVersion.UserAgent)
 	if err != nil {
 		return err

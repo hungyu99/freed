@@ -1,13 +1,13 @@
 package protowire
 
 import (
-	"github.com/karlsen-network/karlsend/app/appmessage"
+	"github.com/hungyu99/freed/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *KarlsendMessage_InvTransactions) toAppMessage() (appmessage.Message, error) {
+func (x *FreedMessage_InvTransactions) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "KarlsendMessage_InvTransactions is nil")
+		return nil, errors.Wrapf(errorNil, "FreedMessage_InvTransactions is nil")
 	}
 	return x.InvTransactions.toAppMessage()
 }
@@ -29,7 +29,7 @@ func (x *InvTransactionsMessage) toAppMessage() (appmessage.Message, error) {
 
 }
 
-func (x *KarlsendMessage_InvTransactions) fromAppMessage(msgInvTransaction *appmessage.MsgInvTransaction) error {
+func (x *FreedMessage_InvTransactions) fromAppMessage(msgInvTransaction *appmessage.MsgInvTransaction) error {
 	if len(msgInvTransaction.TxIDs) > appmessage.MaxInvPerTxInvMsg {
 		return errors.Errorf("too many hashes for message "+
 			"[count %d, max %d]", len(msgInvTransaction.TxIDs), appmessage.MaxInvPerTxInvMsg)

@@ -1,30 +1,30 @@
 package protowire
 
 import (
-	"github.com/karlsen-network/karlsend/app/appmessage"
+	"github.com/hungyu99/freed/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *KarlsendMessage_NotifyVirtualDaaScoreChangedRequest) toAppMessage() (appmessage.Message, error) {
+func (x *FreedMessage_NotifyVirtualDaaScoreChangedRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "KarlsendMessage_NotifyVirtualDaaScoreChangedRequest is nil")
+		return nil, errors.Wrapf(errorNil, "FreedMessage_NotifyVirtualDaaScoreChangedRequest is nil")
 	}
 	return &appmessage.NotifyVirtualDaaScoreChangedRequestMessage{}, nil
 }
 
-func (x *KarlsendMessage_NotifyVirtualDaaScoreChangedRequest) fromAppMessage(_ *appmessage.NotifyVirtualDaaScoreChangedRequestMessage) error {
+func (x *FreedMessage_NotifyVirtualDaaScoreChangedRequest) fromAppMessage(_ *appmessage.NotifyVirtualDaaScoreChangedRequestMessage) error {
 	x.NotifyVirtualDaaScoreChangedRequest = &NotifyVirtualDaaScoreChangedRequestMessage{}
 	return nil
 }
 
-func (x *KarlsendMessage_NotifyVirtualDaaScoreChangedResponse) toAppMessage() (appmessage.Message, error) {
+func (x *FreedMessage_NotifyVirtualDaaScoreChangedResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "KarlsendMessage_NotifyVirtualDaaScoreChangedResponse is nil")
+		return nil, errors.Wrapf(errorNil, "FreedMessage_NotifyVirtualDaaScoreChangedResponse is nil")
 	}
 	return x.NotifyVirtualDaaScoreChangedResponse.toAppMessage()
 }
 
-func (x *KarlsendMessage_NotifyVirtualDaaScoreChangedResponse) fromAppMessage(message *appmessage.NotifyVirtualDaaScoreChangedResponseMessage) error {
+func (x *FreedMessage_NotifyVirtualDaaScoreChangedResponse) fromAppMessage(message *appmessage.NotifyVirtualDaaScoreChangedResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}
@@ -49,14 +49,14 @@ func (x *NotifyVirtualDaaScoreChangedResponseMessage) toAppMessage() (appmessage
 	}, nil
 }
 
-func (x *KarlsendMessage_VirtualDaaScoreChangedNotification) toAppMessage() (appmessage.Message, error) {
+func (x *FreedMessage_VirtualDaaScoreChangedNotification) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "KarlsendMessage_VirtualDaaScoreChangedNotification is nil")
+		return nil, errors.Wrapf(errorNil, "FreedMessage_VirtualDaaScoreChangedNotification is nil")
 	}
 	return x.VirtualDaaScoreChangedNotification.toAppMessage()
 }
 
-func (x *KarlsendMessage_VirtualDaaScoreChangedNotification) fromAppMessage(message *appmessage.VirtualDaaScoreChangedNotificationMessage) error {
+func (x *FreedMessage_VirtualDaaScoreChangedNotification) fromAppMessage(message *appmessage.VirtualDaaScoreChangedNotificationMessage) error {
 	x.VirtualDaaScoreChangedNotification = &VirtualDaaScoreChangedNotificationMessage{
 		VirtualDaaScore: message.VirtualDaaScore,
 	}

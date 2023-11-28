@@ -1,11 +1,11 @@
 package protowire
 
-import "github.com/karlsen-network/karlsend/app/appmessage"
+import "github.com/hungyu99/freed/app/appmessage"
 
-func (x *KarlsendMessage_UnexpectedPruningPoint) toAppMessage() (appmessage.Message, error) {
+func (x *FreedMessage_UnexpectedPruningPoint) toAppMessage() (appmessage.Message, error) {
 	return &appmessage.MsgUnexpectedPruningPoint{}, nil
 }
 
-func (x *KarlsendMessage_UnexpectedPruningPoint) fromAppMessage(_ *appmessage.MsgUnexpectedPruningPoint) error {
+func (x *FreedMessage_UnexpectedPruningPoint) fromAppMessage(_ *appmessage.MsgUnexpectedPruningPoint) error {
 	return nil
 }

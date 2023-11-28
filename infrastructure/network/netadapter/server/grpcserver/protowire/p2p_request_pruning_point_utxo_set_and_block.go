@@ -1,13 +1,13 @@
 package protowire
 
 import (
-	"github.com/karlsen-network/karlsend/app/appmessage"
+	"github.com/hungyu99/freed/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *KarlsendMessage_RequestPruningPointUTXOSet) toAppMessage() (appmessage.Message, error) {
+func (x *FreedMessage_RequestPruningPointUTXOSet) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "KarlsendMessage_RequestPruningPointUTXOSet is nil")
+		return nil, errors.Wrapf(errorNil, "FreedMessage_RequestPruningPointUTXOSet is nil")
 	}
 	return x.RequestPruningPointUTXOSet.toAppMessage()
 }
@@ -23,7 +23,7 @@ func (x *RequestPruningPointUTXOSetMessage) toAppMessage() (appmessage.Message, 
 	return &appmessage.MsgRequestPruningPointUTXOSet{PruningPointHash: pruningPointHash}, nil
 }
 
-func (x *KarlsendMessage_RequestPruningPointUTXOSet) fromAppMessage(
+func (x *FreedMessage_RequestPruningPointUTXOSet) fromAppMessage(
 	msgRequestPruningPointUTXOSet *appmessage.MsgRequestPruningPointUTXOSet) error {
 
 	x.RequestPruningPointUTXOSet = &RequestPruningPointUTXOSetMessage{}

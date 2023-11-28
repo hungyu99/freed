@@ -1,26 +1,26 @@
 package protowire
 
 import (
-	"github.com/karlsen-network/karlsend/app/appmessage"
+	"github.com/hungyu99/freed/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *KarlsendMessage_GetConnectedPeerInfoRequest) toAppMessage() (appmessage.Message, error) {
+func (x *FreedMessage_GetConnectedPeerInfoRequest) toAppMessage() (appmessage.Message, error) {
 	return &appmessage.GetConnectedPeerInfoRequestMessage{}, nil
 }
 
-func (x *KarlsendMessage_GetConnectedPeerInfoRequest) fromAppMessage(_ *appmessage.GetConnectedPeerInfoRequestMessage) error {
+func (x *FreedMessage_GetConnectedPeerInfoRequest) fromAppMessage(_ *appmessage.GetConnectedPeerInfoRequestMessage) error {
 	return nil
 }
 
-func (x *KarlsendMessage_GetConnectedPeerInfoResponse) toAppMessage() (appmessage.Message, error) {
+func (x *FreedMessage_GetConnectedPeerInfoResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "KarlsendMessage_GetConnectedPeerInfoResponse is nil")
+		return nil, errors.Wrapf(errorNil, "FreedMessage_GetConnectedPeerInfoResponse is nil")
 	}
 	return x.GetConnectedPeerInfoResponse.toAppMessage()
 }
 
-func (x *KarlsendMessage_GetConnectedPeerInfoResponse) fromAppMessage(message *appmessage.GetConnectedPeerInfoResponseMessage) error {
+func (x *FreedMessage_GetConnectedPeerInfoResponse) fromAppMessage(message *appmessage.GetConnectedPeerInfoResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}

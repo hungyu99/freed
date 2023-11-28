@@ -1,18 +1,18 @@
 package protowire
 
 import (
-	"github.com/karlsen-network/karlsend/app/appmessage"
+	"github.com/hungyu99/freed/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *KarlsendMessage_NotifyUtxosChangedRequest) toAppMessage() (appmessage.Message, error) {
+func (x *FreedMessage_NotifyUtxosChangedRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "KarlsendMessage_NotifyUtxosChangedRequest is nil")
+		return nil, errors.Wrapf(errorNil, "FreedMessage_NotifyUtxosChangedRequest is nil")
 	}
 	return x.NotifyUtxosChangedRequest.toAppMessage()
 }
 
-func (x *KarlsendMessage_NotifyUtxosChangedRequest) fromAppMessage(message *appmessage.NotifyUTXOsChangedRequestMessage) error {
+func (x *FreedMessage_NotifyUtxosChangedRequest) fromAppMessage(message *appmessage.NotifyUTXOsChangedRequestMessage) error {
 	x.NotifyUtxosChangedRequest = &NotifyUtxosChangedRequestMessage{
 		Addresses: message.Addresses,
 	}
@@ -28,14 +28,14 @@ func (x *NotifyUtxosChangedRequestMessage) toAppMessage() (appmessage.Message, e
 	}, nil
 }
 
-func (x *KarlsendMessage_NotifyUtxosChangedResponse) toAppMessage() (appmessage.Message, error) {
+func (x *FreedMessage_NotifyUtxosChangedResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
 		return nil, errors.Wrapf(errorNil, "NotifyUtxosChangedResponseMessage is nil")
 	}
 	return x.NotifyUtxosChangedResponse.toAppMessage()
 }
 
-func (x *KarlsendMessage_NotifyUtxosChangedResponse) fromAppMessage(message *appmessage.NotifyUTXOsChangedResponseMessage) error {
+func (x *FreedMessage_NotifyUtxosChangedResponse) fromAppMessage(message *appmessage.NotifyUTXOsChangedResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}
@@ -60,14 +60,14 @@ func (x *NotifyUtxosChangedResponseMessage) toAppMessage() (appmessage.Message, 
 	}, nil
 }
 
-func (x *KarlsendMessage_UtxosChangedNotification) toAppMessage() (appmessage.Message, error) {
+func (x *FreedMessage_UtxosChangedNotification) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "KarlsendMessage_UtxosChangedNotification is nil")
+		return nil, errors.Wrapf(errorNil, "FreedMessage_UtxosChangedNotification is nil")
 	}
 	return x.UtxosChangedNotification.toAppMessage()
 }
 
-func (x *KarlsendMessage_UtxosChangedNotification) fromAppMessage(message *appmessage.UTXOsChangedNotificationMessage) error {
+func (x *FreedMessage_UtxosChangedNotification) fromAppMessage(message *appmessage.UTXOsChangedNotificationMessage) error {
 	added := make([]*UtxosByAddressesEntry, len(message.Added))
 	for i, entry := range message.Added {
 		added[i] = &UtxosByAddressesEntry{}

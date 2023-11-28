@@ -1,13 +1,13 @@
 package protowire
 
 import (
-	"github.com/karlsen-network/karlsend/app/appmessage"
+	"github.com/hungyu99/freed/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *KarlsendMessage_BlockWithTrustedDataV4) toAppMessage() (appmessage.Message, error) {
+func (x *FreedMessage_BlockWithTrustedDataV4) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "KarlsendMessage_BlockWithTrustedDataV4 is nil")
+		return nil, errors.Wrapf(errorNil, "FreedMessage_BlockWithTrustedDataV4 is nil")
 	}
 
 	msgBlock, err := x.BlockWithTrustedDataV4.Block.toAppMessage()
@@ -22,7 +22,7 @@ func (x *KarlsendMessage_BlockWithTrustedDataV4) toAppMessage() (appmessage.Mess
 	}, nil
 }
 
-func (x *KarlsendMessage_BlockWithTrustedDataV4) fromAppMessage(msgBlockWithTrustedData *appmessage.MsgBlockWithTrustedDataV4) error {
+func (x *FreedMessage_BlockWithTrustedDataV4) fromAppMessage(msgBlockWithTrustedData *appmessage.MsgBlockWithTrustedDataV4) error {
 	x.BlockWithTrustedDataV4 = &BlockWithTrustedDataV4Message{
 		Block:               &BlockMessage{},
 		DaaWindowIndices:    msgBlockWithTrustedData.DAAWindowIndices,

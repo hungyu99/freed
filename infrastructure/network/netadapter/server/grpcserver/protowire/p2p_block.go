@@ -1,18 +1,18 @@
 package protowire
 
 import (
-	"github.com/karlsen-network/karlsend/app/appmessage"
+	"github.com/hungyu99/freed/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *KarlsendMessage_Block) toAppMessage() (appmessage.Message, error) {
+func (x *FreedMessage_Block) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrap(errorNil, "KarlsendMessage_Block is nil")
+		return nil, errors.Wrap(errorNil, "FreedMessage_Block is nil")
 	}
 	return x.Block.toAppMessage()
 }
 
-func (x *KarlsendMessage_Block) fromAppMessage(msgBlock *appmessage.MsgBlock) error {
+func (x *FreedMessage_Block) fromAppMessage(msgBlock *appmessage.MsgBlock) error {
 	x.Block = new(BlockMessage)
 	return x.Block.fromAppMessage(msgBlock)
 }
