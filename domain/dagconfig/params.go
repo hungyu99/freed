@@ -211,16 +211,14 @@ var MainnetParams = Params{
 	K:           defaultGHOSTDAGK,
 	Name:        "free-mainnet",
 	Net:         appmessage.Mainnet,
-	RPCPort:     "22110",
-	DefaultPort: "22111",
-	DNSSeeds: []string{
-		// Team DNS seed
-		//"mainnet-dnsseed-1.freecoin.com",
-		//"mainnet-dnsseed-2.freecoin.com",
-		"35.194.139.71",
-		"211.72.119.154",
-		"192.168.31.138",
-	},
+	RPCPort:     "52110",
+        DefaultPort: "52111",
+        DNSSeeds: []string{
+                // Team DNS seed
+                "mainnet-dnsseed-1.freepay.biz",
+                "mainnet-dnsseed-2.freepay.biz",
+        },
+
 
 	// DAG parameters
 	GenesisBlock:                    &genesisBlock,
